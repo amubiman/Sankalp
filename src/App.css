@@ -1,0 +1,177 @@
+/* --- Global Styles --- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  overflow-x: hidden; /* स्क्रीनच्या बाहेर काहीही जाणार नाही */
+}
+
+/* --- Fixed Header Config --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #181E33;
+  padding: 8px 20px;
+  color: white;
+  box-sizing: border-box;
+}
+
+header img {
+  height: 70px;
+  width: auto;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- Main Layout Wrapper --- */
+#home {
+  margin-top: 86px; /* हेडरच्या खाली परफेक्ट जागा सुटेल */
+  width: 100%;
+}
+
+/* --- 🔴 Slider & Auto-Fit Images (Fired & Fixed) --- */
+.slider {
+  position: relative;
+  width: 100% !important;
+  height: 500px !important; /* स्लायडरची हाईट ५००px फिक्स केली */
+  overflow: hidden;
+  display: block;
+}
+
+.slides {
+  display: block !important; /* flex काढून टाकला जेणेकरून इमेज ताणली जाणार नाही */
+  width: 100% !important;
+  height: 100% !important;
+  animation: none !important; /* जुने सर्व सरकणारे ॲनिमेशन पूर्ण बंद केले */
+  transform: none !important;
+}
+
+.slides img {
+  width: 100% !important; /* इमेज डाव्या-उजव्या बाजूने १००% ऑटो-फिट होईल */
+  height: 100% !important; /* ५००px हाईटमध्ये परफेक्ट बसेल */
+  object-fit: cover !important; /* यामुळे फोटो चपटा होणार नाही, परफेक्ट क्रॉप होऊन फिट बसेल */
+  display: block !important;
+}
+
+/* --- Caption Styles --- */
+.caption {
+  position: absolute;
+  top: 50%; 
+  left: 5%;         
+  transform: translateY(-50%); 
+  color: white; 
+  background: transparent !important
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;  
+  z-index: 10;
+}
+
+.caption h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.caption p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* --- Content Sections --- */
+section {
+  padding: 40px;
+  background: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  color: #003366;
+}
+
+/* --- Footer --- */
+footer {
+  background: #181E33;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* --- Layout Columns --- */
+.two-columns, .four-columns {
+  display: flex;              
+  justify-content: space-between;
+  gap: 2rem;                  
+  padding: 2rem 0; /* बाजूचे पॅडिंग काढले जेणेकरून सेक्शनमध्ये फिट बसेल */
+}
+
+.column {
+  flex: 1;                    
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Mobile Friendly --- */
+@media (max-width: 768px) {
+  .two-columns, .four-columns {
+    flex-direction: column; 
+    padding: 1rem;
+  }
+  
+  .slider {
+    height: 350px !important; /* मोबाईलवर इमेजची हाईट कमी केली */
+  }
+
+  .slides img {
+    height: 100% !important;
+  }
+  
+  header {
+    flex-direction: column; 
+    text-align: center;
+    padding: 10px;
+  }
+  
+  nav a {
+    display: inline-block;
+    margin: 5px 10px;
+    font-size: 0.9rem;
+  }
+  
+  #home {
+    margin-top: 140px; 
+  }
+
+  .caption {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    max-width: 100%;
+    border-radius: 0;
+    background: #181E33;
+  }
+}
