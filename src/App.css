@@ -40,7 +40,7 @@ nav a:hover {
 }
 
 /* --- Main Layout Wrapper --- */
-#home {
+#home, #contact-page { /* 🟢 चौकशी आणि संपर्क पेजसाठी लागू केले */
   margin-top: 86px; /* हेडरच्या खाली परफेक्ट जागा सुटेल */
   width: 100%;
 }
@@ -134,11 +134,25 @@ footer {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* --- 🟢 Team Section Grid Layout (नवीन जोडले - डेस्कटॉपवर ३/४ कॉलम आणि मोबाईलवर २) --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
 /* --- Mobile Friendly --- */
 @media (max-width: 768px) {
   .two-columns, .four-columns {
     flex-direction: column; 
     padding: 1rem;
+  }
+  
+  /* संपर्क फॉर्ममधील इनपुट्स मोबाईलवर स्क्रीनबाहेर जाऊ नयेत म्हणून */
+  .column form {
+    width: 100% !important;
+    box-sizing: border-box;
   }
   
   .slider {
@@ -161,17 +175,31 @@ footer {
     font-size: 0.9rem;
   }
   
-  #home {
+  #home, #contact-page { /* 🟢 मोबाईलवर संपर्क पेजचा टॉप मार्जिन देखील अचूक वाढवला */
     margin-top: 140px; 
   }
 
   .caption {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
+    position: absolute; /* 🟢 तुमच्या मूळ डिझाईननुसार इमेजवर सेंटर ठेवण्यासाठी बदलले */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
     max-width: 100%;
-    border-radius: 0;
-    background: #181E33;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: rgba(24, 30, 51, 0.6) !important; /* 🟢 मोबाईलवर पांढरा टेक्स्ट स्पष्ट दिसण्यासाठी अंधुक काळा पडदा */
+    border-radius: 8px;
+  }
+
+  .caption h2 {
+    font-size: 1.5rem; /* मोबाईलवर मथळा परफेक्ट बसेल */
+  }
+  
+  /* 🟢 मोबाईल स्क्रीनवर टीमचे फोटो २-२ च्या रांगेत सुबक दिसण्यासाठी */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
   }
 }
