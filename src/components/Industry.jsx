@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
+import logoImage from '../assets/Images/Logo.png';
+import industryImage from '../assets/Images/Industry.jpg';
+
 function Industry() {
   return (
     <>
       {/* Header */}
       <header>
-        <img src="/src/assets/Images/Logo.png" alt="Company Logo"/>
+        {/* 🟢 इथे इम्पोर्ट केलेली logoImage वापरली आहे */}
+        <img src={logoImage} alt="Company Logo"/>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
@@ -20,7 +25,8 @@ function Industry() {
       <div id="home" style={{ marginTop: '90px' }}>
         <div className="slider">
           <div className="slides">
-            <img src="/src/assets/Images/Industry.jpg" alt="img1"/>
+            {/* 🟢 इथे इम्पोर्ट केलेली industryImage वापरली आहे */}
+            <img src={industryImage} alt="img1"/>
           </div>
         </div>
 
@@ -40,7 +46,7 @@ function Industry() {
               <h2>Our Approach</h2>
               <p>
                 We focus on clarity, usability, and performance. Every project is built
-                with attention to detail and a user‑first mindset.
+                with attention to Detail and a user‑first mindset.
               </p>
             </div>
           </section>

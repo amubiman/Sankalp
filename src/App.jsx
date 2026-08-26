@@ -4,13 +4,13 @@ import Home from './components/Home';
 import Case from './components/Case';
 import Contact from './components/Contact';
 import Industry from './components/Industry';
-import Services from './components/Services'; // 👈 शेवटचे Services पेज इथे इम्पोर्ट केले
+import Services from './components/Services';
 
 function App() {
   return (
-    <Router>
+    // 👈 इथे basename="/Sankalp" जोडले आहे
+    <Router basename="/Sankalp"> 
       <Routes>
-        {/* सर्व ५ पेजेसचे अधिकृत पत्ते (Routes) */}
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/industry" element={<Industry />} />

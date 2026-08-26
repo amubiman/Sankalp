@@ -76,7 +76,7 @@ nav a:hover {
   left: 5%;         
   transform: translateY(-50%); 
   color: white; 
-  background: transparent !important
+  background: transparent !important;
   padding: 1.5rem;
   border-radius: 8px;
   max-width: 500px;  

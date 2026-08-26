@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
+import logoImage from '../assets/Images/Logo.png';
+import serviceImage from '../assets/Images/Service.jpg';
+
 function Services() {
   return (
     <>
       {/* Header */}
       <header>
-        <img src="/src/assets/Images/Logo.png" alt="Company Logo"/>
+        {/* 🟢 इथे इम्पोर्ट केलेली logoImage वापरली आहे */}
+        <img src={logoImage} alt="Company Logo"/>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
@@ -20,7 +25,8 @@ function Services() {
       <div id="home" style={{ marginTop: '90px' }}>
         <div className="slider">
           <div className="slides">
-            <img src="/src/assets/Images/Service.jpg" alt="img1"/>
+            {/* 🟢 इथे इम्पोर्ट केलेली serviceImage वापरली आहे */}
+            <img src={serviceImage} alt="img1"/>
           </div>
         </div>
 

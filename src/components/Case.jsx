@@ -2,12 +2,17 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import '../App.css'; 
 
+// 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
+import logoImage from '../assets/Images/Logo.png';
+import caseImage from '../assets/Images/Case.jpg';
+
 function About() {
   return (
     <>
       {/* Header */}
       <header>
-        <img src="/src/assets/Images/Logo.png" alt="Company Logo"/>
+        {/* 🟢 इथे इम्पोर्ट केलेली logoImage वापरली आहे */}
+        <img src={logoImage} alt="Company Logo"/>
         <nav>
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
@@ -23,8 +28,9 @@ function About() {
         {/* स्लायडर आणि इमेज ऑटो-फिट */}
         <div className="slider" style={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden', display: 'block' }}>
           <div className="slides" style={{ display: 'block', width: '100%', height: '100%' }}>
+            {/* 🟢 इथे इम्पोर्ट केलेली caseImage वापरली आहे */}
             <img 
-              src="/src/assets/Images/Case.jpg" 
+              src={caseImage} 
               alt="img1"
               style={{ 
                 width: '100%', 
