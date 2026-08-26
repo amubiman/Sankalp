@@ -28,6 +28,13 @@ header img {
   width: auto;
 }
 
+/* 🟢 डेस्कटॉपवर नेव्हिगेशन मेनू फ्लेक्समध्ये दिसेल */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
 nav a {
   color: white;
   margin: 0 15px;
@@ -134,25 +141,38 @@ footer {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* --- 🟢 Team Section Grid Layout (नवीन जोडले - डेस्कटॉपवर ३/४ कॉलम आणि मोबाईलवर २) --- */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+/* --- 🟢 Team Section Flex Layout (नवीन मांडणी: डेस्कटॉपवर ३ आणि २) --- */
+.team-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 👈 यामुळे शेवटचे २ फोटो परफेक्ट सेंटरला येतील */
+  gap: 30px;
   margin-top: 20px;
+}
+
+/* डेस्कटॉपवर ३ कार्ड्स नीट बसण्यासाठी रुंदी सेट केली */
+.team-member-card {
+  width: 250px;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #fff;
+  box-sizing: border-box;
 }
 
 /* --- Mobile Friendly --- */
 @media (max-width: 768px) {
   .two-columns, .four-columns {
-    flex-direction: column; 
-    padding: 1rem;
+    flex-direction: column !important; 
+    padding: 1rem !important;
   }
   
   /* संपर्क फॉर्ममधील इनपुट्स मोबाईलवर स्क्रीनबाहेर जाऊ नयेत म्हणून */
   .column form {
     width: 100% !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
   
   .slider {
@@ -163,43 +183,59 @@ footer {
     height: 100% !important;
   }
   
+  /* मोबाईलवर हेडरला ब्लॉक लेव्हल आणि सेंटर केले */
   header {
-    flex-direction: column; 
-    text-align: center;
-    padding: 10px;
+    flex-direction: column !important; 
+    text-align: center !important;
+    padding: 10px !important;
+  }
+  
+  /* ५ मेनू उजवीकडे न जाता केस स्टडी पेजसारखे पुढच्या लाईनवर येण्यासाठी */
+  header nav {
+    display: flex !important;
+    flex-wrap: wrap !important; 
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 10px 0 5px 0 !important;
+    gap: 10px !important;
   }
   
   nav a {
-    display: inline-block;
-    margin: 5px 10px;
-    font-size: 0.9rem;
+    display: inline-block !important;
+    margin: 5px 10px !important;
+    font-size: 0.9rem !important;
   }
   
-  #home, #contact-page { /* 🟢 मोबाईलवर संपर्क पेजचा टॉप मार्जिन देखील अचूक वाढवला */
-    margin-top: 140px; 
+  /* हेडर मोठा झाल्यावर कंटेंन्ट मागे लपू नये म्हणून मार्जिन १५०px केला */
+  #home, #contact-page { 
+    margin-top: 150px !important; 
   }
 
   .caption {
-    position: absolute; /* 🟢 तुमच्या मूळ डिझाईननुसार इमेजवर सेंटर ठेवण्यासाठी बदलले */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    text-align: center;
-    max-width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    background: rgba(24, 30, 51, 0.6) !important; /* 🟢 मोबाईलवर पांढरा टेक्स्ट स्पष्ट दिसण्यासाठी अंधुक काळा पडदा */
-    border-radius: 8px;
+    position: absolute !important; 
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+    background: rgba(24, 30, 51, 0.6) !important; 
+    border-radius: 8px !important;
   }
 
   .caption h2 {
-    font-size: 1.5rem; /* मोबाईलवर मथळा परफेक्ट बसेल */
+    font-size: 1.5rem !important; 
   }
   
-  /* 🟢 मोबाईल स्क्रीनवर टीमचे फोटो २-२ च्या रांगेत सुबक दिसण्यासाठी */
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px;
+  /* 🟢 मोबाईल स्क्रीनवर ५ फोटो २-२ च्या रांगेत सुबक आणण्यासाठी बदल (Grid ऐवजी Flex गॅप) */
+  .team-flex {
+    gap: 15px !important;
+  }
+
+  /* 🟢 मोबाईलवर प्रत्येक फोटो ५०% जागा घेईल, ज्यामुळे एका ओळीत २ कार्ड्स दिसतील */
+  .team-member-card {
+    width: calc(50% - 10px) !important;
   }
 }

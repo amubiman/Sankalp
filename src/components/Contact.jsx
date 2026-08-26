@@ -4,7 +4,7 @@ import '../App.css';
 
 // 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
 import logoImage from '../assets/Images/Logo.png';
-import contactImage from '../assets/Images/contact.png'; // मुख्य बॅнер इमेज
+import contactImage from '../assets/Images/contact.png'; // मुख्य बॅनर इमेज
 import rohitImg from '../assets/Images/rohit.jpg';
 import poojaImg from '../assets/Images/pooja.jpg';
 import mayurImg from '../assets/Images/mayur.jpg';
@@ -61,10 +61,10 @@ function Contact() {
 
   return (
     <>
-      {/* हेडर (Header) - About.jsx प्रमाणे */}
-      <header>
-        <img src={logoImage} alt="Company Logo"/>
-        <nav>
+      {/* हेडर (Header) - पूर्णपणे रिस्पॉन्सिव्ह आणि केस स्टडी पेजसारखा */}
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', padding: '10px 20px' }}>
+        <img src={logoImage} alt="Company Logo" style={{ height: '70px', width: 'auto' }}/>
+        <nav style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
             <Link to="/industry">Industries</Link>
@@ -115,7 +115,7 @@ function Contact() {
         <section>
           <section className="two-columns">
             
-            {/* 🟢 डावा कॉलम: संपर्क माहिती (Perfect Left Align केली आहे) */}
+            {/* डावा कॉलम: संपर्क माहिती */}
             <div className="column" style={{ textAlign: 'left' }}>
               <h2 style={{ textAlign: 'left', margin: '0 0 10px 0', color: '#003366' }}>Contact Us</h2>
               <hr style={{ border: '0', height: '1px', background: '#eee', marginBottom: '15px' }} />
@@ -142,10 +142,11 @@ function Contact() {
         {/* आमची टीम सेक्शन (Our Team) */}
         <section style={{ paddingBottom: '40px' }}>
           <h2>Our Team</h2>
-          {/* 🟢 मोबाईल रिस्पॉन्सिव्हतेसाठी तुमच्या CSS मधील 'team-grid' क्लास वापरला आहे */}
-          <div className="team-grid">
+          {/* 🟢 ३ आणि २ च्या रचनेसाठी 'team-flex' क्लास वापरला आहे */}
+          <div className="team-flex">
             {teamMembers.map((member, index) => (
-              <div key={index} style={{ textAlign: 'center', padding: '15px', border: '1px solid #eee', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', background: '#fff' }}>
+              /* 🟢 प्रत्येक कार्डला 'team-member-card' क्लास देऊन इनलाईन विड्थ काढून टाकली आहे */
+              <div key={index} className="team-member-card">
                 <img 
                   src={member.img} 
                   alt={member.name} 
