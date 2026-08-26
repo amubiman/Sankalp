@@ -105,7 +105,7 @@ function Contact() {
               zIndex: '10'
             }}>
               <h2 style={{ color: '#ffffff', fontSize: '2.8rem', fontWeight: 'bold', margin: '0', textShadow: '2px 2px 8px rgba(0,0,0,0.6)' }}>
-                Contact Our Team
+                
               </h2>
             </div>
           </div>
