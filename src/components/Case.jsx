@@ -7,12 +7,30 @@ import logoImage from '../assets/Images/Logo.png';
 import caseImage from '../assets/Images/Case.jpg';
 
 function About() {
+  const caseRow1 = [
+    { title: "ARC-Based Procurement", challenge: "High volume of repetitive procurement for stationery, housekeeping & consumables leading to inefficiencies.", solution: "Implemented Annual Rate Contracts (ARC) with selected vendors and standardized procurement processes.", impact: "Reduced workload, improved cost control, faster ordering cycle." },
+    { title: "Loan License Manufacturing", challenge: "High production cost and longer lead time for cosmetic product line.", solution: "Onboarded loan license manufacturing partners to optimize production.", impact: "Reduced cost, improved lead time, increased flexibility." },
+    { title: "Multi-Year AMC Strategy", challenge: "Frequent breakdowns and high maintenance costs of instruments.", solution: "Negotiated multi-year AMC agreements with OEMs.", impact: "Reduced maintenance cost, improved uptime, predictable budgeting." }
+  ];
+
+  const caseRow2 = [
+    { title: "Cost Sheet Analysis", challenge: "Lack of cost transparency in marketing procurement.", solution: "Introduced cost sheet analysis and vendor benchmarking.", impact: "Identified cost gaps, achieved savings, improved negotiation." },
+    { title: "Advance Demand Planning", challenge: "Frequent stock-outs affecting availability.", solution: "Implemented projection-based advance planning system.", impact: "Ensured availability, reduced emergency purchases." },
+    { title: "Supplier Credit Optimization", challenge: "Unfavorable supplier credit terms affecting cash flow.", solution: "Aligned credit terms with business potential.", impact: "Improved cash flow, stronger supplier relationships." }
+  ];
+
+  const caseRow3 = [
+    { title: "Vendor Base Rationalization", challenge: "Too many vendors causing administrative and operational inefficiency.", solution: "Consolidated vendor base across key supply areas.", impact: "Better pricing, improved quality consistency." },
+    { title: "Emergency Cost Control", challenge: "High procurement cost due to urgent spot purchases.", solution: "Created backup vendor network and rate agreements.", impact: "Reduced cost, faster response." },
+    { title: "Process Standardization", challenge: "Unstructured and inconsistent procurement process.", solution: "Implemented SOPs and tracking systems.", impact: "Improved transparency and control." }
+  ];
+
   return (
     <>
       {/* Header */}
       <header>
         {/* 🟢 इथे इम्पोर्ट केलेली logoImage वापरली आहे */}
-        <img src={logoImage} alt="Company Logo"/>
+        <img src={logoImage} alt="Sankalp Solutions Logo"/>
         <nav>
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
@@ -31,7 +49,7 @@ function About() {
             {/* 🟢 इथे इम्पोर्ट केलेली caseImage वापरली आहे */}
             <img 
               src={caseImage} 
-              alt="img1"
+              alt="Sankalp Solutions Case Study Banner"
               style={{ 
                 width: '100%', 
                 height: '100%', 
@@ -40,12 +58,12 @@ function About() {
               }}
             />
             
-            {/* 🔴 मजकूर इमेजच्या परफेक्ट बॉटमला (खालच्या कडेला) आणि सेंटरला आणला आहे */}
+            {/* 🔴 मजकूर इमेजच्या परफेक्ट बॉटमला आणि सेंटरला ठेवला आहे */}
             <div className="caption" style={{
               position: 'absolute',
-              bottom: '20px',          /* इमेजच्या खालच्या कडेपासून २०px वर */
+              bottom: '20px',
               left: '50%',
-              transform: 'translateX(-50%)', /* आडव्या रेषेत परफेक्ट सेंटरला ठेवण्यासाठी */
+              transform: 'translateX(-50%)',
               color: '#ffffff',
               textAlign: 'center',
               width: '100%',
@@ -61,55 +79,64 @@ function About() {
           </div>
         </div>
 
-        <section>
-          <h2>Home</h2>
-          <p>We are a leading corporate solutions provider, dedicated to helping businesses achieve sustainable growth through innovation, strategy, and excellence.</p>
-          
-          <section className="two-columns">
-            <div className="column">
-              <h2>Our Vision</h2>
-              <p>
-                To create simple, responsive, and elegant websites that empower businesses
-                and individuals to share their ideas with the world.
-              </p>
+        {/* Case Studies Introduction */}
+        <section style={{ textAlign: 'center', background: '#f8f9fa', marginBottom: '-10px' }}>
+          <h2 style={{ color: '#003366', margin: '0 0 10px 0' }}>Our Work in Action - Case Studies</h2>
+          <p style={{ fontSize: '1.1rem', color: '#444', maxWidth: '800px', margin: '0 auto', fontWeight: '500', lineHeight: '1.6' }}>
+            We deliver measurable procurement impact through strategic sourcing, process optimization, and data-driven decision-making. Below are select case studies demonstrating our expertise.
+          </p>
+        </section>
+
+        {/* Case Studies Row 1 (Four Columns - ३ डेटा कॉलम आणि १ बॅलन्स डिझाईन स्पेस) */}
+        <section className="four-columns">
+          {caseRow1.map((item, idx) => (
+            <div className="column" key={idx} style={{ borderLeft: '4px solid #181E33' }}>
+              <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem' }}>{item.title}</h3>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Challenge:</strong> {item.challenge}</p>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Solution:</strong> {item.solution}</p>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0', color: '#2e7d32' }}><strong>Impact:</strong> {item.impact}</p>
             </div>
-            <div className="column">
-              <h2>Our Approach</h2>
-              <p>
-                We focus on clarity, usability, and performance. Every project is built
-                with attention to detail and a user‑first mindset.
-              </p>
+          ))}
+          <div className="column" style={{ background: '#eef3f7', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none' }}>
+            <p style={{ fontWeight: 'bold', color: '#003366', margin: 0, textAlign: 'center', fontSize: '0.9rem' }}>Proven Efficiency 📈</p>
+          </div>
+        </section>
+
+        {/* Case Studies Row 2 (Four Columns) */}
+        <section className="four-columns" style={{ marginTop: '-20px' }}>
+          {caseRow2.map((item, idx) => (
+            <div className="column" key={idx} style={{ borderLeft: '4px solid #181E33' }}>
+              <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem' }}>{item.title}</h3>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Challenge:</strong> {item.challenge}</p>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Solution:</strong> {item.solution}</p>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0', color: '#2e7d32' }}><strong>Impact:</strong> {item.impact}</p>
             </div>
-          </section>
+          ))}
+          <div className="column" style={{ background: '#eef3f7', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none' }}>
+            <p style={{ fontWeight: 'bold', color: '#003366', margin: 0, textAlign: 'center', fontSize: '0.9rem' }}>Cost Control 💰</p>
+          </div>
         </section>
 
-        <section>
-          <h2>Our Vision</h2>
-          <p>Our vision is to empower organizations worldwide with cutting-edge solutions that drive success, foster collaboration, and create lasting impact.</p>
+        {/* Case Studies Row 3 (Four Columns) */}
+        <section className="four-columns" style={{ marginTop: '-20px' }}>
+          {caseRow3.map((item, idx) => (
+            <div className="column" key={idx} style={{ borderLeft: '4px solid #181E33' }}>
+              <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem' }}>{item.title}</h3>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Challenge:</strong> {item.challenge}</p>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Solution:</strong> {item.solution}</p>
+              <p style={{ fontSize: '0.85rem', margin: '5px 0', color: '#2e7d32' }}><strong>Impact:</strong> {item.impact}</p>
+            </div>
+          ))}
+          <div className="column" style={{ background: '#eef3f7', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none' }}>
+            <p style={{ fontWeight: 'bold', color: '#003366', margin: 0, textAlign: 'center', fontSize: '0.9rem' }}>Process-Driven ⚙️</p>
+          </div>
         </section>
-      </div>
 
-      {/* Services Section */}
-      <div id="services">
-        <section>
-          <h2>Our Services</h2>
-          <p>We offer a wide range of services including business consulting, technology solutions, digital transformation, and customer support tailored to your needs.</p>
-        </section>
-      </div>
-
-      {/* Contact Us Section */}
-      <div id="contact">
-        <section>
-          <h2>Contact Us</h2>
-          <p>Email: info@corporate.com</p>
-          <p>Phone: +91 98765 43210</p>
-          <p>Address: Corporate Tower, Ahilyanagar, MH, India</p>
-        </section>
       </div>
 
       {/* Footer */}
       <footer>
-        <p>&copy; 2026 Corporate Inc. All rights reserved.</p>
+        <p>&copy; 2026 Sankalp Solutions. All rights reserved.</p>
       </footer>
     </>
   );
