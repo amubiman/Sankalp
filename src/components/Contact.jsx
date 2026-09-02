@@ -2,23 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css'; 
 
-// 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
+// assets मधील इमेजेस
 import logoImage from '../assets/Images/Logo.png';
-import contactImage from '../assets/Images/contact.png'; // मुख्य बॅनर इमेज
+import contactImage from '../assets/Images/contact.png'; 
 import rohitImg from '../assets/Images/rohit.jpg';
 import poojaImg from '../assets/Images/pooja.jpg';
 import mayurImg from '../assets/Images/mayur.jpg';
 import rutujaImg from '../assets/Images/rutuja.jpg';
 import mangeshImg from '../assets/Images/mangesh.jpg';
 
+// 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
+import Footer from '../components/Footer';
+
 function Contact() {
-  // फॉर्म डेटा हँडल करण्यासाठी स्टेट्स
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,79 +27,48 @@ function Contact() {
     setFormData({ name: '', phone: '', email: '', message: '' });
   };
 
-  // 🟢 टीम मेंबर्सचा डेटा - लोकल इमेजेस व्हेरिएबल्ससह सुरक्षित
   const teamMembers = [
-    { 
-      name: "Mr. Rohit Vijay Kawale", 
-      role: "Founder", 
-      img: rohitImg 
-    },
-    { 
-      name: "Mrs. Pooja Adwait Kulkarni", 
-      role: "Client Relations Coordinator", 
-      img: poojaImg 
-    },
-    { 
-      name: "Mr. Mayur Pramod Kulkarni", 
-      role: "Technical Support Specialist", 
-      img: mayurImg 
-    },
-    { 
-      name: "Ms. Rutuja Vilas Deshpande", 
-      role: "Documentation & Compliance Executive", 
-      img: rutujaImg 
-    },
-    { 
-      name: "Mr. Mangesh Sadanand Shahane", 
-      role: "Support Associate", 
-      img: mangeshImg 
-    }
+    { name: "Mr. Rohit Vijay Kawale", role: "Founder", img: rohitImg },
+    { name: "Mrs. Pooja Adwait Kulkarni", role: "Client Relations Coordinator", img: poojaImg },
+    { name: "Mr. Mayur Pramod Kulkarni", role: "Technical Support Specialist", img: mayurImg },
+    { name: "Ms. Rutuja Vilas Deshpande", role: "Documentation & Compliance Executive", img: rutujaImg },
+    { name: "Mr. Mangesh Sadanand Shahane", role: "Support Associate", img: mangeshImg }
   ];
 
   return (
     <>
-      {/* हेडर (Header) - पूर्णपणे रिस्पॉन्सिव्ह */}
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', padding: '10px 20px' }}>
-        <img src={logoImage} alt="Sankalp Solutions Logo" style={{ height: '70px', width: 'auto' }}/>
-        <nav style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
-            <Link to="/">Home</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/industry">Industries</Link>
-            <Link to="/case">Case Study</Link>
-            <Link to="/contact">Contact Us</Link>
+      {/* 🟢 एकसमान ग्लोबल हेडर */}
+      <header>
+        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src={logoImage} alt="Sankalp Solutions Logo" />
+        </div>
+        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
+          <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/industry">Industries</Link>
+          <Link to="/case">Case Study</Link>
+          <Link to="/contact">Contact Us</Link>
+          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
         </nav>
       </header>
 
-      {/* मुख्य मजकूर रॅप (Main Content Wrap) */}
-      <div id="contact-page" style={{ marginTop: '86px', width: '100%' }}>
+      {/* मुख्य मजकूर रॅप */}
+      <div className="page-wrapper">
         
-        {/* स्लायडर आणि इमेज ऑटो-फिट - आता कोणताही मजकूर यावर दिसणार नाही */}
-        <div className="slider" style={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden', display: 'block' }}>
-          <div className="slides" style={{ display: 'block', width: '100%', height: '100%' }}>
-            <img 
-              src={contactImage} 
-              alt="Sankalp Solutions Contact Us Banner"
-              style={{ 
-                width: '100%', 
-                height: '100%', 
-                objectFit: 'cover', 
-                display: 'block' 
-              }}
-            />
-          </div>
+        {/* स्लायडर आणि इमेज ऑटो-फिट */}
+        <div className="slider">
+          <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" />
         </div>
 
-        {/* Contact Us Introduction Section - मजकूर इथे खाली जोडला आहे */}
-        <div style={{ marginBottom: '-30px' }}>
-          <section style={{ textAlign: 'center', background: '#f8f9fa' }}>
-            <h2 style={{ color: '#003366', margin: '0 0 10px 0' }}>Contact Us</h2>
-            <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: '800px', margin: '0 auto', fontWeight: 'bold', lineHeight: '1.6', fontStyle: 'italic' }}>
-              "Your Success, Our Priority"
-            </p>
-          </section>
+        {/* Contact Us Introduction Section */}
+        <div className="intro-section">
+          <h2 style={{ color: '#003366', margin: '0 0 10px 0' }}>Contact Us</h2>
+          <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: '800px', margin: '0 auto', fontWeight: 'bold', lineHeight: '1.6', fontStyle: 'italic' }}>
+            "Your Success, Our Priority"
+          </p>
         </div>
 
-        {/* मुख्य संपर्क विभाग दोन कॉलममध्ये (Two Columns Layout) */}
+        {/* मुख्य संपर्क विभाग दोन कॉलममध्ये */}
         <section>
           <div className="two-columns">
             
@@ -134,20 +100,18 @@ function Contact() {
                 <input type="tel" name="phone" placeholder="Mobile Number" value={formData.phone} onChange={handleChange} required style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
                 <input type="email" name="email" placeholder="Email Id" value={formData.email} onChange={handleChange} required style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ccc', boxSizing: 'border-box' }} />
                 <textarea name="message" placeholder="Your Message / Requirement" value={formData.message} onChange={handleChange} required style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ccc', height: '110px', boxSizing: 'border-box', resize: 'vertical' }}></textarea>
-                <button type="submit" style={{ padding: '12px', background: '#181E33', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1rem' }}>SUBMIT ENQUIRY</button>
+                <button type="submit" style={{ padding: '12px', background: '#0a1931', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1rem' }}>SUBMIT ENQUIRY</button>
               </form>
             </div>
           </div>
         </section>
 
-        {/* आमची टीम सेक्शन (Our Team) */}
+        {/* आमची टीम सेक्शन */}
         <section style={{ paddingBottom: '40px', background: '#fdfdfd' }}>
           <h2 style={{ textAlign: 'center', color: '#003366', marginBottom: '30px' }}>Meet Our Team</h2>
-          {/* 🟢 ३ आणि २ च्या रचनेसाठी 'team-flex' क्लास वापरला आहे */}
           <div className="team-flex">
             {teamMembers.map((member, index) => (
-              /* 🟢 प्रत्येक कार्डला 'team-member-card' क्लास देऊन इनलाईन विड्थ काढून टाकली आहे */
-              <div key={index} className="team-member-card" style={{ borderTop: '3px solid #003366' }}>
+              <div key={index} className="team-member-card" style={{ borderTop: '3px solid #ff6b6b' }}>
                 <img 
                   src={member.img} 
                   alt={member.name} 
@@ -170,10 +134,8 @@ function Contact() {
 
       </div>
 
-      {/* फूटर (Footer) */}
-      <footer>
-        <p>&copy; 2026 Sankalp Solutions. All Rights Reserved.</p>
-      </footer>
+      {/* 🟢 नवीन फुल स्क्रीन फुटर */}
+      <Footer />
     </>
   );
 }

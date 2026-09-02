@@ -1,13 +1,18 @@
 /* --- Global Styles --- */
+/* 🟢 अपूर्ण लिंक बदलून अचूक Poppins फॉन्ट इम्पोर्ट केला आहे */
+/* 🟢 जुनी ओळ काढून ही अचूक लिंक ओळ क्र. ३ वर पेस्ट करा */
+@import url('https://googleapis.com');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
-  overflow-x: hidden; /* स्क्रीनच्या बाहेर काहीही जाणार नाही */
+  background: #fdfdfd;
+  color: #333;
+  overflow-x: hidden; /* स्क्रीनच्या बाहेर कंटेंट जाऊन आडवी स्क्रोल पट्टी येणार नाही */
 }
 
-/* --- Fixed Header Config --- */
+/* --- Fixed Global Header --- */
 header {
   position: fixed;
   top: 0;
@@ -17,225 +22,382 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #181E33;
-  padding: 8px 20px;
-  color: white;
+  background: #0a1931; /* सर्व पेजेससाठी एकच डार्क थीम */
+  padding: 10px 5%;
   box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 header img {
-  height: 70px;
-  width: auto;
+  width: 160px;
+  height: auto;
 }
 
-/* 🟢 डेस्कटॉपवर नेव्हिगेशन मेनू फ्लेक्समध्ये दिसेल */
-nav {
+header nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  align-items: center;
+  gap: 25px;
 }
 
-nav a {
-  color: white;
-  margin: 0 15px;
+header nav a {
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  text-decoration: underline;
+header nav a:hover {
+  color: #ff6b6b;
+}
+
+/* Header Button */
+.btn-get-touch {
+  background-color: #ff6b6b;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.btn-get-touch:hover {
+  background-color: #e05454;
 }
 
 /* --- Main Layout Wrapper --- */
-#home, #contact-page { /* 🟢 चौकशी आणि संपर्क पेजसाठी लागू केले */
-  margin-top: 86px; /* हेडरच्या खाली परफेक्ट जागा सुटेल */
+.page-wrapper {
+  margin-top: 80px; /* हेडर फिक्स असल्यामुळे कंटेंट खाली ढकलण्यासाठी */
   width: 100%;
 }
 
-/* --- 🔴 Slider & Auto-Fit Images (Fired & Fixed) --- */
-.slider {
-  position: relative;
-  width: 100% !important;
-  height: 500px !important; /* स्लायडरची हाईट ५००px फिक्स केली */
-  overflow: hidden;
-  display: block;
+/* --- 🟢 Hero Slider & Banner (Updated to Full-Screen Width) --- */
+.hero-banner, .slider {
+  position: relative !important;
+  height: 500px !important;
+  overflow: hidden !important;
+
+  /* 👇 बॅनर आणि इमेजला कडांपर्यंत Full Width करणारा मॅजिक कोड */
+  width: 100vw !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  box-sizing: border-box !important;
 }
 
-.slides {
-  display: block !important; /* flex काढून टाकला जेणेकरून इमेज ताणली जाणार नाही */
+.slides, .slides img, .hero-banner img, .slider img {
   width: 100% !important;
   height: 100% !important;
-  animation: none !important; /* जुने सर्व सरकणारे ॲनिमेशन पूर्ण बंद केले */
-  transform: none !important;
-}
-
-.slides img {
-  width: 100% !important; /* इमेज डाव्या-उजव्या बाजूने १००% ऑटो-फिट होईल */
-  height: 100% !important; /* ५००px हाईटमध्ये परफेक्ट बसेल */
-  object-fit: cover !important; /* यामुळे फोटो चपटा होणार नाही, परफेक्ट क्रॉप होऊन फिट बसेल */
   display: block !important;
 }
 
-/* --- Caption Styles --- */
-.caption {
-  position: absolute;
-  top: 50%; 
-  left: 5%;         
-  transform: translateY(-50%); 
-  color: white; 
-  background: transparent !important;
-  padding: 1.5rem;
-  border-radius: 8px;
-  max-width: 500px;  
-  z-index: 10;
-}
-
-.caption h2 {
-  margin: 0 0 0.5rem 0;
-  font-size: 2rem;
-  color: #fff;
-}
-
-.caption p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.4;
+/* इमेज चपटी न होता परफेक्ट क्रॉप होऊन फिट बसण्यासाठी */
+.slides img, .hero-banner img, .slider img {
+  object-fit: cover !important;
 }
 
 /* --- Content Sections --- */
 section {
-  padding: 40px;
+  padding: 60px 5%;
   background: white;
-  margin: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-section h2 {
-  color: #003366;
-}
-
-/* --- Footer --- */
-footer {
-  background: #181E33;
-  color: white;
+/* Intro Centered Section */
+.intro-section {
   text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-  width: 100%;
+  background: #f8f9fa;
+  padding: 40px 5%;
+  margin-bottom: -10px;
 }
 
-/* --- Layout Columns --- */
-.two-columns, .four-columns {
-  display: flex;              
-  justify-content: space-between;
-  gap: 2rem;                  
-  padding: 2rem 0; /* बाजूचे पॅडिंग काढले जेणेकरून सेक्शनमध्ये फिट बसेल */
+/* --- Grid Layouts (Desktop First) --- */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.four-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
 }
 
 .column {
-  flex: 1;                    
   background: #fff;
-  padding: 1.5rem;
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
-/* --- 🟢 Team Section Flex Layout (नवीन मांडणी: डेस्कटॉपवर ३ आणि २) --- */
+/* --- 🟢 Why Choose Us: ४ बॉक्स एकाच ओळीत आणणारा नवीन कोड --- */
+.why-choose-us .column-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; /* बॉक्सला दुसऱ्या ओळीत जाण्यापासून रोखते */
+  gap: 20px !important;
+  justify-content: center !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.why-choose-us .card {
+  flex: 1 !important; /* सर्व ४ कार्ड्सना समान रुंदी देते */
+  min-width: 200px !important; 
+  padding: 30px 15px !important;
+  box-sizing: border-box !important;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* --- Team Section Layout --- */
 .team-flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* 👈 यामुळे शेवटचे २ फोटो परफेक्ट सेंटरला येतील */
+  justify-content: center;
   gap: 30px;
   margin-top: 20px;
 }
 
-/* डेस्कटॉपवर ३ कार्ड्स नीट बसण्यासाठी रुंदी सेट केली */
 .team-member-card {
-  width: 250px;
+  width: 230px;
   text-align: center;
-  padding: 15px;
-  border: 1px solid #eee;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
   background: #fff;
   box-sizing: border-box;
 }
 
-/* --- Mobile Friendly --- */
+/* --- Old Generic Footer --- */
+footer {
+  background: #0a1931;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* --- 🟢 Professional Footer Styles (Full-Screen Width) --- */
+.site-footer {
+  background-color: #0a1931; /* इमेजमधील डार्क ब्लू बॅकग्राउंड */
+  color: #ffffff;
+  padding: 50px 5% 20px 5%;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 8px solid;
+  border-image: linear-gradient(to right, #ff9933, #ff5555, #cc0066) 1; /* खालची सुंदर...पट्टी */
+  
+  /* 👇 फुटरला कडांना टच (Full Width) करणारा मॅजिक कोड */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr; /* डेस्कटॉपवर ५ कॉलम्स */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column img {
+  width: 160px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.footer-column p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccd6f6;
+  margin: 0;
+}
+
+.footer-column h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* लिंक्सची स्टाईल */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #ccd6f6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6b6b; /* होव्हर रंग */
+}
+
+/* सोशल मीडिया आयकॉन्स */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icons a:hover {
+  background: #ff6b6b;
+  color: #ffffff;
+}
+
+/* संपर्क माहिती (Contact Info) */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #ccd6f6;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.contact-info i {
+  color: #ff6b6b;
+  margin-top: 3px;
+  font-size: 1rem;
+}
+
+/* कॉपीराईट पट्टी */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #8892b0;
+}
+
+/* --- Mobile Responsive (Media Queries) --- */
+@media (max-width: 992px) {
+  .why-choose-us .column-container {
+    flex-wrap: wrap !important;
+  }
+  .why-choose-us .card {
+    flex: 1 1 calc(50% - 20px) !important; /* टॅबलेटवर २-२ बॉक्स व्यवस्थित दिसतील */
+  }
+}
+
 @media (max-width: 768px) {
-  .two-columns, .four-columns {
-    flex-direction: column !important; 
-    padding: 1rem !important;
+  header {
+    flex-direction: column;
+    padding: 15px;
   }
-  
-  /* संपर्क फॉर्ममधील इनपुट्स मोबाईलवर स्क्रीनबाहेर जाऊ नयेत म्हणून */
-  .column form {
-    width: 100% !important;
-    box-sizing: border-box !important;
+
+  header nav {
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
   }
-  
-  .slider {
+
+  .page-wrapper {
+    margin-top: 160px; /* मोबाईलवर हेडर मोठा झाल्यावर जागा वाढवली */
+  }
+
+  .slider, .hero-banner {
     height: 350px !important; /* मोबाईलवर इमेजची हाईट कमी केली */
   }
 
-  .slides img {
-    height: 100% !important;
-  }
-  
-  /* मोबाईलवर हेडरला ब्लॉक लेव्हल आणि सेंटर केले */
-  header {
-    flex-direction: column !important; 
-    text-align: center !important;
-    padding: 10px !important;
-  }
-  
-  /* ५ मेनू उजवीकडे न जाता केस स्टडी पेजसारखे पुढच्या लाईनवर येण्यासाठी */
-  header nav {
-    display: flex !important;
-    flex-wrap: wrap !important; 
-    justify-content: center !important;
-    width: 100% !important;
-    padding: 10px 0 5px 0 !important;
-    gap: 10px !important;
-  }
-  
-  nav a {
-    display: inline-block !important;
-    margin: 5px 10px !important;
-    font-size: 0.9rem !important;
-  }
-  
-  /* हेडर मोठा झाल्यावर कंटेंन्ट मागे लपू नये म्हणून मार्जिन १५०px केला */
-  #home, #contact-page { 
-    margin-top: 150px !important; 
+  .two-columns {
+    grid-template-columns: 1fr;
   }
 
-  .caption {
-    position: absolute !important; 
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 90% !important;
-    text-align: center !important;
-    max-width: 100% !important;
-    padding: 1rem !important;
-    box-sizing: border-box !important;
-    background: rgba(24, 30, 51, 0.6) !important; 
-    border-radius: 8px !important;
-  }
-
-  .caption h2 {
-    font-size: 1.5rem !important; 
-  }
-  
-  /* 🟢 मोबाईल स्क्रीनवर ५ फोटो २-२ च्या रांगेत सुबक आणण्यासाठी बदल (Grid ऐवजी Flex गॅप) */
-  .team-flex {
-    gap: 15px !important;
-  }
-
-  /* 🟢 मोबाईलवर प्रत्येक फोटो ५०% जागा घेईल, ज्यामुळे एका ओळीत २ कार्ड्स दिसतील */
   .team-member-card {
-    width: calc(50% - 10px) !important;
+    width: calc(50% - 15px);
   }
+
+  /* 📱 मोबाईलवर फुटर २ कॉलम्समध्ये विभागला जाईल */
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-choose-us .card {
+    flex: 1 1 100% !important; /* अगदी लहान मोबाईलवर १-१ बॉक्स एकाखाली एक दिसेल */
+  }
+  /* 📱 फुटरचे सर्व रकाने एकाखाली एक यावेत म्हणून */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .site-footer {
+    padding: 40px 20px 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member-card {
+    width: 100%;
+  }
+}
+.why-choose-us .column-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; /* बॉक्स खाली जाण्यापासून रोखतो */
+  gap: 20px !important;
+}
+.why-choose-us .card {
+  flex: 1 !important; /* सर्व ४ बॉक्स समान रुंदीचे करतो */
 }

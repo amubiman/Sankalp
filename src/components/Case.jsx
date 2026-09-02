@@ -2,9 +2,12 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import '../App.css'; 
 
-// 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
+// assets मधील इमेजेस
 import logoImage from '../assets/Images/Logo.png';
 import caseImage from '../assets/Images/Case.jpg';
+
+// 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
+import Footer from '../components/Footer';
 
 function About() {
   const caseRow1 = [
@@ -27,36 +30,28 @@ function About() {
 
   return (
     <>
-      {/* Header */}
+      {/* 🟢 एकसमान ग्लोबल हेडर */}
       <header>
-        {/* 🟢 इथे इम्पोर्ट केलेली logoImage वापरली आहे */}
-        <img src={logoImage} alt="Sankalp Solutions Logo"/>
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/industry">Industries</Link>
-            <Link to="/case">Case Study</Link>
-            <Link to="/contact">Contact Us</Link>
+        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src={logoImage} alt="Sankalp Solutions Logo" />
+        </div>
+        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
+          <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/industry">Industries</Link>
+          <Link to="/case">Case Study</Link>
+          <Link to="/contact">Contact Us</Link>
+          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
         </nav>
       </header>
 
       {/* Main Content Wrap */}
-      <div id="home" style={{ marginTop: '86px', width: '100%' }}>
+      <div className="page-wrapper">
         
         {/* स्लायडर आणि इमेज ऑटो-फिट */}
-        <div className="slider" style={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden', display: 'block' }}>
-          <div className="slides" style={{ display: 'block', width: '100%', height: '100%' }}>
-            {/* 🟢 इथे इम्पोर्ट केलेली caseImage वापरली आहे */}
-            <img 
-              src={caseImage} 
-              alt="Sankalp Solutions Case Study Banner"
-              style={{ 
-                width: '100%', 
-                height: '100%', 
-                objectFit: 'cover', 
-                display: 'block' 
-              }}
-            />
+        <div className="slider">
+          <div className="slides">
+            <img src={caseImage} alt="Sankalp Solutions Case Study Banner" />
             
             {/* 🔴 मजकूर इमेजच्या परफेक्ट बॉटमला आणि सेंटरला ठेवला आहे */}
             <div className="caption" style={{
@@ -80,17 +75,17 @@ function About() {
         </div>
 
         {/* Case Studies Introduction */}
-        <section style={{ textAlign: 'center', background: '#f8f9fa', marginBottom: '-10px' }}>
+        <div className="intro-section">
           <h2 style={{ color: '#003366', margin: '0 0 10px 0' }}>Our Work in Action - Case Studies</h2>
           <p style={{ fontSize: '1.1rem', color: '#444', maxWidth: '800px', margin: '0 auto', fontWeight: '500', lineHeight: '1.6' }}>
             We deliver measurable procurement impact through strategic sourcing, process optimization, and data-driven decision-making. Below are select case studies demonstrating our expertise.
           </p>
-        </section>
+        </div>
 
-        {/* Case Studies Row 1 (Four Columns - ३ डेटा कॉलम आणि १ बॅलन्स डिझाईन स्पेस) */}
+        {/* Case Studies Row 1 */}
         <section className="four-columns">
           {caseRow1.map((item, idx) => (
-            <div className="column" key={idx} style={{ borderLeft: '4px solid #181E33' }}>
+            <div className="column" key={idx} style={{ borderLeft: '4px solid #0a1931' }}>
               <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem' }}>{item.title}</h3>
               <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Challenge:</strong> {item.challenge}</p>
               <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Solution:</strong> {item.solution}</p>
@@ -102,10 +97,10 @@ function About() {
           </div>
         </section>
 
-        {/* Case Studies Row 2 (Four Columns) */}
+        {/* Case Studies Row 2 */}
         <section className="four-columns" style={{ marginTop: '-20px' }}>
           {caseRow2.map((item, idx) => (
-            <div className="column" key={idx} style={{ borderLeft: '4px solid #181E33' }}>
+            <div className="column" key={idx} style={{ borderLeft: '4px solid #0a1931' }}>
               <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem' }}>{item.title}</h3>
               <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Challenge:</strong> {item.challenge}</p>
               <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Solution:</strong> {item.solution}</p>
@@ -117,10 +112,10 @@ function About() {
           </div>
         </section>
 
-        {/* Case Studies Row 3 (Four Columns) */}
+        {/* Case Studies Row 3 */}
         <section className="four-columns" style={{ marginTop: '-20px' }}>
           {caseRow3.map((item, idx) => (
-            <div className="column" key={idx} style={{ borderLeft: '4px solid #181E33' }}>
+            <div className="column" key={idx} style={{ borderLeft: '4px solid #0a1931' }}>
               <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem' }}>{item.title}</h3>
               <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Challenge:</strong> {item.challenge}</p>
               <p style={{ fontSize: '0.85rem', margin: '5px 0' }}><strong>Solution:</strong> {item.solution}</p>
@@ -134,10 +129,8 @@ function About() {
 
       </div>
 
-      {/* Footer */}
-      <footer>
-        <p>&copy; 2026 Sankalp Solutions. All rights reserved.</p>
-      </footer>
+      {/* 🟢 नवीन फुल स्क्रीन फुटर */}
+      <Footer />
     </>
   );
 }

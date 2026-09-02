@@ -1,57 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
-// 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
+// assets मधील इमेजेस
 import logoImage from '../assets/Images/Logo.png';
 import serviceImage from '../assets/Images/Service.jpg';
+
+// 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
+import Footer from '../components/Footer';
 
 function Services() {
   return (
     <>
-      {/* Header */}
+      {/* 🟢 एकसमान ग्लोबल हेडर */}
       <header>
-        {/* 🟢 इथे इम्पोर्ट केलेली logoImage वापरली आहे */}
-        <img src={logoImage} alt="Sankalp Solutions Logo"/>
-        <nav>
+        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src={logoImage} alt="Sankalp Solutions Logo" />
+        </div>
+        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
           <Link to="/industry">Industries</Link>
           <Link to="/case">Case Study</Link>
           <Link to="/contact">Contact Us</Link>
+          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
         </nav>
       </header>
 
       {/* Main Content Area */}
-      <div id="home" style={{ marginTop: '90px', width: '100%' }}>
+      <div className="page-wrapper">
         
-        {/* 🔴 स्लायडर - आता मजकूर काढून फक्त क्लीन इमेज ठेवली आहे */}
-        <div className="slider" style={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden', display: 'block' }}>
-          <div className="slides" style={{ display: 'block', width: '100%', height: '100%' }}>
-            {/* 🟢 इथे इम्पोर्ट केलेली serviceImage वापरली आहे */}
-            <img 
-              src={serviceImage} 
-              alt="Sankalp Solutions Services Banner"
-              style={{ 
-                width: '100%', 
-                height: '100%', 
-                objectFit: 'cover', 
-                display: 'block' 
-              }}
-            />
-          </div>
+        {/* स्लायडर */}
+        <div className="slider">
+          <img src={serviceImage} alt="Sankalp Solutions Services Banner" />
         </div>
 
-        {/* Services Main Header Section - माहिती इथे जोडली आहे */}
-        <div id="services" style={{ marginBottom: '-30px' }}>
-          <section style={{ textAlign: 'center', background: '#f8f9fa' }}>
-            <h2 style={{ color: '#003366', margin: '0 0 10px 0' }}>Our Services</h2>
-            <p style={{ fontSize: '1.1rem', color: '#444', maxWidth: '800px', margin: '0 auto', fontWeight: '500', lineHeight: '1.6' }}>
-              Expert-led supply chain solutions designed to drive efficiency, reduce costs, and strengthen supplier partnerships.
-            </p>
-          </section>
+        {/* Services Main Header Section */}
+        <div className="intro-section">
+          <h2 style={{ color: '#003366', margin: '0 0 10px 0' }}>Our Services</h2>
+          <p style={{ fontSize: '1.1rem', color: '#444', maxWidth: '800px', margin: '0 auto', fontWeight: '500', lineHeight: '1.6' }}>
+            Expert-led supply chain solutions designed to drive efficiency, reduce costs, and strengthen supplier partnerships.
+          </p>
         </div>
 
-        {/* Services Row 1 (Four Columns Section) */}
+        {/* Services Row 1 */}
         <section className="four-columns">
           <div className="column">
             <h3 style={{ color: '#003366', marginTop: 0 }}>Strategic Sourcing</h3>
@@ -79,7 +71,7 @@ function Services() {
           </div>
         </section>
 
-        {/* Services Row 2 (Four Columns Section) */}
+        {/* Services Row 2 */}
         <section className="four-columns" style={{ marginTop: '-20px' }}>
           <div className="column">
             <h3 style={{ color: '#003366', marginTop: 0 }}>Cost Reduction</h3>
@@ -99,13 +91,12 @@ function Services() {
               Providing comprehensive Government E-Marketplace (GEM), Tendering, Documentation, and Bid Support Services.
             </p>
           </div>
-          {/* लेआऊट मॅच करण्यासाठी बॅलन्स कॉलम */}
           <div className="column" style={{ background: '#f8f9fa', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none' }}>
             <p style={{ fontWeight: 'bold', color: '#003366', margin: 0, textAlign: 'center' }}>Tailored Sourcing Solutions ⚙️</p>
           </div>
         </section>
 
-        {/* Our Approach / Engagement Models (Two Columns Section) */}
+        {/* Our Approach / Engagement Models */}
         <section>
           <h2>Our Approach & Engagement Models</h2>
           <p style={{ marginBottom: '20px' }}>Our approach is designed to be flexible, practical, and result-oriented based on your business requirements.</p>
@@ -131,10 +122,8 @@ function Services() {
         </section>
       </div>
 
-      {/* Footer */}
-      <footer>
-        <p>&copy; 2026 Sankalp Solutions. All rights reserved.</p>
-      </footer>
+      {/* 🟢 नवीन फुल स्क्रीन फुटर */}
+      <Footer />
     </>
   );
 }

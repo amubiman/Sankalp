@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
-// 🟢 assets मधील इमेजेस फाईलच्या वर इम्पोर्ट केल्या आहेत
+// assets मधील इमेजेस
 import logoImage from '../assets/Images/Logo.png';
 import industryImage from '../assets/Images/Industry.jpg';
+
+// 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
+import Footer from '../components/Footer';
 
 function Industry() {
   const industriesGroup1 = [
@@ -22,51 +26,41 @@ function Industry() {
 
   return (
     <>
-      {/* Header */}
+      {/* 🟢 एकसमान ग्लोबल हेडर */}
       <header>
-        {/* 🟢 इथे इम्पोर्ट केलेली logoImage वापरली आहे */}
-        <img src={logoImage} alt="Sankalp Solutions Logo"/>
-        <nav>
+        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src={logoImage} alt="Sankalp Solutions Logo" />
+        </div>
+        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
           <Link to="/industry">Industries</Link>
           <Link to="/case">Case Study</Link>
           <Link to="/contact">Contact Us</Link>
+          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
         </nav>
       </header>
 
       {/* Main Content Area */}
-      <div id="home" style={{ marginTop: '90px', width: '100%' }}>
+      <div className="page-wrapper">
         
-        {/* 🔴 स्लायडर - मजकूर काढून फक्त क्लीन बॅनर इमेज ठेवली आहे */}
-        <div className="slider" style={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden', display: 'block' }}>
-          <div className="slides" style={{ display: 'block', width: '100%', height: '100%' }}>
-            {/* 🟢 इथे इम्पोर्ट केलेली industryImage वापरली आहे */}
-            <img 
-              src={industryImage} 
-              alt="Sankalp Solutions Industries Banner"
-              style={{ 
-                width: '100%', 
-                height: '100%', 
-                objectFit: 'cover', 
-                display: 'block' 
-              }}
-            />
-          </div>
+        {/* स्लायडर */}
+        <div className="slider">
+          <img src={industryImage} alt="Sankalp Solutions Industries Banner" />
         </div>
 
         {/* Industries Introduction Section */}
-        <section style={{ textAlign: 'center', background: '#f8f9fa', marginBottom: '-10px' }}>
+        <div className="intro-section">
           <h2 style={{ color: '#003366', margin: '0 0 10px 0' }}>Industries We Serve</h2>
           <p style={{ fontSize: '1.1rem', color: '#444', maxWidth: '900px', margin: '0 auto', fontWeight: '500', lineHeight: '1.6', fontStyle: 'italic' }}>
             “From routine consumables to critical project procurement, we ensure quality, cost efficiency, and timely delivery across all industries.”
           </p>
-        </section>
+        </div>
 
-        {/* Sectors Row 1 (Four Columns Section) */}
+        {/* Sectors Row 1 */}
         <section className="four-columns">
           {industriesGroup1.map((ind, idx) => (
-            <div className="column" key={idx} style={{ borderTop: '4px solid #181E33' }}>
+            <div className="column" key={idx} style={{ borderTop: '4px solid #0a1931' }}>
               <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem', borderBottom: '2px solid #eee', paddingBottom: '8px' }}>{ind.name}</h3>
               <ul style={{ paddingLeft: '18px', margin: 0, fontSize: '0.88rem', lineHeight: '1.6', color: '#333' }}>
                 {ind.items.map((item, i) => (
@@ -77,10 +71,10 @@ function Industry() {
           ))}
         </section>
 
-        {/* Sectors Row 2 (Four Columns Section) */}
+        {/* Sectors Row 2 */}
         <section className="four-columns" style={{ marginTop: '-20px' }}>
           {industriesGroup2.map((ind, idx) => (
-            <div className="column" key={idx} style={{ borderTop: '4px solid #181E33' }}>
+            <div className="column" key={idx} style={{ borderTop: '4px solid #0a1931' }}>
               <h3 style={{ color: '#003366', marginTop: 0, fontSize: '1.1rem', borderBottom: '2px solid #eee', paddingBottom: '8px' }}>{ind.name}</h3>
               <ul style={{ paddingLeft: '18px', margin: 0, fontSize: '0.88rem', lineHeight: '1.6', color: '#333' }}>
                 {ind.items.map((item, i) => (
@@ -97,10 +91,8 @@ function Industry() {
         </section>
       </div>
 
-      {/* Footer */}
-      <footer>
-        <p>&copy; 2026 Sankalp Solutions. All rights reserved.</p>
-      </footer>
+      {/* 🟢 नवीन फुल स्क्रीन फुटर */}
+      <Footer />
     </>
   );
 }
