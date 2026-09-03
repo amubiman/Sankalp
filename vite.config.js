@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// 🟢 हा मॅजिक कोड लोकल कॉम्प्युटरवर '/' वापरेल आणि ऑनलाईन गिटहबवर '/Sankalp/' वापरेल
 export default defineConfig({
   plugins: [react()],
-  // 🟢 'base' ची लाईन आपण इथून काढून टाकली आहे जेणेकरून लोकल होस्टवर एरर येणार नाही
+  base: process.env.NODE_ENV === 'production' ? '/Sankalp/' : '/',
 })

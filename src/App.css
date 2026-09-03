@@ -401,3 +401,98 @@ footer p {
 .why-choose-us .card {
   flex: 1 !important; /* सर्व ४ बॉक्स समान रुंदीचे करतो */
 }
+/* ==========================================================================
+   📱 🟢 MOBILE RESPONSIVE FIX (Menu, Wallpaper, and 4 Icons Mobile Optimization)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* --- १. हेडर आणि नेव्हिगेशन मेनू फिक्स --- */
+  header {
+    position: fixed !important;
+    padding: 10px 4% !important;
+    flex-direction: column !important; /* लोगो आणि मेनू एकाखाली एक आणण्यासाठी */
+    gap: 10px !important;
+  }
+
+  header img {
+    width: 130px !important; /* मोबाईलवर लोगो लहान केला */
+  }
+
+  header nav {
+    gap: 12px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important; /* मेनू एकाच ओळीत कोंबण्याऐवजी आवश्यकतेनुसार खाली येईल */
+  }
+
+  header nav a {
+    font-size: 0.85rem !important; /* अक्षरे थोडी लहान केली */
+    font-weight: 600 !important;
+  }
+
+  .btn-get-touch {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* हेडर मोठा झाल्यामुळे मुख्य कंटेंट खाली सरकवला */
+  .page-wrapper, #home {
+    margin-top: 110px !important; 
+  }
+
+  /* --- २. वॉलपेपर (Hero Banner) मोबाईल फिक्स --- */
+  .hero-banner {
+    height: 60vh !important; /* मोबाईलवर खूप मोठा न दाखवता ६०% हाईट दिली */
+    padding: 0 20px !important;
+    background-attachment: scroll !important; /* मोबाईल हँग होऊ नये म्हणून */
+  }
+
+  .hero-banner .caption {
+    max-width: 100% !important;
+    text-align: center !important; /* मजकूर सेंटर केला */
+  }
+
+  .hero-banner h1 {
+    font-size: 1.8rem !important; /* अक्षरांचा आकार मोबाईलसाठी योग्य केला */
+    line-height: 1.3 !important;
+  }
+
+  .hero-banner p {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-banner div {
+    justify-content: center !important; /* बटन्स सेंटर केले */
+  }
+
+  /* --- ३. ४ बॉक्सेस (Why Choose Us) मोबाईल फिक्स --- */
+  .why-choose-us .column-container {
+    flex-direction: column !important; /* मोबाईलवर ४ बॉक्स एकाखाली एक येतील */
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 0 10px !important;
+  }
+
+  .why-choose-us .card {
+    flex: 1 1 100% !important; /* प्रत्येक बॉक्स पूर्ण रुंदी घेईल */
+    min-width: 100% !important;
+    padding: 20px 15px !important;
+  }
+
+  .why-choose-us h2 {
+    font-size: 1.6rem !important; /* सेक्शनचे टायटल लहान केले */
+    margin-bottom: 25px !important;
+  }
+}
+
+/* अगदी लहान मोबाईल स्क्रीनसाठी (Saves from overlapping) */
+@media (max-width: 480px) {
+  header nav {
+    gap: 8px !important;
+  }
+  header nav a {
+    font-size: 0.75rem !important;
+  }
+  .hero-banner h1 {
+    font-size: 1.5rem !important;
+  }
+}

@@ -28,6 +28,7 @@ function Home() {
         
         <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
           <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Home</Link>
+          <Link to="/about" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>About Us</Link>
           <Link to="/services" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Services</Link>
           <Link to="/industry" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Industries</Link>
           <Link to="/case" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Case Study</Link>
