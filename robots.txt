@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sankalpsolutions.co.in/sitemap.xml
