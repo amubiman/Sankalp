@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { Helmet } from 'react-helmet-async';
 
 // assets मधील इमेजेस
-import logoImage from '../assets/Images/Logo.png';
+import Header from '../components/Header'; // 👈 ही लाईन जोडा
 import serviceImage from '../assets/Images/Service.jpg';
 
 // 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
@@ -11,22 +12,20 @@ import Footer from '../components/Footer';
 
 function Services() {
   return (
+    
     <>
-      {/* 🟢 एकसमान ग्लोबल हेडर */}
-      <header>
-        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <img src={logoImage} alt="Sankalp Solutions Logo" />
-        </div>
-        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/industry">Industries</Link>
-          <Link to="/case">Case Study</Link>
-          <Link to="/contact">Contact Us</Link>
-          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
-        </nav>
-      </header>
+      <Helmet>
+        <title>Our Services | Strategic Sourcing & SCM Co-Ordination</title>
+        <meta name="description" content="Explore expert supply chain solutions: Strategic Sourcing, Category Management, Contract Negotiation, Cost Reduction, and GEM Support." />
+        <link rel="canonical" href="https://sankalpsolutions.co.in" />
+        <meta property="og:title" content="Our Procurement Services | Sankalp Solutions" />
+        <meta property="og:description" content="Flexible, practical, and result-oriented engagement models tailored to your business goals." />
+        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+      </Helmet>
+
+      {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
+      <Header />
+
 
       {/* Main Content Area */}
       <div className="page-wrapper">
@@ -50,17 +49,18 @@ function Services() {
            ========================================== */}
         <section style={{ padding: '20px 5%', background: '#fff', boxShadow: 'none' }}>
           
-          {/* पहिल्या ६ सेवांची २-कॉलम रचना */}
+          {/* पहिल्या ६ सेवांची २-कॉलम रचना (मोबाईलवर आपोआप एकाखाली एक येईल) */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(45%, 1fr))',
+            display: 'flex',
+            flexWrap: 'wrap',
             gap: '25px',
             maxWidth: '1200px',
-            margin: '0 auto 25px auto'
+            margin: '0 auto 25px auto',
+            justifyContent: 'center'
           }}>
             
             {/* Box 1: Strategic Sourcing */}
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#0a1931', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
               </div>
@@ -71,7 +71,7 @@ function Services() {
             </div>
 
             {/* Box 2: Category Management */}
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#7cb342', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
               </div>
@@ -82,7 +82,7 @@ function Services() {
             </div>
 
             {/* Box 3: Contract Negotiation */}
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#1565c0', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
               </div>
@@ -93,7 +93,7 @@ function Services() {
             </div>
 
             {/* Box 4: Supplier Relationship Management (SRM) */}
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#2e7d32', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg>
               </div>
@@ -104,7 +104,7 @@ function Services() {
             </div>
 
             {/* Box 5: Cost Reduction */}
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#c62828', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
               </div>
@@ -115,7 +115,7 @@ function Services() {
             </div>
 
             {/* Box 6: SCM Co-Ordination */}
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#f57c00', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
               </div>
@@ -126,6 +126,7 @@ function Services() {
             </div>
 
           </div>
+
 
           {/* ७ वी सेवा खालच्या ओळीत मध्यावर (Center) आणण्यासाठी स्वतंत्र रचना */}
           <div style={{ display: 'flex', justifyContent: 'center', maxWidth: '1200px', margin: '0 auto' }}>
@@ -158,29 +159,30 @@ function Services() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', maxWidth: '1000px', margin: '0 auto' }}>
             
             {/* Model 1: Existing Team (Navy Blue Theme) */}
-            <div style={{ display: 'flex', gap: '25px', alignItems: 'center', padding: '25px', border: '1px solid #003366', borderRadius: '40px 12px 12px 40px', background: '#f4f7f9' }}>
-              <div style={{ width: '80px', height: '80px', border: '2px solid #003366', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: '#fff' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #003366', borderRadius: '16px', background: '#f4f7f9' }}>
+              <div style={{ width: '70px', height: '70px', border: '2px solid #003366', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: '#fff', margin: '0 auto' }}>
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               </div>
-              <div>
-                <h4 style={{ margin: '0 0 6px 0', color: '#003366', fontSize: '1.25rem', fontWeight: 'bold' }}>For organizations with an existing team:</h4>
+              <div style={{ flex: '1', minWidth: '250px', textAlign: 'left' }}>
+                <h4 style={{ margin: '0 0 8px 0', color: '#003366', fontSize: '1.25rem', fontWeight: 'bold' }}>For organizations with an existing team:</h4>
                 <p style={{ margin: 0, fontSize: '0.95rem', color: '#333', lineHeight: '1.6' }}>We work as an extended procurement partner, strengthening your current team with our expertise, vendor network and strategic support.</p>
               </div>
             </div>
 
             {/* Model 2: New Setups (Green Theme) */}
-            <div style={{ display: 'flex', gap: '25px', alignItems: 'center', padding: '25px', border: '1px solid #7cb342', borderRadius: '40px 12px 12px 40px', background: '#f8faf4' }}>
-              <div style={{ width: '80px', height: '80px', border: '2px solid #7cb342', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: '#fff' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7cb342" strokeWidth="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #7cb342', borderRadius: '16px', background: '#f8faf4' }}>
+              <div style={{ width: '70px', height: '70px', border: '2px solid #7cb342', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: '#fff', margin: '0 auto' }}>
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#7cb342" strokeWidth="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
               </div>
-              <div>
-                <h4 style={{ margin: '0 0 6px 0', color: '#558b2f', fontSize: '1.25rem', fontWeight: 'bold' }}>For new setups and growing businesses:</h4>
+              <div style={{ flex: '1', minWidth: '250px', textAlign: 'left' }}>
+                <h4 style={{ margin: '0 0 8px 0', color: '#558b2f', fontSize: '1.25rem', fontWeight: 'bold' }}>For new setups and growing businesses:</h4>
                 <p style={{ margin: 0, fontSize: '0.95rem', color: '#333', lineHeight: '1.6' }}>We act as your complete procurement function, eliminating the need to hire and manage an in-house team—helping you significantly reduce administrative and manpower costs.</p>
               </div>
             </div>
 
           </div>
         </section>
+
 
         {/* ==========================================
             SECTION 3: FOCUS ON EXECUTION
@@ -203,7 +205,8 @@ function Services() {
             </div>
 
             {/* Benefit 2 */}
-            <div style={{ flex: '1', minWidth: '200px', padding: '0 20px', borderLeft: '1px solid #ddd', borderRight: '1px solid #ddd' }}>
+            {/* Benefit 2 */}
+              <div style={{ flex: '1', minWidth: '200px', padding: '0 10px' }}>
               <div style={{ color: '#003366', marginBottom: '15px' }}>
                 <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               </div>

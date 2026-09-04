@@ -1,6 +1,6 @@
-/* --- Global Styles --- */
-/* 🟢 अपूर्ण लिंक बदलून अचूक Poppins फॉन्ट इम्पोर्ट केला आहे */
-/* 🟢 जुनी ओळ काढून ही अचूक लिंक ओळ क्र. ३ वर पेस्ट करा */
+/* ==========================================================================
+   🌐 GLOBAL STYLES & CORE INTEGRATION
+   ========================================================================== */
 @import url('https://googleapis.com');
 
 body {
@@ -9,7 +9,7 @@ body {
   padding: 0;
   background: #fdfdfd;
   color: #333;
-  overflow-x: hidden; /* स्क्रीनच्या बाहेर कंटेंट जाऊन आडवी स्क्रोल पट्टी येणार नाही */
+  overflow-x: hidden;
 }
 
 /* --- Fixed Global Header --- */
@@ -22,7 +22,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #0a1931; /* सर्व पेजेससाठी एकच डार्क थीम */
+  background: #0a1931;
   padding: 10px 5%;
   box-sizing: border-box;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -33,20 +33,21 @@ header img {
   height: auto;
 }
 
-header nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+/* डेस्कटॉपसाठी क्लीन नेव्हिगेशन क्लास */
+.main-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 25px !important;
 }
 
-header nav a {
+.main-nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-header nav a:hover {
+.main-nav a:hover {
   color: #ff6b6b;
 }
 
@@ -67,17 +68,14 @@ header nav a:hover {
 
 /* --- Main Layout Wrapper --- */
 .page-wrapper {
-  margin-top: 80px; /* हेडर फिक्स असल्यामुळे कंटेंट खाली ढकलण्यासाठी */
+  margin-top: 80px;
   width: 100%;
 }
 
-/* --- 🟢 Hero Slider & Banner (Updated to Full-Screen Width) --- */
+/* --- Hero Slider & Banner --- */
 .hero-banner, .slider {
   position: relative !important;
-  height: 500px !important;
   overflow: hidden !important;
-
-  /* 👇 बॅनर आणि इमेजला कडांपर्यंत Full Width करणारा मॅजिक कोड */
   width: 100vw !important;
   left: 50% !important;
   right: 50% !important;
@@ -92,7 +90,6 @@ header nav a:hover {
   display: block !important;
 }
 
-/* इमेज चपटी न होता परफेक्ट क्रॉप होऊन फिट बसण्यासाठी */
 .slides img, .hero-banner img, .slider img {
   object-fit: cover !important;
 }
@@ -107,7 +104,6 @@ section {
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-/* Intro Centered Section */
 .intro-section {
   text-align: center;
   background: #f8f9fa;
@@ -115,7 +111,7 @@ section {
   margin-bottom: -10px;
 }
 
-/* --- Grid Layouts (Desktop First) --- */
+/* --- Grid Layouts --- */
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -137,11 +133,10 @@ section {
   box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
-/* --- 🟢 Why Choose Us: ४ बॉक्स एकाच ओळीत आणणारा नवीन कोड --- */
 .why-choose-us .column-container {
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: nowrap !important; /* बॉक्सला दुसऱ्या ओळीत जाण्यापासून रोखते */
+  flex-wrap: nowrap !important;
   gap: 20px !important;
   justify-content: center !important;
   max-width: 1200px !important;
@@ -149,7 +144,7 @@ section {
 }
 
 .why-choose-us .card {
-  flex: 1 !important; /* सर्व ४ कार्ड्सना समान रुंदी देते */
+  flex: 1 !important;
   min-width: 200px !important; 
   padding: 30px 15px !important;
   box-sizing: border-box !important;
@@ -158,7 +153,6 @@ section {
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* --- Team Section Layout --- */
 .team-flex {
   display: flex;
   flex-wrap: wrap;
@@ -177,31 +171,14 @@ section {
   box-sizing: border-box;
 }
 
-/* --- Old Generic Footer --- */
-footer {
-  background: #0a1931;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* --- 🟢 Professional Footer Styles (Full-Screen Width) --- */
+/* --- site-footer --- */
 .site-footer {
-  background-color: #0a1931; /* इमेजमधील डार्क ब्लू बॅकग्राउंड */
+  background-color: #0a1931;
   color: #ffffff;
   padding: 50px 5% 20px 5%;
   font-family: 'Poppins', sans-serif;
   border-bottom: 8px solid;
-  border-image: linear-gradient(to right, #ff9933, #ff5555, #cc0066) 1; /* खालची सुंदर...पट्टी */
-  
-  /* 👇 फुटरला कडांना टच (Full Width) करणारा मॅजिक कोड */
+  border-image: linear-gradient(to right, #ff9933, #ff5555, #cc0066) 1;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -213,7 +190,7 @@ footer p {
 
 .footer-container {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr; /* डेस्कटॉपवर ५ कॉलम्स */
+  grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr;
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -246,7 +223,6 @@ footer p {
   position: relative;
 }
 
-/* लिंक्सची स्टाईल */
 .footer-links {
   list-style: none;
   padding: 0;
@@ -265,10 +241,9 @@ footer p {
 }
 
 .footer-links a:hover {
-  color: #ff6b6b; /* होव्हर रंग */
+  color: #ff6b6b;
 }
 
-/* सोशल मीडिया आयकॉन्स */
 .social-icons {
   display: flex;
   gap: 12px;
@@ -294,7 +269,6 @@ footer p {
   color: #ffffff;
 }
 
-/* संपर्क माहिती (Contact Info) */
 .contact-info {
   list-style: none;
   padding: 0;
@@ -317,7 +291,6 @@ footer p {
   font-size: 1rem;
 }
 
-/* कॉपीराईट पट्टी */
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
@@ -327,35 +300,86 @@ footer p {
   color: #8892b0;
 }
 
-/* --- Mobile Responsive (Media Queries) --- */
+/* ==========================================================================
+   📊 MEDIA QUERIES (TABLET & MID-SIZE SCREENS)
+   ========================================================================== */
 @media (max-width: 992px) {
   .why-choose-us .column-container {
     flex-wrap: wrap !important;
   }
   .why-choose-us .card {
-    flex: 1 1 calc(50% - 20px) !important; /* टॅबलेटवर २-२ बॉक्स व्यवस्थित दिसतील */
+    flex: 1 1 calc(50% - 20px) !important;
   }
 }
 
+/* ==========================================================================
+   📱 ULTIMATE MOBILE RESPONSIVE FIX (No Line Overflow)
+   ========================================================================== */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    padding: 15px;
+    position: fixed !important;
+    padding: 12px 4% !important;
+    flex-direction: column !important;
+    gap: 12px !important;
   }
 
-  header nav {
-    margin-top: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+  header img {
+    width: 125px !important;
   }
 
-  .page-wrapper {
-    margin-top: 160px; /* मोबाईलवर हेडर मोठा झाल्यावर जागा वाढवली */
+  .main-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px 14px !important;
+    width: 100% !important;
+  }
+
+  .main-nav a {
+    font-size: 0.84rem !important; 
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    padding: 2px 4px !important;
+  }
+
+  .btn-get-touch {
+    padding: 5px 12px !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+  }
+
+  .page-wrapper, #home {
+    margin-top: 125px !important; 
   }
 
   .slider, .hero-banner {
-    height: 350px !important; /* मोबाईलवर इमेजची हाईट कमी केली */
+    height: 350px !important;
+  }
+
+  .hero-banner {
+    padding: 0 20px !important;
+    background-attachment: scroll !important;
+  }
+
+  .hero-banner .caption {
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.7rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-banner p {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-banner div {
+    justify-content: center !important;
   }
 
   .two-columns {
@@ -366,18 +390,34 @@ footer p {
     width: calc(50% - 15px);
   }
 
-  /* 📱 मोबाईलवर फुटर २ कॉलम्समध्ये विभागला जाईल */
+  .why-choose-us .column-container {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 0 10px !important;
+  }
+
+  .why-choose-us .card {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+    padding: 20px 15px !important;
+  }
+
+  .why-choose-us h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 25px !important;
+  }
+
   .footer-container {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
 }
 
+/* ==========================================================================
+   📱 ULTRA-SMALL MOBILES (iPhone SE / Older Screens)
+   ========================================================================== */
 @media (max-width: 576px) {
-  .why-choose-us .card {
-    flex: 1 1 100% !important; /* अगदी लहान मोबाईलवर १-१ बॉक्स एकाखाली एक दिसेल */
-  }
-  /* 📱 फुटरचे सर्व रकाने एकाखाली एक यावेत म्हणून */
   .footer-container {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -388,111 +428,267 @@ footer p {
 }
 
 @media (max-width: 480px) {
+  .main-nav {
+    gap: 6px 10px !important;
+  }
+  
+  .main-nav a {
+    font-size: 0.78rem !important;
+  }
+
   .team-member-card {
     width: 100%;
   }
+  
+  .hero-banner h1 {
+    font-size: 1.4rem !important;
+  }
 }
-.why-choose-us .column-container {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important; /* बॉक्स खाली जाण्यापासून रोखतो */
-  gap: 20px !important;
-}
-.why-choose-us .card {
-  flex: 1 !important; /* सर्व ४ बॉक्स समान रुंदीचे करतो */
-}
-/* ==========================================================================
-   📱 🟢 MOBILE RESPONSIVE FIX (Menu, Wallpaper, and 4 Icons Mobile Optimization)
-   ========================================================================== */
 
+/* ==========================================================================
+   📱 ULTIMATE GLOBAL MOBILE RESPONSIVE FIX (For All Pages Aligned)
+   ========================================================================== */
 @media (max-width: 768px) {
-  /* --- १. हेडर आणि नेव्हिगेशन मेनू फिक्स --- */
-  header {
+  header, 
+  header[style] {
     position: fixed !important;
-    padding: 10px 4% !important;
-    flex-direction: column !important; /* लोगो आणि मेनू एकाखाली एक आणण्यासाठी */
-    gap: 10px !important;
+    padding: 12px 4% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .logo-container,
+  header div[style] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 
   header img {
-    width: 130px !important; /* मोबाईलवर लोगो लहान केला */
+    width: 125px !important;
+    height: auto !important;
+    margin: 0 auto !important;
   }
 
-  header nav {
-    gap: 12px !important;
+  .main-nav,
+  header nav,
+  header nav[style] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important; 
     justify-content: center !important;
-    flex-wrap: wrap !important; /* मेनू एकाच ओळीत कोंबण्याऐवजी आवश्यकतेनुसार खाली येईल */
-  }
-
-  header nav a {
-    font-size: 0.85rem !important; /* अक्षरे थोडी लहान केली */
-    font-weight: 600 !important;
-  }
-
-  .btn-get-touch {
-    padding: 6px 12px !important;
-    font-size: 0.8rem !important;
-  }
-
-  /* हेडर मोठा झाल्यामुळे मुख्य कंटेंट खाली सरकवला */
-  .page-wrapper, #home {
-    margin-top: 110px !important; 
-  }
-
-  /* --- २. वॉलपेपर (Hero Banner) मोबाईल फिक्स --- */
-  .hero-banner {
-    height: 60vh !important; /* मोबाईलवर खूप मोठा न दाखवता ६०% हाईट दिली */
-    padding: 0 20px !important;
-    background-attachment: scroll !important; /* मोबाईल हँग होऊ नये म्हणून */
-  }
-
-  .hero-banner .caption {
+    align-items: center !important;
+    gap: 8px 10px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    text-align: center !important; /* मजकूर सेंटर केला */
+    margin-top: 5px !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
   }
 
-  .hero-banner h1 {
-    font-size: 1.8rem !important; /* अक्षरांचा आकार मोबाईलसाठी योग्य केला */
-    line-height: 1.3 !important;
-  }
+.main-nav a,
+header nav a {
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+  padding: 2px 4px !important;
+}
 
-  .hero-banner p {
-    font-size: 0.9rem !important;
-  }
+.btn-get-touch,
+header nav a.btn-get-touch {
+  padding: 5px 12px !important;
+  font-size: 0.78rem !important;
+  white-space: nowrap !important;
+}
 
-  .hero-banner div {
-    justify-content: center !important; /* बटन्स सेंटर केले */
-  }
+.page-wrapper,
+#home {
+  margin-top: 125px !important;
+}
 
-  /* --- ३. ४ बॉक्सेस (Why Choose Us) मोबाईल फिक्स --- */
-  .why-choose-us .column-container {
-    flex-direction: column !important; /* मोबाईलवर ४ बॉक्स एकाखाली एक येतील */
+.case-row-container {
+  flex-direction: column !important;
+  gap: 15px !important;
+}
+.case-sidebar-box {
+  flex: 1 1 100% !important;
+  text-align: center !important;
+}
+.case-grid-cards {
+  grid-template-columns: 1fr !important;
+  gap: 15px !important;
+}
+.slider, .hero-banner {
+  height: 350px !important;
+}
+.two-columns {
+  grid-template-columns: 1fr;
+}
+.team-member-card {
+  width: calc(50% - 15px);
+}
+.why-choose-us .column-container {
+  flex-direction: column !important;
+  gap: 15px !important;
+}
+.why-choose-us .card {
+  flex: 1 1 100% !important;
+  min-width: 100% !important;
+}
+.footer-container {
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+}
+
+@media (max-width: 768px) {
+  .main-nav,
+  header nav {
+    display: flex !important;
+    flex-direction: row !important;
     flex-wrap: wrap !important;
-    gap: 15px !important;
-    padding: 0 10px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 5px auto 0 auto !important;
+    box-sizing: border-box !important;
   }
-
-  .why-choose-us .card {
-    flex: 1 1 100% !important; /* प्रत्येक बॉक्स पूर्ण रुंदी घेईल */
-    min-width: 100% !important;
-    padding: 20px 15px !important;
-  }
-
-  .why-choose-us h2 {
-    font-size: 1.6rem !important; /* सेक्शनचे टायटल लहान केले */
-    margin-bottom: 25px !important;
+  
+  .main-nav a {
+    text-align: center !important;
+    display: inline-block !important;
   }
 }
 
-/* अगदी लहान मोबाईल स्क्रीनसाठी (Saves from overlapping) */
-@media (max-width: 480px) {
-  header nav {
-    gap: 8px !important;
+/* --- Desktop layout --- */
+.approach-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.approach-card {
+  padding: 20px 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  text-align: center;
+}
+
+.approach-card h4 {
+  color: #0a1931;
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.approach-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- Tablet / Medium Screen View --- */
+@media (max-width: 992px) {
+  .approach-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
-  header nav a {
-    font-size: 0.75rem !important;
+}
+
+/* --- Mobile View --- */
+@media (max-width: 576px) {
+  .approach-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
-  .hero-banner h1 {
-    font-size: 1.5rem !important;
+}
+/* ==========================================================================
+   📐 CASE STUDY PREMIUM ROW & GRID LAYOUT (FIXED ALIGNMENT)
+   ========================================================================== */
+.case-row-container {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 30px !important;
+  margin-bottom: 50px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+.case-sidebar-box {
+  flex: 0 0 320px !important; /* डावा डार्क बॉक्स फिक्स ३२० पिक्सेल */
+  padding: 40px 30px !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+.case-grid-cards {
+  flex: 1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* डेस्कटॉपवर ३ कॉलम्स */
+  gap: 20px !important;
+}
+
+.case-single-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 30px 20px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
+  box-sizing: border-box !important;
+}
+
+.case-card-number {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #a0aec0 !important;
+}
+
+/* 📱 मोबाईल आणि टॅब्लेटसाठी परफेक्ट रिस्पॉन्सिव्ह अलाईनमेंट */
+@media (max-width: 1024px) {
+  .case-grid-cards {
+    grid-template-columns: repeat(2, 1fr) !important; /* टॅब्लेटवर २ कॉलम्स */
+  }
+}
+
+@media (max-width: 768px) {
+  .case-row-container {
+    flex-direction: column !important; /* मोबाईलवर एकाखाली एक */
+    gap: 20px !important;
+  }
+  
+  .case-sidebar-box {
+    flex: 1 1 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  
+  .case-grid-cards {
+    grid-template-columns: 1fr !important; /* मोबाईलवर १ कॉलम पूर्ण विड्थ */
+    gap: 15px !important;
   }
 }

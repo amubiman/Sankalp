@@ -1,26 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css'; 
+import { Helmet } from 'react-helmet-async';
 
 // assets मधील इमेजेस
-import logoImage from '../assets/Images/Logo.png';
+import Header from '../components/Header'; // 👈 ही लाईन जोडा
 import caseImage from '../assets/Images/Case.jpg';
 
-// जर भविष्यात इमेजेस वापरायच्या असतील तर त्याचे इम्पोर्ट इथे करू शकता:
-// import loanMfgImg from '../assets/Images/loan-mfg.jpg';
-
-// 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
+// Footer कॉम्पोनंट इम्पोर्ट केला
 import Footer from '../components/Footer';
 
 function CaseStudy() {
   
-  // डाव्या बाजूच्या ३ मुख्य कॅटेगरीज आणि त्यांच्या उजव्या बाजूच्या ३-३ केस स्टडीजचा फायनल डेटा
   const caseCategories = [
     {
       id: "01",
       catTitle: "COST & COMMERCIAL OPTIMIZATION",
       catDesc: "Driving measurable savings through strategic sourcing and commercial negotiation.",
-      color: "#0a1931", // Navy Blue
+      color: "#0a1931", 
       studies: [
         { 
           title: "Loan License Manufacturing Optimization", 
@@ -43,7 +40,7 @@ function CaseStudy() {
       id: "02",
       catTitle: "PROCUREMENT EFFICIENCY & PROCESS EXCELLENCE",
       catDesc: "Building structured procurement systems that improve speed, control, and productivity.",
-      color: "#1565c0", // Medium Blue
+      color: "#1565c0", 
       studies: [
         { 
           title: "ARC-Based Procurement Optimization", 
@@ -53,7 +50,7 @@ function CaseStudy() {
         { 
           title: "Vendor Base Rationalization", 
           desc: "Consolidated suppliers to improve pricing and quality consistency.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><circle cx="12" cy="12" r="4" /><path d="M16 12a4 4 0 0 1-4 4 4 4 0 0 1-4-4" /></svg>
+          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><circle cx="12" cy="12" r="4" /><path d="M16 12a4 4 0 0 1-4 4 4 4 4 4-4" /></svg>
         },
         { 
           title: "Procurement Process Standardization", 
@@ -66,7 +63,7 @@ function CaseStudy() {
       id: "03",
       catTitle: "PLANNING, CONTINUITY & RISK MANAGEMENT",
       catDesc: "Proactive procurement strategies that ensure availability and business continuity.",
-      color: "#00695c", // Teal / Deep Green-Blue
+      color: "#00695c", 
       studies: [
         { 
           title: "Advance Demand-Based Procurement", 
@@ -89,26 +86,22 @@ function CaseStudy() {
 
   return (
     <>
-      {/* 🟢 एकसमान ग्लोबल हेडर */}
-      <header>
-        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <img src={logoImage} alt="Sankalp Solutions Logo" />
-        </div>
-        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/industry">Industries</Link>
-          <Link to="/case">Case Study</Link>
-          <Link to="/contact">Contact Us</Link>
-          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
-        </nav>
-      </header>
+      <Helmet>
+        <title>Case Studies | Sankalp Solutions - Real Impact Stories</title>
+        <meta name="description" content="Read select case studies demonstrating our expertise in cost optimization, procurement efficiency, and risk management." />
+        <link rel="canonical" href="https://sankalpsolutions.co.in" />
+        <meta property="og:title" content="Case Studies | Sankalp Solutions" />
+        <meta property="og:description" content="Real procurement challenges. Strategic solutions. Measurable business impact." />
+        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+      </Helmet>
+
+      {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
+      <Header />
 
       {/* Main Content Wrap */}
       <div className="page-wrapper" style={{ backgroundColor: '#f8fafc', paddingBottom: '60px' }}>
         
-        {/* स्लायडर आणि इमेज ऑटो-फिट */}
+        {/* बॅनर्स */}
         <div className="slider">
           <div className="slides">
             <img src={caseImage} alt="Sankalp Solutions Case Study Banner" />
@@ -124,7 +117,7 @@ function CaseStudy() {
           </div>
         </div>
 
-        {/* Case Studies Introduction (Services/Industries च्या थीम मॅचिंग) */}
+        {/* Introduction */}
         <div className="intro-section" style={{ backgroundColor: '#ffffff', padding: '40px 5%', textAlign: 'center', borderBottom: '1px solid #e2e8f0' }}>
           <h2 style={{ color: '#003366', margin: '0 0 15px 0', fontSize: '2.3rem', fontWeight: 'bold' }}>CASE STUDIES</h2>
           <p style={{ fontSize: '1rem', color: '#444', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
@@ -132,36 +125,18 @@ function CaseStudy() {
           </p>
         </div>
 
-        {/* ==========================================
-            📐 स्क्रीनशॉट प्रमाणे तंतोतंत प्रीमियम लेआउट विभाग
-           ========================================== */}
-        <section style={{ maxWidth: '1280px', margin: '40px auto 0 auto', padding: '0 20px', background: 'transparent', boxShadow: 'none' }}>
+        {/* 📐 ग्रिड आणि लेआउट विभाग */}
+        <section style={{ maxWidth: '1200px', margin: '40px auto 0 auto', padding: '0 20px', background: 'transparent', boxShadow: 'none' }}>
           
           {caseCategories.map((cat, index) => (
-            <div key={index} style={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: '24px',
-              marginBottom: '45px',
-              alignItems: 'stretch'
-            }}>
+            <div key={index} className="case-row-container">
               
-              {/* 🟦 डावा कॉलम: डार्क कॅटेगरी सॉलिड कलर बॉक्स */}
-              <div style={{
-                flex: '0 0 290px',
-                backgroundColor: cat.color,
-                color: '#ffffff',
-                borderRadius: '8px',
-                padding: '40px 25px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
-              }}>
-                <span style={{ fontSize: '2.5rem', fontWeight: '800', borderBottom: '2px solid rgba(255,255,255,0.3)', pb: '5px', display: 'inline-block', width: 'fit-content', marginBottom: '20px', lineHeight: '1' }}>
+              {/* 🟦 डावा कॉलम: कॅटेगरी सॉलिड बॉक्स */}
+              <div className="case-sidebar-box" style={{ backgroundColor: cat.color }}>
+                <span style={{ fontSize: '2.5rem', fontWeight: '800', borderBottom: '2px solid rgba(255,255,255,0.3)', paddingBottom: '5px', display: 'inline-block', width: 'fit-content', marginBottom: '15px', lineHeight: '1' }}>
                   {cat.id}
                 </span>
-                <h3 style={{ color: '#ffffff', fontSize: '1.2rem', fontWeight: '800', margin: '0 0 15px 0', lineHeight: '1.4', letterSpacing: '0.5px' }}>
+                <h3 style={{ color: '#ffffff', fontSize: '1.2rem', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.4', letterSpacing: '0.5px' }}>
                   {cat.catTitle}
                 </h3>
                 <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0, fontWeight: '400' }}>
@@ -169,51 +144,20 @@ function CaseStudy() {
                 </p>
               </div>
 
-              {/* ⬜ उजवा कॉलम: ३ केस स्टडीजची ३-कॉलम ग्रिड रचना */}
-              <div style={{
-                flex: '1',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '20px'
-              }}>
+              {/* ⬜ उजवा कॉलम: ३ केस स्टडीजची रचना */}
+              <div className="case-grid-cards">
                 {cat.studies.map((study, idx) => {
-                  // प्रत्येक कार्डचा जागतिक नंबर काढण्यासाठी (उदा. 01, 02, 03... 09)
-                  const globalNumber = String((index * 3) + (idx + 1)).padStart(2, '0');
                   
                   return (
-                    <div key={idx} style={{
-                      backgroundColor: '#ffffff',
-                      borderRadius: '8px',
-                      border: '1px solid #e5eaf0',
-                      padding: '30px 20px 20px 20px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      position: 'relative',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.02)',
-                      textAlign: 'left'
-                    }}>
+                    <div key={idx} className="case-single-card">
                       
-                      {/* 🏷️ स्क्रीनशॉट प्रमाणे कार्डच्या कोपऱ्यातील निळा ओव्हरलॅप नंबर टॅग */}
-                      <span style={{
-                        position: 'absolute',
-                        top: '0',
-                        left: '0',
-                        backgroundColor: '#0a1931',
-                        color: '#ffffff',
-                        fontSize: '0.8rem',
-                        fontWeight: 'bold',
-                        padding: '4px 10px',
-                        borderRadius: '8px 0 8px 0'
-                      }}>
-                        {globalNumber}
-                      </span>
 
-                      {/* लोगोज किंवा आयकॉन्ससाठीचा राऊंडेड लाईट बॉक्स */}
+                      {/* आयकॉन बॉक्स */}
                       <div style={{ 
                         width: '100%', 
-                        height: '110px', 
+                        height: '90px', 
                         backgroundColor: '#f8fafc', 
-                        borderRadius: '6px', 
+                        borderRadius: '8px', 
                         display: 'flex', 
                         alignItems: 'center', 
                         justifyContent: 'center',
@@ -223,17 +167,17 @@ function CaseStudy() {
                         {study.icon}
                       </div>
 
-                      {/* केस स्टडी हेडिंग */}
-                      <h4 style={{ color: '#0a1931', fontSize: '1.05rem', fontWeight: '700', margin: '0 0 10px 0', lineHeight: '1.4' }}>
+                      {/* हेडिंग */}
+                      <h4 style={{ color: '#0a1931', fontSize: '1.02rem', fontWeight: '700', margin: '0 0 8px 0', lineHeight: '1.4' }}>
                         {study.title}
                       </h4>
 
-                      {/* शार्ट डिस्क्रिप्शन मजकूर */}
-                      <p style={{ color: '#666666', fontSize: '0.88rem', lineHeight: '1.5', margin: '0 0 20px 0' }}>
+                      {/* डिस्क्रिप्शन */}
+                      <p style={{ color: '#666666', fontSize: '0.86rem', lineHeight: '1.5', margin: '0 0 15px 0' }}>
                         {study.desc}
                       </p>
 
-                      {/* ➡️ स्क्रीनशॉट प्रमाणे तळाशी उजवीकडे असणारा छोटा ऑरेंज/गोल्डन ॲरो */}
+                      {/* ऑरेंज ॲरो पट्टी */}
                       <span style={{ 
                         marginTop: 'auto', 
                         alignSelf: 'flex-end', 
@@ -255,7 +199,6 @@ function CaseStudy() {
         </section>
       </div>
 
-      {/* 🟢 नवीन फुल स्क्रीन फुटर */}
       <Footer />
     </>
   );

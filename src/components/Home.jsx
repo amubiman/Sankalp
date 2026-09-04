@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { Helmet } from 'react-helmet-async';
+import Header from '../components/Header'; // 👈 ही लाईन जोडा
 
 // assets मधील इमेजेस
-import logoImage from '../assets/Images/Logo.png';
 import homeImage from '../assets/Images/Home.jpg';
 // फाईलच्या सर्वात वर हा इम्पोर्ट नक्की जोडा
 import founderImage from '../assets/Images/Founder.jpg'; 
@@ -14,34 +15,23 @@ import Footer from '../components/Footer';
 function Home() {
   return (
     <div style={{ fontFamily: "'Poppins', sans-serif", backgroundColor: '#fdfdfd', color: '#333' }}>
-      
-      {/* 🟢 Header Section: नवीन डिझाईननुसार */}
-      <header style={{
-        position: 'fixed', top: 0, left: 0, width: '100%', 
-        backgroundColor: '#0a1931', display: 'flex', 
-        justifyContent: 'space-between', alignItems: 'center', 
-        padding: '10px 5%', zIndex: 1000, boxShadow: '0 2px 10px rgba(0,0,0,0.3)'
-      }}>
-        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <img src={logoImage} alt="Sankalp Solutions Logo" style={{ width: '160px', height: 'auto' }} />
-        </div>
-        
-        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-          <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Home</Link>
-          <Link to="/about" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>About Us</Link>
-          <Link to="/services" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Services</Link>
-          <Link to="/industry" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Industries</Link>
-          <Link to="/case" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Case Study</Link>
-          <Link to="/contact" style={{ color: '#fff', textDecoration: 'none', fontWeight: '500' }}>Contact Us</Link>
-          <Link to="/contact" style={{
-            backgroundColor: '#ff6b6b', color: '#fff', padding: '8px 18px', 
-            borderRadius: '5px', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.9rem'
-          }}>Get In Touch</Link>
-        </nav>
-      </header>
+      <Helmet>
+  <title>Sankalp Solutions | Procurement & Supply Chain Expert</title>
+  <meta name="description" content="Sankalp Solutions delivers smart, reliable, and innovative procurement solutions. Optimize costs, build strong supplier networks, and streamline your supply chain." />
+  <link rel="canonical" href="https://sankalpsolutions.co.in" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sankalp Solutions | Smart Sourcing, Better Prices, Stronger Businesses." />
+  <meta property="og:description" content="Expert-led supply chain and procurement solutions designed to drive efficiency and reduce operational costs." />
+  <meta property="og:url" content="https://sankalpsolutions.co.in" />
+</Helmet>
+
+      {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
+      <Header />
 
       {/* Main Home Content */}
       <div id="home" style={{ marginTop: '80px', width: '100%' }}>
+
         
         {/* 🟢 Hero Banner Section: डार्क ओव्हरले पूर्णपणे काढून टाकला आहे जेणेकरून वॉलपेपर १००% ओरिजिनल दिसेल */}
         <div className="hero-banner" style={{ 
@@ -53,18 +43,17 @@ function Home() {
           {/* डार्क बॉक्स काढला आहे, मजकूर स्पष्ट दिसण्यासाठी सुंदर टेक्स्ट-शॅडो दिली आहे */}
           <div className="caption" style={{ maxWidth: '600px', color: '#fff' }}>
             <h1 style={{ 
-              fontSize: '3rem', 
+              fontSize: '2.5rem', 
               fontWeight: 'bold', 
               marginBottom: '20px', 
               lineHeight: '1.2',
               textShadow: '2px 2px 4px rgba(0,0,0,0.8)' 
             }}>
-              <span style={{ color: '#ffffff' }}>Your </span>
-              <span style={{ color: '#ff6b6b' }}>Success,</span>
-              <br/>
-              <span style={{ color: '#ffffff' }}>Our Priority</span>
+              <span style={{ color: '#ffffff' }}>"Smart Sourcing, </span>
+              <span style={{ color: '#ff6b6b' }}>Better Prices, </span>
+              <span style={{ color: '#ffffff' }}>Stronger Businesses."</span>
             </h1>
-            
+
             <p style={{ 
               fontSize: '1.1rem', 
               color: '#ffb3b3', 

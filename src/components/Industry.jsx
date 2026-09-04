@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { Helmet } from 'react-helmet-async';
 
 // assets मधील इमेजेस
-import logoImage from '../assets/Images/Logo.png';
+import Header from '../components/Header'; // 👈 ही लाईन जोडा
 import industryImage from '../assets/Images/Industry.jpg';
 import mfgImg from '../assets/Images/mfg.jpg';
 import pharmaImg from '../assets/Images/pharma.jpg';
@@ -124,21 +125,17 @@ function Industry() {
 
   return (
     <>
-      {/* 🟢 एकसमान ग्लोबल हेडर */}
-      <header>
-        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <img src={logoImage} alt="Sankalp Solutions Logo" />
-        </div>
-        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/industry">Industries</Link>
-          <Link to="/case">Case Study</Link>
-          <Link to="/contact">Contact Us</Link>
-          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
-        </nav>
-      </header>
+      <Helmet>
+        <title>Industries We Serve | Tailored Procurement Solutions</title>
+        <meta name="description" content="We act as an extended procurement arm for Manufacturing, Pharma, Automobile, Construction, IT, Energy, and Hospitality sectors." />
+        <link rel="canonical" href="https://sankalpsolutions.co.in" />
+        <meta property="og:title" content="Industries We Serve | Sankalp Solutions" />
+        <meta property="og:description" content="From routine consumables to critical project procurement, we ensure quality and timely delivery across all sectors." />
+        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+      </Helmet>
+
+      {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
+      <Header />
 
       {/* Main Content Area */}
       <div className="page-wrapper">

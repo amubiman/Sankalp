@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css'; 
+import { Helmet } from 'react-helmet-async';
 
 // assets मधील इमेजेस
-import logoImage from '../assets/Images/Logo.png';
+import Header from '../components/Header'; // 👈 ही लाईन जोडा
 import contactImage from '../assets/Images/contact.png'; 
 
 // 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
@@ -24,21 +25,17 @@ function Contact() {
 
   return (
     <>
-      {/* 🟢 एकसमान ग्लोबल हेडर */}
-      <header>
-        <div className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <img src={logoImage} alt="Sankalp Solutions Logo" />
-        </div>
-        <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/industry">Industries</Link>
-          <Link to="/case">Case Study</Link>
-          <Link to="/contact">Contact Us</Link>
-          <Link to="/contact" className="btn-get-touch">Get In Touch</Link>
-        </nav>
-      </header>
+      <Helmet>
+        <title>Contact Us | Let's Connect & Grow Together</title>
+        <meta name="description" content="Get in touch with Sankalp Solutions in AhilyaNagar, Maharashtra. Call us or send a message for smart procurement solutions." />
+        <link rel="canonical" href="https://sankalpsolutions.co.in" />
+        <meta property="og:title" content="Contact Us | Sankalp Solutions" />
+        <meta property="og:description" content="We are here to answer your questions and provide the best solutions for your business." />
+        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+      </Helmet>
+
+      {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
+      <Header />
 
       {/* मुख्य मजकूर रॅप */}
       <div className="page-wrapper" style={{ backgroundColor: '#f8fafc', width: '100%', overflowX: 'hidden' }}>
@@ -71,10 +68,10 @@ function Contact() {
             {/* 🟦 टॉप विभाग: एकाच सरळ ओळीत सेट केलेले आकर्षक हेडिंग आणि टेक्स्ट */}
             <div style={{ maxWidth: '100%', width: '100%', marginBottom: '45px', textAlign: 'center', boxSizing: 'border-box' }}>
               <span style={{ fontSize: '0.95rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', color: '#ff6b6b', display: 'block', marginBottom: '8px' }}>Contact Us</span>
-              <h2 style={{ color: '#0a1931', fontSize: '2.5rem', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2', whiteSpace: 'nowrap' }}>
+              <h2 style={{ color: '#0a1931', fontSize: '2.5rem', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>
                 Let's Connect and Grow Together
               </h2>
-              <p style={{ color: '#555555', fontSize: '1.05rem', lineHeight: '1.6', margin: '0 auto', whiteSpace: 'nowrap' }}>
+              <p style={{ color: '#555555', fontSize: '1.05rem', lineHeight: '1.6', margin: '0 auto' }}>
                 We are here to answer your questions and provide the best solutions for your business.
               </p>
             </div>
