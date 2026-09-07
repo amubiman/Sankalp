@@ -692,3 +692,98 @@ header nav a.btn-get-touch {
     gap: 15px !important;
   }
 }
+/* 📱 मोबाईलवर ग्रॅडिएंट बॉक्समधील मजकूर सुरक्षितपणे रॅप करण्यासाठी */
+@media (max-width: 992px) {
+  .cta-single-line-text {
+    white-space: normal !important;
+    font-size: 0.95rem !important;
+    padding: 0 10px !important;
+  }
+}
+/* ==========================================================================
+   ✨ PREMIUM SCROLL ANIMATIONS (FADE & SLIDE UP)
+   ========================================================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* जेव्हा स्क्रोल केल्यावर हा क्लास ॲक्टिव्हेट होईल */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* हिरो बॅनरच्या टेक्स्टसाठी जलद ॲनिमेशन (पेज लोड होताच येण्यासाठी) */
+@keyframes fadeInUpHero {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: fadeInUpHero 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* बॉक्समध्ये थोडा डिले (Delay) देण्यासाठी जेणेकरून ते एकामागून एक येतील */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+/* ==========================================================================
+   ⚡ SLIM & PREMIUM HEADER MENU BAR (REDUCED THICKNESS)
+   ========================================================================== */
+
+/* 1. डेस्कटॉपवर हेडरची जाडी कमी करणे */
+header {
+  padding-top: 8px !important;    /* वरचे पॅडिंग १५ वरून ८ पिक्सेल केले */
+  padding-bottom: 8px !important; /* खालचे पॅडिंग १५ वरून ८ पिक्सेल केले */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important; /* शॅडो हलकी केली */
+}
+
+/* लोगोचा आकार किंचित सुबक करणे जेणेकरून जाडी वाढणार नाही */
+header img {
+  width: 145px !important; /* १६० वरून १४५ पिक्सेल केला */
+  height: auto !important;
+}
+
+/* नेव्हिगेशन लिंक्स मधील बटणाची जाडी कमी करणे */
+.btn-get-touch, 
+header nav a.btn-get-touch {
+  padding: 6px 14px !important; /* बटन स्लिम केले */
+  font-size: 0.85rem !important;
+}
+
+/* 2. 📱 मोबाईलवर हेडर खूप जाड दिसतो, तो फिक्स करणे */
+@media (max-width: 768px) {
+  header, 
+  header[style] {
+    padding-top: 10px !important;    /* मोबाईलवर जास्तीची स्पेस कमी केली */
+    padding-bottom: 10px !important;
+    gap: 6px !important;            /* लोगो आणि लिंक्समधील अंतर ६ पिक्सेल केले */
+  }
+
+  header img {
+    width: 110px !important; /* मोबाईल लोगो आणखी थोडा लहान केला */
+  }
+
+  .main-nav,
+  header nav {
+    gap: 4px 10px !important; /* लिंक्समधील स्पेस कमी केली जेणेकरून उंची वाढणार नाही */
+    margin-top: 2px !important;
+  }
+
+  /* ⚠️ सर्वात महत्त्वाचे: हेडर स्लिम केल्यामुळे खालील कंटेंट वर सरकतो, 
+     मोबाईलवर कंटेंट हेडरच्या मागे लपू नये म्हणून ही मार्जिन अचूक मॅनेज केली */
+  .page-wrapper,
+  #home {
+    margin-top: 95px !important; /* १२५ वरून ९५ पिक्सेल केले */
+  }
+}

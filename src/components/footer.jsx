@@ -7,23 +7,26 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-container">
         
-        {/* कॉलम १: लोगो आणि माहिती */}
-        <div className="footer-column">
-          <img src={logoImage} alt="Sankalp Solutions Logo" />
-          <p>Delivering innovative and reliable solutions that help businesses grow, scale and succeed in a competitive world.</p>
+        {/* कॉलम १: लोगो आणि माहिती - 🟢 फिक्स: लोगो आणि मजकूर डावीकडे सरकवण्यासाठी इनलाईन स्टाईल जोडली */}
+        <div className="footer-column" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', paddingLeft: '0', marginLeft: '0' }}>
+          <img src={logoImage} alt="Sankalp Solutions Logo" style={{ marginLeft: '0', paddingLeft: '0', display: 'block' }} />
+          <p style={{ textAlign: 'left', marginLeft: '0', paddingLeft: '0' }}>Delivering innovative and reliable solutions that help businesses grow, scale and succeed in a competitive world.</p>
         </div>
 
-        {/* कॉलम २: क्विक लिंक्स */}
+
+        {/* कॉलम २: क्विक लिंक्स (६ अचूक लिंक्स आणि बदललेली नावे) */}
         <div className="footer-column">
           <h4>Quick Links</h4>
           <ul className="footer-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/services">Services</Link></li>
-            <li><Link to="/case">Solutions</Link></li>
+            <li><Link to="/industry">Industries</Link></li>
+            <li><Link to="/case">Case Study</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
+
 
         {/* कॉलम ३: आमच्या सेवा */}
         <div className="footer-column">
@@ -52,16 +55,20 @@ function Footer() {
           <h4>Get In Touch</h4>
           <ul className="contact-info">
             <li>
-              <i className="fas fa-phone-alt"></i>
-              <span>+91 8600771113</span>
-            </li>
+              <i className="fas fa-map-marker-alt"></i>
+              <span>AhilyaNagar</span>
+              </li>
+              <li>
+              <i className="fas fa-map-marker-alt"></i>
+              <span>Pune</span>
+              </li>
             <li>
               <i className="fas fa-envelope"></i>
               <span>info@sankalpsolutions.co.in</span>
             </li>
             <li>
-              <i className="fas fa-map-marker-alt"></i>
-              <span>Savedi, AhilyaNagar, Maharashtra, 414005.</span>
+              <i className="fas fa-phone-alt"></i>
+              <span>+91 8600771113</span>
             </li>
           </ul>
         </div>

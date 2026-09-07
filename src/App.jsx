@@ -1,19 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import About from './components/About'; // 👈 नवीन About कॉम्पोनंट इथे इम्पोर्ट केला
+import About from './components/About'; 
 import Case from './components/Case';
 import Contact from './components/Contact';
 import Industry from './components/Industry';
 import Services from './components/Services';
+import ScrollToTop from './components/ScrollToTop'; // 👈 १. इथे इम्पोर्ट करा
 
 function App() {
   return (
-    // 👈 इथे basename="/Sankalp" जोडले आहे
     <Router basename="/Sankalp"> 
+      <ScrollToTop /> {/* 👈 २. गिटहब राउटरच्या आत सर्वात वर हा टॅग जोडा */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} /> {/* 👈 नवीन About Us चा रूट इथे जोडला आहे */}
+        <Route path="/about" element={<About />} /> 
         <Route path="/services" element={<Services />} />
         <Route path="/industry" element={<Industry />} />
         <Route path="/case" element={<Case />} />
