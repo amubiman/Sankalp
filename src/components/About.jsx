@@ -3,38 +3,25 @@ import { Link } from 'react-router-dom';
 import '../App.css'; 
 import { Helmet } from 'react-helmet-async';
 
-// assets मधील इमेजेस इम्पोर्ट केल्या
-import Header from '../components/Header'; // 👈 ही लाईन जोडा
+// assets मधील इमेजेस इम्पोर्ट केल्या (फक्त आवश्यक इमेजेस ठेवल्या आहेत)
+import Header from '../components/Header'; 
 import aboutImage from '../assets/Images/about.jpg'; 
 import founderImage from '../assets/Images/Founder.jpg'; 
-import rohitImg from '../assets/Images/rohit.jpg';
-import poojaImg from '../assets/Images/pooja.jpg';
-import mayurImg from '../assets/Images/mayur.jpg';
-import rutujaImg from '../assets/Images/rutuja.jpg';
-import mangeshImg from '../assets/Images/mangesh.jpg';
 
 // Footer कॉम्पोनंट इम्पोर्ट केला
 import Footer from '../components/Footer';
 
 function About() {
+  // 🟢 बदल १: फोटोच्या व्हेरिएबल्स ऐवजी थेट 'initials' नावाचा नवीन पॅरामीटर जोडला
   const teamMembers = [
-    { name: "Mr. Rohit Vijay Kawale", role: "Founder", img: rohitImg },
-    { name: "Mrs. Pooja Adwait Kulkarni", role: "Client Relations Coordinator", img: poojaImg },
-    { name: "Mr. Mayur Pramod Kulkarni", role: "Technical Support Specialist", img: mayurImg },
-    { name: "Ms. Rutuja Vilas Deshpande", role: "Documentation & Compliance Executive", img: rutujaImg },
-    { name: "Mr. Mangesh Sadanand Shahane", role: "Support Associate", img: mangeshImg }
-  ];
-
-  const approaches = [
-    { step: "1", title: "Understand", desc: "We understand your needs" },
-    { step: "2", title: "Source", desc: "We find the right suppliers" },
-    { step: "3", title: "Evaluate", desc: "We evaluate for quality, cost & reliability" },
-    { step: "4", title: "Optimize", desc: "We optimize for better value and efficiency" },
-    { step: "5", title: "Deliver", desc: "We ensure timely and reliable delivery" }
+    { name: "Mr. Rohit Vijay Kawale", role: "Founder", initials: "RK" },
+    { name: "Mr. Amol Prakash Biman", role: "Technical Support Specialist", initials: "AB" },
+    { name: "Ms. Rutuja Vilas Deshpande", role: "Documentation & Compliance Executive", initials: "RD" },
+    { name: "Mr. Mangesh Sadanand Shahane", role: "Support Associate", initials: "MS" }
   ];
 
   return (
-        <>
+    <>
       <Helmet>
         <title>About Us | Sankalp Solutions - Our Story & Founder</title>
         <meta name="description" content="Learn about Sankalp Solutions, founded by Mr. Rohit Vijay Kawale in 2025. Discover our structured procurement approach and expert team." />
@@ -44,13 +31,11 @@ function About() {
         <meta property="og:url" content="https://sankalpsolutions.co.in" />
       </Helmet>
 
-      {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
       <Header />
 
-      {/* Main Content Wrap */}
       <div className="page-wrapper">
         
-        {/* स्लायडर आणि इमेज ऑटो-फिट */}
+        {/* Banner Section */}
         <div className="slider">
           <div className="slides">
             <img src={aboutImage} alt="Sankalp Solutions About Us Banner" />
@@ -99,57 +84,42 @@ function About() {
           </div>
         </section>
 
-        {/* ३. Our Approach Section */}
+        {/* 3. Our Approach Section */}
         <section style={{ padding: '50px 5%', backgroundColor: '#fff', textAlign: 'center' }}>
-          <h2 style={{ color: '#003366', fontSize: '2.2rem', marginBottom: '40px', fontWeight: '700' }}>Our Approach</h2>
-          
-          <div style={{ 
-            display: 'flex', 
-            flexWrap: 'wrap',           /* 🟢 बदल १: सर्व बॉक्स मोबाईलवर खाली येण्यासाठी wrap केले */
-            justifyContent: 'center', 
-            gap: '20px', 
-            maxWidth: '1200px', 
-            margin: '0 auto'
-          }}>
-            
+          <h2 style={{ color: '#003366', fontSize: '2.4rem', marginBottom: '40px', fontWeight: '700' }}>Our Approach</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px', maxWidth: '1200px', margin: '0 auto' }}>
             {/* Step 1 - Understand */}
-            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '25px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '15px' }}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              <h4 style={{ color: '#0a1931', margin: '0 0 8px 0', fontSize: '1.1rem', fontWeight: '700' }}>Understand</h4>
-              <p style={{ fontSize: '0.9rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We understand your needs</p>
+            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '30px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
+              <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '20px' }}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <h4 style={{ color: '#0a1931', margin: '0 0 10px 0', fontSize: '1.25rem', fontWeight: '700' }}>Understand</h4>
+              <p style={{ fontSize: '1.0rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We understand your needs</p>
             </div>
-
             {/* Step 2 - Source */}
-            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '25px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '15px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <h4 style={{ color: '#0a1931', margin: '0 0 8px 0', fontSize: '1.1rem', fontWeight: '700' }}>Source</h4>
-              <p style={{ fontSize: '0.9rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We find the right suppliers</p>
+            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '30px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
+              <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '20px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <h4 style={{ color: '#0a1931', margin: '0 0 10px 0', fontSize: '1.25rem', fontWeight: '700' }}>Source</h4>
+              <p style={{ fontSize: '1.0rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We find the right suppliers</p>
             </div>
-
             {/* Step 3 - Evaluate */}
-            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '25px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '15px' }}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              <h4 style={{ color: '#0a1931', margin: '0 0 8px 0', fontSize: '1.1rem', fontWeight: '700' }}>Evaluate</h4>
-              <p style={{ fontSize: '0.9rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We evaluate for quality, cost & reliability</p>
+            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '30px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
+              <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '20px' }}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <h4 style={{ color: '#0a1931', margin: '0 0 10px 0', fontSize: '1.25rem', fontWeight: '700' }}>Evaluate</h4>
+              <p style={{ fontSize: '1.0rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We evaluate for quality, cost & reliability</p>
             </div>
-
             {/* Step 4 - Optimize */}
-            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '25px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '15px' }}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              <h4 style={{ color: '#0a1931', margin: '0 0 8px 0', fontSize: '1.1rem', fontWeight: '700' }}>Optimize</h4>
-              <p style={{ fontSize: '0.9rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We optimize for better value and efficiency</p>
+            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '30px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
+              <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '20px' }}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              <h4 style={{ color: '#0a1931', margin: '0 0 10px 0', fontSize: '1.25rem', fontWeight: '700' }}>Optimize</h4>
+              <p style={{ fontSize: '1.0rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We optimize for better value and efficiency</p>
             </div>
-
             {/* Step 5 - Deliver */}
-            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '25px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '15px' }}><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-              <h4 style={{ color: '#0a1931', margin: '0 0 8px 0', fontSize: '1.1rem', fontWeight: '700' }}>Deliver</h4>
-              <p style={{ fontSize: '0.9rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We ensure timely and reliable delivery</p>
+            <div style={{ flex: '1', minWidth: '240px', maxWidth: '340px', padding: '30px 15px', background: '#f8f9fa', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', border: '1px solid #eef2f6' }}>
+              <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '20px' }}><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <h4 style={{ color: '#0a1931', margin: '0 0 10px 0', fontSize: '1.25rem', fontWeight: '700' }}>Deliver</h4>
+              <p style={{ fontSize: '1.0rem', color: '#666', margin: 0, lineHeight: '1.5' }}>We ensure timely and reliable delivery</p>
             </div>
-
           </div>
         </section>
-
 
         {/* 4. Our Team Section */}
         <section style={{ padding: '50px 5%', backgroundColor: '#fdfdfd' }}>
@@ -157,14 +127,26 @@ function About() {
           <div className="team-flex">
             {teamMembers.map((member, index) => (
               <div key={index} className="team-member-card" style={{ borderTop: '3px solid #ff6b6b' }}>
-                <img 
-                  src={member.img} 
-                  alt={member.name} 
-                  style={{ 
-                    width: '110px', height: '110px', marginBottom: '12px', borderRadius: '50%', objectFit: 'cover',
-                    boxShadow: '0 3px 8px rgba(0,0,0,0.12)', border: '2px solid #fff'
-                  }} 
-                />
+                
+                {/* इनिशियल्ससाठी वर्तुळाकार बॉक्स */}
+                <div style={{
+                  width: '110px',
+                  height: '110px',
+                  backgroundColor: '#002258',
+                  color: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1.8rem',
+                  fontWeight: 'bold',
+                  borderRadius: '50%',
+                  margin: '0 auto 12px auto',
+                  boxShadow: '0 3px 8px rgba(0, 45, 87, 0.12)',
+                  border: '2px solid #fff'
+                }}>
+                  {member.initials}
+                </div>
+
                 <h4 style={{ margin: '5px 0', fontSize: '1.05rem', color: '#181E33', fontWeight: 'bold', wordBreak: 'break-word' }}>{member.name}</h4>
                 <p style={{ margin: '4px 0 0 0', color: '#666', fontSize: '0.85rem', fontWeight: '500' }}>{member.role}</p>
               </div>
@@ -174,7 +156,7 @@ function About() {
 
       </div>
 
-      {/* 🟢 नवीन फुल स्क्रीन फुटर */}
+      {/* फुल स्क्रीन फुटर */}
       <Footer />
     </>
   );

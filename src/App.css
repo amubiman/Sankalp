@@ -1,15 +1,13 @@
 /* ==========================================================================
-   🌐 GLOBAL STYLES & CORE INTEGRATION
+   🌐 GLOBAL STYLES & RESET
    ========================================================================== */
-@import url('https://googleapis.com');
-
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background: #fdfdfd;
   color: #333;
-  overflow-x: hidden;
+  overflow-x: hidden; /* उजव्या बाजूला नको असलेला स्क्रोल बंद करण्यासाठी */
 }
 
 /* --- Fixed Global Header --- */
@@ -17,48 +15,63 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #0a1931;
-  padding: 10px 5%;
+  /* 🟢 फिक्स: पॅडिंगला मॅक्स-विड्थच्या मर्यादेत मॅनेज केले जेणेकरून लोगो आत येईल */
+  padding: 8px calc((100% - 1400px) / 2 + 24px) !important; 
   box-sizing: border-box;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
 }
+
 
 header img {
-  width: 160px;
-  height: auto;
+  width: 145px !important;
+  height: auto !important;
 }
 
-/* डेस्कटॉपसाठी क्लीन नेव्हिगेशन क्लास */
+/* Navigation Menu */
 .main-nav {
   display: flex !important;
   align-items: center !important;
   gap: 25px !important;
 }
 
+/* सामान्य लिंकची स्टाईल */
 .main-nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  padding-bottom: 4px; /* अंडरलाईनसाठी थोडी जागा */
+  border-bottom: 2px solid transparent; /* सुरुवातीला बॉर्डर ट्रान्सपरंट राहील */
+  transition: all 0.3s ease;
 }
 
+/* 🟢 माउस कर्सर नेल्यावर (Hover Effect) */
 .main-nav a:hover {
-  color: #ff6b6b;
+  color: #ff6b6b !important;
 }
 
-/* Header Button */
-.btn-get-touch {
+/* 🟢 जी लिंक चालू / ॲक्टिव्ह आहे (Active Effect) */
+.main-nav a.active {
+  color: #ff6b6b !important;
+  border-bottom: 2px solid #ff6b6b !important;
+}
+
+
+/* Header Action Button */
+.btn-get-touch, 
+header nav a.btn-get-touch {
   background-color: #ff6b6b;
   color: #fff !important;
-  padding: 8px 18px;
+  padding: 6px 14px !important;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.85rem !important;
   transition: background 0.3s ease;
 }
 
@@ -66,21 +79,18 @@ header img {
   background-color: #e05454;
 }
 
-/* --- Main Layout Wrapper --- */
-.page-wrapper {
+/* --- Layout Wrapper --- */
+.page-wrapper, #home {
   margin-top: 80px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* --- Hero Slider & Banner --- */
 .hero-banner, .slider {
   position: relative !important;
   overflow: hidden !important;
-  width: 100vw !important;
-  left: 50% !important;
-  right: 50% !important;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
+  width: 100% !important;
   box-sizing: border-box !important;
 }
 
@@ -88,9 +98,6 @@ header img {
   width: 100% !important;
   height: 100% !important;
   display: block !important;
-}
-
-.slides img, .hero-banner img, .slider img {
   object-fit: cover !important;
 }
 
@@ -99,10 +106,13 @@ section {
   padding: 60px 5%;
   background: white;
   margin: 20px auto;
-  max-width: 1200px;
+  max-width: 1400px; /* 🟢 फिक्स: 1200 वरून 1400px केली जेणेकरून ग्रॅडिएंट पट्टीला मॅच होईल */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  width: 100%;
 }
+
 
 .intro-section {
   text-align: center;
@@ -111,7 +121,7 @@ section {
   margin-bottom: -10px;
 }
 
-/* --- Grid Layouts --- */
+/* --- Layout & Grids --- */
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -133,26 +143,29 @@ section {
   box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
+/* Why Choose Us */
 .why-choose-us .column-container {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* 🟢 फिक्स: डेस्कटॉपवर एका ओळीत ४ बॉक्स लॉक केले */
   gap: 20px !important;
-  justify-content: center !important;
-  max-width: 1200px !important;
+  max-width: 1400px !important; /* 🟢 फिक्स: वरच्या ग्रॅडिएंट पट्टीच्या विड्थएवढी साईझ केली */
   margin: 0 auto !important;
+  width: 100% !important;
 }
 
 .why-choose-us .card {
-  flex: 1 !important;
-  min-width: 200px !important; 
-  padding: 30px 15px !important;
+  width: 100% !important;
   box-sizing: border-box !important;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 35px 15px !important;
+  text-align: center;
 }
 
+
+
+/* Team Section */
 .team-flex {
   display: flex;
   flex-wrap: wrap;
@@ -171,20 +184,125 @@ section {
   box-sizing: border-box;
 }
 
-/* --- site-footer --- */
+/* --- Premium Approach Layout --- */
+.approach-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.approach-card {
+  padding: 20px 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  text-align: center;
+}
+
+.approach-card h4 {
+  color: #0a1931;
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.approach-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- Case Study Layout --- */
+.case-row-container {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 30px !important;
+  margin-bottom: 50px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+.case-sidebar-box {
+  flex: 0 0 320px !important;
+  padding: 40px 30px !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+.case-grid-cards {
+  flex: 1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+}
+
+.case-single-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 30px 20px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
+  box-sizing: border-box !important;
+}
+
+.case-card-number {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #a0aec0 !important;
+}
+
+/* --- Premium Scroll Animations --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUpHero {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-animate {
+  animation: fadeInUpHero 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ==========================================================================
+   🌐 SITE FOOTER (CLEANED FROM 100VW & BAD MARGINS)
+   ========================================================================== */
 .site-footer {
   background-color: #0a1931;
   color: #ffffff;
-  padding: 50px 5% 20px 5%;
+  padding: 50px 24px 20px 24px; /* 🟢 फिक्स: कंटेनर व्यवस्थित बसण्यासाठी पॅडिंग सेट केले */
   font-family: 'Poppins', sans-serif;
   border-bottom: 8px solid;
   border-image: linear-gradient(to right, #ff9933, #ff5555, #cc0066) 1;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%; 
+  margin: 0;   
   box-sizing: border-box;
 }
 
@@ -192,9 +310,12 @@ section {
   display: grid;
   grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr;
   gap: 30px;
-  max-width: 1200px;
+  max-width: 1400px !important; /* 🟢 फिक्स: विड्थ 1200 वरून 1400px केली जेणेकरून हेडर आणि सेक्शनला तंतोतंत मॅच होईल */
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 .footer-column {
   display: flex;
@@ -220,7 +341,6 @@ section {
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 20px;
-  position: relative;
 }
 
 .footer-links {
@@ -229,9 +349,7 @@ section {
   margin: 0;
 }
 
-.footer-links li {
-  margin-bottom: 12px;
-}
+.footer-links li { margin-bottom: 12px; }
 
 .footer-links a {
   color: #ccd6f6;
@@ -240,9 +358,7 @@ section {
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-  color: #ff6b6b;
-}
+.footer-links a:hover { color: #ff6b6b; }
 
 .social-icons {
   display: flex;
@@ -301,8 +417,10 @@ section {
 }
 
 /* ==========================================================================
-   📊 MEDIA QUERIES (TABLET & MID-SIZE SCREENS)
+   📱 RESPONSIVE MEDIA QUERIES (TABLET & MOBILE COMBINED FIX)
    ========================================================================== */
+
+/* --- Tablet / Medium Screen View (992px) --- */
 @media (max-width: 992px) {
   .why-choose-us .column-container {
     flex-wrap: wrap !important;
@@ -310,63 +428,73 @@ section {
   .why-choose-us .card {
     flex: 1 1 calc(50% - 20px) !important;
   }
+  .approach-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .case-grid-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cta-single-line-text {
+    white-space: normal !important;
+    font-size: 0.95rem !important;
+    padding: 0 10px !important;
+  }
 }
 
-/* ==========================================================================
-   📱 ULTIMATE MOBILE RESPONSIVE FIX (No Line Overflow)
-   ========================================================================== */
+/* --- Ultimate Mobile View Fix (768px) --- */
 @media (max-width: 768px) {
   header {
-    position: fixed !important;
-    padding: 12px 4% !important;
+    padding: 10px 4% !important;
     flex-direction: column !important;
-    gap: 12px !important;
+    gap: 6px !important;
   }
 
   header img {
-    width: 125px !important;
+    width: 110px !important;
   }
 
+  /* मोबाईलवर लिंक्स सुटसुटीत आणि एका रांगेत रॅप होण्यासाठी */
   .main-nav {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 10px 14px !important;
+    gap: 4px 10px !important;
     width: 100% !important;
+    margin-top: 2px !important;
+    padding: 0 !important;
   }
 
-  .main-nav a {
-    font-size: 0.84rem !important; 
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-    display: inline-block !important;
-    padding: 2px 4px !important;
-  }
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent; /* 🟢 सुरुवातीला अंडरलाईन ट्रान्सपरंट ठेवली */
+  display: inline-block;
+}
+
 
   .btn-get-touch {
     padding: 5px 12px !important;
     font-size: 0.78rem !important;
-    white-space: nowrap !important;
   }
 
+  /* हेडर स्लिम केल्यामुळे कंटेंट मागे लपू नये म्हणून अंतर फिक्स केले */
   .page-wrapper, #home {
-    margin-top: 125px !important; 
+    margin-top: 95px !important; 
+  }
+
+  /* 🟢 फिक्स: गायब झालेला आणि अर्धवट कट झालेला मोबाईल रिस्पॉन्सिव्ह कोड खालीलप्रमाणे */
+  header {
+    box-sizing: border-box !important;
+    right: 0 !important;
   }
 
   .slider, .hero-banner {
     height: 350px !important;
-  }
-
-  .hero-banner {
-    padding: 0 20px !important;
-    background-attachment: scroll !important;
-  }
-
-  .hero-banner .caption {
-    max-width: 100% !important;
-    text-align: center !important;
   }
 
   .hero-banner h1 {
@@ -374,28 +502,17 @@ section {
     line-height: 1.3 !important;
   }
 
-  .hero-banner p {
-    font-size: 0.9rem !important;
-  }
-
-  .hero-banner div {
-    justify-content: center !important;
-  }
-
+  /* ग्रिड्स सिंगल कॉलम करणे */
   .two-columns {
     grid-template-columns: 1fr;
   }
 
-  .team-member-card {
-    width: calc(50% - 15px);
-  }
-
   .why-choose-us .column-container {
-    flex-direction: column !important;
-    flex-wrap: wrap !important;
+    grid-template-columns: 1fr !important; /* 🟢 फिक्स: मोबाईलवर १ कॉलम केला */
     gap: 15px !important;
     padding: 0 10px !important;
   }
+
 
   .why-choose-us .card {
     flex: 1 1 100% !important;
@@ -403,281 +520,13 @@ section {
     padding: 20px 15px !important;
   }
 
-  .why-choose-us h2 {
-    font-size: 1.5rem !important;
-    margin-bottom: 25px !important;
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-}
-
-/* ==========================================================================
-   📱 ULTRA-SMALL MOBILES (iPhone SE / Older Screens)
-   ========================================================================== */
-@media (max-width: 576px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .site-footer {
-    padding: 40px 20px 20px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-nav {
-    gap: 6px 10px !important;
-  }
-  
-  .main-nav a {
-    font-size: 0.78rem !important;
-  }
-
   .team-member-card {
-    width: 100%;
-  }
-  
-  .hero-banner h1 {
-    font-size: 1.4rem !important;
-  }
-}
-
-/* ==========================================================================
-   📱 ULTIMATE GLOBAL MOBILE RESPONSIVE FIX (For All Pages Aligned)
-   ========================================================================== */
-@media (max-width: 768px) {
-  header, 
-  header[style] {
-    position: fixed !important;
-    padding: 12px 4% !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    width: 100% !important;
-    display: flex !important;
+    width: calc(50% - 15px);
   }
 
-  .logo-container,
-  header div[style] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  header img {
-    width: 125px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-
-  .main-nav,
-  header nav,
-  header nav[style] {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important; 
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-top: 5px !important;
-    padding: 0 15px !important;
-    box-sizing: border-box !important;
-  }
-
-.main-nav a,
-header nav a {
-  font-size: 0.82rem !important;
-  font-weight: 600 !important;
-  white-space: nowrap !important;
-  display: inline-block !important;
-  padding: 2px 4px !important;
-}
-
-.btn-get-touch,
-header nav a.btn-get-touch {
-  padding: 5px 12px !important;
-  font-size: 0.78rem !important;
-  white-space: nowrap !important;
-}
-
-.page-wrapper,
-#home {
-  margin-top: 125px !important;
-}
-
-.case-row-container {
-  flex-direction: column !important;
-  gap: 15px !important;
-}
-.case-sidebar-box {
-  flex: 1 1 100% !important;
-  text-align: center !important;
-}
-.case-grid-cards {
-  grid-template-columns: 1fr !important;
-  gap: 15px !important;
-}
-.slider, .hero-banner {
-  height: 350px !important;
-}
-.two-columns {
-  grid-template-columns: 1fr;
-}
-.team-member-card {
-  width: calc(50% - 15px);
-}
-.why-choose-us .column-container {
-  flex-direction: column !important;
-  gap: 15px !important;
-}
-.why-choose-us .card {
-  flex: 1 1 100% !important;
-  min-width: 100% !important;
-}
-.footer-container {
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-}
-
-@media (max-width: 768px) {
-  .main-nav,
-  header nav {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px 12px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 5px auto 0 auto !important;
-    box-sizing: border-box !important;
-  }
-  
-  .main-nav a {
-    text-align: center !important;
-    display: inline-block !important;
-  }
-}
-
-/* --- Desktop layout --- */
-.approach-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.approach-card {
-  padding: 20px 10px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  text-align: center;
-}
-
-.approach-card h4 {
-  color: #0a1931;
-  margin: 0 0 8px 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.approach-card p {
-  font-size: 0.85rem;
-  color: #666;
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* --- Tablet / Medium Screen View --- */
-@media (max-width: 992px) {
-  .approach-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
-/* --- Mobile View --- */
-@media (max-width: 576px) {
-  .approach-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-}
-/* ==========================================================================
-   📐 CASE STUDY PREMIUM ROW & GRID LAYOUT (FIXED ALIGNMENT)
-   ========================================================================== */
-.case-row-container {
-  display: flex !important;
-  flex-direction: row !important;
-  gap: 30px !important;
-  margin-bottom: 50px !important;
-  align-items: stretch !important;
-  width: 100% !important;
-}
-
-.case-sidebar-box {
-  flex: 0 0 320px !important; /* डावा डार्क बॉक्स फिक्स ३२० पिक्सेल */
-  padding: 40px 30px !important;
-  border-radius: 16px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  color: #ffffff !important;
-  box-sizing: border-box !important;
-}
-
-.case-grid-cards {
-  flex: 1 !important;
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important; /* डेस्कटॉपवर ३ कॉलम्स */
-  gap: 20px !important;
-}
-
-.case-single-card {
-  background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
-  border-radius: 16px !important;
-  padding: 30px 20px !important;
-  position: relative !important;
-  display: flex !important;
-  flex-direction: column !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
-  box-sizing: border-box !important;
-}
-
-.case-card-number {
-  position: absolute !important;
-  top: 15px !important;
-  right: 15px !important;
-  font-size: 0.85rem !important;
-  font-weight: 800 !important;
-  color: #a0aec0 !important;
-}
-
-/* 📱 मोबाईल आणि टॅब्लेटसाठी परफेक्ट रिस्पॉन्सिव्ह अलाईनमेंट */
-@media (max-width: 1024px) {
-  .case-grid-cards {
-    grid-template-columns: repeat(2, 1fr) !important; /* टॅब्लेटवर २ कॉलम्स */
-  }
-}
-
-@media (max-width: 768px) {
+  /* केस स्टडी रिस्पॉन्सिव्ह */
   .case-row-container {
-    flex-direction: column !important; /* मोबाईलवर एकाखाली एक */
+    flex-direction: column !important;
     gap: 20px !important;
   }
   
@@ -688,102 +537,43 @@ header nav a.btn-get-touch {
   }
   
   .case-grid-cards {
-    grid-template-columns: 1fr !important; /* मोबाईलवर १ कॉलम पूर्ण विड्थ */
+    grid-template-columns: 1fr !important;
     gap: 15px !important;
   }
-}
-/* 📱 मोबाईलवर ग्रॅडिएंट बॉक्समधील मजकूर सुरक्षितपणे रॅप करण्यासाठी */
-@media (max-width: 992px) {
-  .cta-single-line-text {
-    white-space: normal !important;
-    font-size: 0.95rem !important;
-    padding: 0 10px !important;
-  }
-}
-/* ==========================================================================
-   ✨ PREMIUM SCROLL ANIMATIONS (FADE & SLIDE UP)
-   ========================================================================== */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
 
-/* जेव्हा स्क्रोल केल्यावर हा क्लास ॲक्टिव्हेट होईल */
-.animate-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* हिरो बॅनरच्या टेक्स्टसाठी जलद ॲनिमेशन (पेज लोड होताच येण्यासाठी) */
-@keyframes fadeInUpHero {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  /* फुटर रिस्पॉन्सिव्ह */
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 }
 
-.hero-animate {
-  animation: fadeInUpHero 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* बॉक्समध्ये थोडा डिले (Delay) देण्यासाठी जेणेकरून ते एकामागून एक येतील */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-/* ==========================================================================
-   ⚡ SLIM & PREMIUM HEADER MENU BAR (REDUCED THICKNESS)
-   ========================================================================== */
-
-/* 1. डेस्कटॉपवर हेडरची जाडी कमी करणे */
-header {
-  padding-top: 8px !important;    /* वरचे पॅडिंग १५ वरून ८ पिक्सेल केले */
-  padding-bottom: 8px !important; /* खालचे पॅडिंग १५ वरून ८ पिक्सेल केले */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important; /* शॅडो हलकी केली */
-}
-
-/* लोगोचा आकार किंचित सुबक करणे जेणेकरून जाडी वाढणार नाही */
-header img {
-  width: 145px !important; /* १६० वरून १४५ पिक्सेल केला */
-  height: auto !important;
-}
-
-/* नेव्हिगेशन लिंक्स मधील बटणाची जाडी कमी करणे */
-.btn-get-touch, 
-header nav a.btn-get-touch {
-  padding: 6px 14px !important; /* बटन स्लिम केले */
-  font-size: 0.85rem !important;
-}
-
-/* 2. 📱 मोबाईलवर हेडर खूप जाड दिसतो, तो फिक्स करणे */
-@media (max-width: 768px) {
-  header, 
-  header[style] {
-    padding-top: 10px !important;    /* मोबाईलवर जास्तीची स्पेस कमी केली */
-    padding-bottom: 10px !important;
-    gap: 6px !important;            /* लोगो आणि लिंक्समधील अंतर ६ पिक्सेल केले */
+/* --- Ultra-Small Mobiles View (576px & 480px) --- */
+@media (max-width: 576px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
-
-  header img {
-    width: 110px !important; /* मोबाईल लोगो आणखी थोडा लहान केला */
+  .site-footer {
+    padding: 40px 20px 20px 20px;
   }
-
-  .main-nav,
-  header nav {
-    gap: 4px 10px !important; /* लिंक्समधील स्पेस कमी केली जेणेकरून उंची वाढणार नाही */
-    margin-top: 2px !important;
+  .approach-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
+}
 
-  /* ⚠️ सर्वात महत्त्वाचे: हेडर स्लिम केल्यामुळे खालील कंटेंट वर सरकतो, 
-     मोबाईलवर कंटेंट हेडरच्या मागे लपू नये म्हणून ही मार्जिन अचूक मॅनेज केली */
-  .page-wrapper,
-  #home {
-    margin-top: 95px !important; /* १२५ वरून ९५ पिक्सेल केले */
+@media (max-width: 480px) {
+  .main-nav {
+    gap: 6px 10px !important;
+  }
+  .main-nav a {
+    font-size: 0.78rem !important;
+  }
+  .team-member-card {
+    width: 100%;
+  }
+  .hero-banner h1 {
+    font-size: 1.4rem !important;
   }
 }

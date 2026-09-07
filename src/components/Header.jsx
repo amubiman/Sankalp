@@ -1,28 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logoImage from '../assets/Images/Logo.png'; // लोगोचा पाथ बरोबर असल्याची खात्री करा
+import { NavLink } from 'react-router-dom'; 
+import logoImage from '../assets/Images/Logo.png'; 
 
 function Header() {
+  // 🟢 बदल: जुने activeStyle चे इनलाईन फंक्शन इथून काढून टाकले आहे.
+
   return (
     <header>
       <div className="logo-container">
         <img src={logoImage} alt="Sankalp Solutions Logo" />
       </div>
       <nav className="main-nav">
-        <Link to="/">Home</Link>
-        <Link to="/about">About Us</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/industry">Industries</Link>
-        <Link to="/case">Case Study</Link>
-        <Link to="/contact">Contact Us</Link>
-        {/* 🟢 व्हॉट्सॲप लिंक थेट इथे जोडली आहे */}
+        {/* 🟢 बदल: सर्व NavLink मधून style={activeStyle} पूर्णपणे काढून टाकले आहे */}
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About Us</NavLink>
+        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/industry">Industries</NavLink>
+        <NavLink to="/case">Case Study</NavLink>
+        <NavLink to="/contact">Contact Us</NavLink>
+        
         <a 
           href="https://wa.me/918600771113" 
           target="_blank" 
           rel="noreferrer" 
           className="btn-get-touch"
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
         >
-          Get In Touch
+          <i className="fab fa-whatsapp" style={{ fontSize: '1.2rem' }}></i>
+          <span>Join Us</span>
         </a>
       </nav>
     </header>

@@ -35,12 +35,27 @@ function Services() {
           <img src={serviceImage} alt="Sankalp Solutions Services Banner" />
         </div>
 
-          {/* 🟢 नवीन अपडेट केलेला कोड (इथे पेस्ट करा): */}
-          <div className="intro-section" style={{ backgroundColor: '#f8f9fa', padding: '40px 5%' }}>
-            <h2 style={{ color: '#003366', margin: '0 0 15px 0', fontSize: '2.3rem', fontWeight: 'bold' }}>OUR SERVICES</h2>
-            <p style={{ fontSize: '1rem', color: '#444', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
+        {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
+        <section style={{ 
+          padding: '30px 5%', 
+          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+          margin: '20px auto', 
+          maxWidth: '1400px', 
+          borderRadius: '10px', 
+          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
               At Sankalp Solutions, we offer expert-led supply chain solutions designed to drive efficiency, reduce costs, and strengthen supplier partnerships.
             </p>
+          </div>
+        </section>
+
+          {/* 🟢 नवीन अपडेट केलेला कोड (इथे पेस्ट करा): */}
+          <div className="intro-section" style={{ backgroundColor: '#f8f9fa', padding: '40px 5%' }}>
+            <h2 style={{ color: '#003366', margin: '0 0 15px 0', fontSize: '2.3rem', fontWeight: 'bold' }}>SERVICES WE OFFER</h2>
           </div>
 
 
@@ -147,12 +162,28 @@ function Services() {
         {/* ==========================================
             🟢 SECTION 2: OUR APPROACH (Engagement Models)
            ========================================== */}
+        {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
+        <section style={{ 
+          padding: '30px 5%', 
+          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+          margin: '20px auto', 
+          maxWidth: '1400px', 
+          borderRadius: '10px', 
+          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+              We understand your business, challenges and operations to offer customized engagement models that fit your needs.
+            </p>
+          </div>
+        </section>
+
+
         <div className="intro-section" style={{ marginTop: '50px', backgroundColor: '#f8f9fa' }}>
           <h2 style={{ color: '#003366', margin: '0 0 10px 0', fontSize: '2.3rem', fontWeight: 'bold' }}>OUR APPROACH</h2>
           <p style={{ fontSize: '1.2rem', color: '#ff6b6b', fontWeight: 'bold', margin: '0 0 10px 0' }}>Flexible. Practical. Result-Oriented.</p>
-          <p style={{ fontSize: '1rem', color: '#444', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
-            We understand your business, challenges and operations to offer customized engagement models that fit your needs.
-          </p>
         </div>
 
         <section style={{ padding: '40px 5%', background: '#fff', boxShadow: 'none' }}>
