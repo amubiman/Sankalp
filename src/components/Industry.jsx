@@ -4,7 +4,7 @@ import '../App.css';
 import { Helmet } from 'react-helmet-async';
 
 // assets मधील इमेजेस
-import Header from '../components/Header'; // 👈 ही लाईन जोडा
+import Header from '../components/Header'; 
 import industryImage from '../assets/Images/Industry.jpg';
 import mfgImg from '../assets/Images/mfg.jpg';
 import pharmaImg from '../assets/Images/pharma.jpg';
@@ -15,11 +15,10 @@ import resiImg from '../assets/Images/resi.jpg';
 import energyImg from '../assets/Images/energy.jpg';
 import hosImg from '../assets/Images/hos.jpg';
 
-// 🟢 नवीन बनवलेला Footer कॉम्पोनंट इम्पोर्ट केला
+// Footer कॉम्पोनंट
 import Footer from '../components/Footer';
 
 function Industry() {
-  // 🛠️ प्रत्येक इंडस्ट्रीला त्याच्या इम्पोर्ट केलेल्या इमेज सोबत जोडले (मॅप केले)
   const industries = [
     {
       id: "01",
@@ -27,7 +26,8 @@ function Industry() {
       desc: "Raw materials, Machinery, MRO, Tools, Packaging & more",
       image: mfgImg,
       icon: (
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 21H2M5 21V7l7-3v17M12 21V9l7 4v8" />
         </svg>
       )
@@ -38,7 +38,8 @@ function Industry() {
       desc: "API, Lab Equipment, Medical Devices, Packaging & more",
       image: pharmaImg,
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="5" y="5" width="14" height="14" rx="2" />
           <line x1="12" y1="9" x2="12" y2="15" />
           <line x1="9" y1="12" x2="15" y2="12" />
@@ -51,7 +52,8 @@ function Industry() {
       desc: "Components, Line Equipment, Lubricants, Electricals & more",
       image: autoImg,
       icon: (
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
           <circle cx="7" cy="17" r="2" />
           <circle cx="17" cy="17" r="2" />
@@ -64,7 +66,8 @@ function Industry() {
       desc: "Cement, Steel, Electrical, Plumbing, Equipment, Safety Items & more",
       image: civilImg,
       icon: (
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="21 8 21 21 3 21 3 8" />
           <rect x="1" y="3" width="22" height="5" />
           <line x1="10" y1="12" x2="14" y2="12" />
@@ -77,7 +80,8 @@ function Industry() {
       desc: "IT Hardware, Office Supplies, Facility Mgmt., Furniture, AMC Services & more",
       image: itImg,
       icon: (
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
           <line x1="8" y1="21" x2="16" y2="21" />
           <line x1="12" y1="17" x2="12" y2="21" />
@@ -90,7 +94,8 @@ function Industry() {
       desc: "Maintenance, Civil Works, Housekeeping, Security, AMC Services & more",
       image: resiImg,
       icon: (
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M3 21V9l9-6 9 6v12M9 21V12h6v9" />
         </svg>
       )
@@ -101,7 +106,8 @@ function Industry() {
       desc: "Solar, Cables, Switchgear, Bulk Procurement, EPC Management & more",
       image: energyImg,
       icon: (
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="12" rx="2" />
           <line x1="3" y1="9" x2="21" y2="9" />
           <line x1="9" y1="3" x2="9" y2="15" />
@@ -116,12 +122,14 @@ function Industry() {
       desc: "Kitchen, Food Supply, Housekeeping, Laundry, Furniture & more",
       image: hosImg,
       icon: (
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        /* 🟢 बदल: width="45" आणि height="45" केले */
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2a10 10 0 0 1 10 10H2A10 10 0 0 1 12 2zM2 16h20v4H2v-4z" />
         </svg>
       )
     }
   ];
+
 
   return (
     <>
@@ -134,28 +142,35 @@ function Industry() {
         <meta property="og:url" content="https://sankalpsolutions.co.in" />
       </Helmet>
 
-      {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
       <Header />
 
-      {/* Main Content Area */}
       <div className="page-wrapper">
         
-        {/* स्लायडर */}
+        {/* Banner Section */}
         <div className="slider">
           <img src={industryImage} alt="Sankalp Solutions Industries Banner" />
         </div>
 
-        {/* Industries Introduction Section - Services Page थीम नुसार अपडेटेड */}
-        <div className="intro-section" style={{ backgroundColor: '#f8f9fa', padding: '40px 5%', textAlign: 'center' }}>
-          <h2 style={{ color: '#003366', margin: '0 0 15px 0', fontSize: '2.3rem', fontWeight: 'bold' }}>INDUSTRIES WE SERVE</h2>
-          <p style={{ fontSize: '1rem', color: '#444', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
-            From routine consumables to critical project procurement, we ensure quality, cost efficiency, and timely delivery across all industries.
-          </p>
-        </div>
+        {/* प्रिमियम लिनियर ग्रॅडिएंट बॉक्स १ */}
+        <section style={{ 
+          padding: '20px 5%', 
+          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+          margin: '20px auto', 
+          maxWidth: '1400px', 
+          borderRadius: '10px', 
+          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+              From everyday procurement to critical project requirements, we deliver reliable sourcing solutions that balance quality, cost, and timelines—helping businesses operate efficiently and grow with confidence.
+            </p>
+          </div>
+        </section>
 
-
-        {/* 🛠️ नवीन मॉडर्न ८-टाईल ग्रिड लेआउट विभाग */}
-        <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', boxShadow: 'none', background: 'transparent' }}>
+        {/* ८-टाईल ग्रिड लेआउट विभाग */}
+        <section style={{ maxWidth: '1400px', margin: '20px auto', padding: '0 24px', boxShadow: 'none', background: 'transparent', width: '100%', boxSizing: 'border-box' }}>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
@@ -175,27 +190,10 @@ function Industry() {
                 minHeight: '380px'
               }}>
                 
-                {/* कार्ड मधील मुख्य कन्टेन्ट */}
-                <div style={{ padding: '25px 20px 10px 20px', flex: '1' }}>
-                  {/* डावीकडील नंबर */}
-                  <span style={{
-                    position: 'absolute',
-                    top: '15px',
-                    left: '15px',
-                    width: '30px',
-                    height: '30px',
-                    backgroundColor: '#0a1931',
-                    color: '#ffffff',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '0.85rem',
-                    fontWeight: 'bold'
-                  }}>{ind.id}</span>
-
-                  {/* 🟢 डायनॅमिक आयकॉन सिम्बॉल बॉक्स */}
-                  <div style={{ margin: '20px auto 15px auto', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f4f8', borderRadius: '8px' }}>
+                {/* मुख्य कार्ड कंटेंट */}
+                <div style={{ padding: '35px 20px 10px 20px', flex: '1' }}>
+                  {/* आयकॉन बॉक्स */}
+                  <div style={{ margin: '0 auto 15px auto', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f4f8', borderRadius: '8px' }}>
                     {ind.icon}
                   </div>
 
@@ -208,9 +206,9 @@ function Industry() {
                   <p style={{ color: '#666', fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 20px 0', padding: '0 10px' }}>
                     {ind.desc}
                   </p>
-                </div>
+                </div> 
 
-                {/* 📐 🟢 अपडेट केलेला भाग: खालची कर्व्ह शेप इमेज पट्टी */}
+                {/* खालची कर्व्ह शेप इमेज पट्टी (नंबर पूर्णपणे काढला आहे) */}
                 <div style={{
                   position: 'relative',
                   width: '100%',
@@ -228,23 +226,37 @@ function Industry() {
                     />
                   ) : (
                     <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #0a1931, #1b365d)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span style={{ color: 'rgba(255,255,255,0.08)', fontSize: '3.5rem', fontWeight: 'bold' }}>{ind.id}</span>
+                      <span style={{ color: 'rgba(255,255,255,0.08)', fontSize: '3.5rem', fontWeight: 'bold' }}></span>
                     </div>
                   )}
                 </div>
 
               </div>
             ))}
-          </div>
-        </section>
+          </div> 
+        </section> 
 
-        {/* Summary Footer Note */}
-        <section style={{ textAlign: 'center', fontWeight: 'bold', color: '#003366', background: '#eef3f7', marginTop: '40px', padding: '20px', borderRadius: '8px' }}>
-          We act as an extended procurement arm, delivering cost-effective and reliable sourcing solutions tailored to each industry.
-        </section>
-      </div>
+      </div> 
 
-      {/* 🟢 नवीन फुल स्क्रीन फुटर */}
+      {/* प्रिमियम लिनियर ग्रॅडिएंट बॉक्स २ */}
+      <section style={{ 
+        padding: '20px 5%', 
+        background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+        margin: '20px auto', 
+        maxWidth: '1400px', 
+        borderRadius: '10px', 
+        boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+        textAlign: 'center',
+        boxSizing: 'border-box'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+          {/* 🟢 फिक्स: इथे </p> टॅग आणि सर्व क्लोजिंग ब्रॅकेट्स अचूक केले आहेत */}
+          <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+            We act as an extended procurement arm, delivering cost-effective and reliable sourcing solutions tailored to each industry.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </>
   );

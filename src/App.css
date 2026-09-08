@@ -10,7 +10,7 @@ body {
   overflow-x: hidden; /* उजव्या बाजूला नको असलेला स्क्रोल बंद करण्यासाठी */
 }
 
-/* --- Fixed Global Header --- */
+/* --- Fixed Global Header (दुरुस्त केलेले स्लिम डिझाईन) --- */
 header {
   position: fixed;
   top: 0;
@@ -22,17 +22,15 @@ header {
   align-items: center;
   justify-content: space-between;
   background: #0a1931;
-  /* 🟢 फिक्स: पॅडिंगला मॅक्स-विड्थच्या मर्यादेत मॅनेज केले जेणेकरून लोगो आत येईल */
-  padding: 4px calc((100% - 1400px) / 2 + 24px) !important; 
+  padding: 5px calc((100% - 1400px) / 2 + 24px) !important; 
   box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  height: 80px !important; /* 🟢 हेडरची एकूण उंची इथे लॉक केली */
+  height: 55px !important; /* 🟢 हेडरची उंची ५५px वर लॉक केली */
 }
 
-
 header img {
-  width: 110px !important;
-  height: auto !important;
+  height: 42px !important;  /* 🟢 स्लिम हेडरमध्ये परफेक्ट बसण्यासाठी उंची ४२px केली */
+  width: auto !important;
   display: block;
 }
 
@@ -48,8 +46,8 @@ header img {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  padding-bottom: 4px; /* अंडरलाईनसाठी थोडी जागा */
-  border-bottom: 2px solid transparent; /* सुरुवातीला बॉर्डर ट्रान्सपरंट राहील */
+  padding-bottom: 4px; 
+  border-bottom: 2px solid transparent; 
   transition: all 0.3s ease;
 }
 
@@ -63,7 +61,6 @@ header img {
   color: #ff6b6b !important;
   border-bottom: 2px solid #ff6b6b !important;
 }
-
 
 /* Header Action Button */
 .btn-get-touch, 
@@ -83,43 +80,39 @@ header nav a.btn-get-touch {
 
 /* --- Layout Wrapper --- */
 .page-wrapper, #home {
-  margin-top: 80px;
+  margin-top: 55px; /* हेडर बारीक केल्यामुळे कंटेंटचे अंतर कमी केले */
   width: 100%;
   box-sizing: border-box;
 }
 
-/* --- Hero Slider & Banner (सर्व पेजेससाठी एकसमान आकार) --- */
+/* --- Hero Slider & Banner --- */
 .slider, .hero-banner {
   position: relative !important;
   overflow: hidden !important;
   width: 100% !important;
-  /* 👇 डेस्कटॉपवर सर्व बॅनरची उंची एकसमान करण्यासाठी खालील उंची (Height) सेट करा */
-  height: 75vh !important; /* तुम्ही तुमच्या गरजेनुसार 400px किंवा 50vh ते 60vh ठेवू शकता */
+  height: 75vh !important; 
   box-sizing: border-box !important;
 }
 
-/* स्लायडरच्या आतील इमेज परफेक्ट फिट होण्यासाठी */
 .slides, .slides img, .hero-banner img, .slider img {
   width: 100% !important;
   height: 100% !important;
   display: block !important;
-  object-fit: cover !important; /* यामुळे इमेज ताणली (stretch) जाणार नाही आणि व्यवस्थित क्रॉप होईल */
-  object-position: center !important; /* इमेज नेहमी मध्यभागी राहील */
+  object-fit: cover !important; 
+  object-position: center !important; 
 }
-
 
 /* --- Content Sections --- */
 section {
   padding: 60px 5%;
   background: white;
   margin: 20px auto;
-  max-width: 1400px; /* 🟢 फिक्स: 1200 वरून 1400px केली जेणेकरून ग्रॅडिएंट पट्टीला मॅच होईल */
+  max-width: 1400px; 
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   box-sizing: border-box;
   width: 100%;
 }
-
 
 .intro-section {
   text-align: center;
@@ -153,9 +146,9 @@ section {
 /* Why Choose Us */
 .why-choose-us .column-container {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important; /* 🟢 फिक्स: डेस्कटॉपवर एका ओळीत ४ बॉक्स लॉक केले */
+  grid-template-columns: repeat(4, 1fr) !important; 
   gap: 20px !important;
-  max-width: 1400px !important; /* 🟢 फिक्स: वरच्या ग्रॅडिएंट पट्टीच्या विड्थएवढी साईझ केली */
+  max-width: 1400px !important; 
   margin: 0 auto !important;
   width: 100% !important;
 }
@@ -169,8 +162,6 @@ section {
   padding: 35px 15px !important;
   text-align: center;
 }
-
-
 
 /* Team Section */
 .team-flex {
@@ -271,29 +262,26 @@ section {
   color: #a0aec0 !important;
 }
 
-/* --- Premium Scroll Animations --- */
+/* --- Premium Scroll Animations (न दिसणारे भाग आता दिसतील) --- */
 .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
   transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* 🟢 हा क्लास नवीन जोडा (यामुळे ॲनिमेशन दिसायला लागेल): */
+.animate-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .animate-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-@keyframes fadeInUpHero {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-animate {
-  animation: fadeInUpHero 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-.delay-1 { transition-delay: 0.1s; }
+.delay-1 { transition-delay: 0.1s !important; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
@@ -302,12 +290,12 @@ section {
 .delay-7 { transition-delay: 0.7s; }
 
 /* ==========================================================================
-   🌐 SITE FOOTER (CLEANED FROM 100VW & BAD MARGINS)
+   🌐 SITE FOOTER
    ========================================================================== */
 .site-footer {
   background-color: #0a1931;
   color: #ffffff;
-  padding: 50px 24px 20px 24px; /* 🟢 फिक्स: कंटेनर व्यवस्थित बसण्यासाठी पॅडिंग सेट केले */
+  padding: 50px 24px 20px 24px; 
   font-family: 'Poppins', sans-serif;
   border-bottom: 8px solid;
   border-image: linear-gradient(to right, #ff9933, #ff5555, #cc0066) 1;
@@ -320,12 +308,11 @@ section {
   display: grid;
   grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr;
   gap: 30px;
-  max-width: 1400px !important; /* 🟢 फिक्स: विड्थ 1200 वरून 1400px केली जेणेकरून हेडर आणि सेक्शनला तंतोतंत मॅच होईल */
+  max-width: 1400px !important; 
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
-
 
 .footer-column {
   display: flex;
@@ -427,29 +414,15 @@ section {
 }
 
 /* ==========================================================================
-   📱 RESPONSIVE MEDIA QUERIES (TABLET & MOBILE COMBINED FIX)
+   📱 RESPONSIVE MEDIA QUERIES (ब्रॅकेट्स आणि रॅप एरर पूर्ण दुरुस्त)
    ========================================================================== */
 
-/* --- Tablet / Medium Screen View (992px) --- */
+/* --- Tablet View (992px) --- */
 @media (max-width: 992px) {
-  .why-choose-us .column-container {
-    flex-wrap: wrap !important;
-  }
-  .why-choose-us .card {
-    flex: 1 1 calc(50% - 20px) !important;
-  }
-  .approach-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .case-grid-cards {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .cta-single-line-text {
-    white-space: normal !important;
-    font-size: 0.95rem !important;
-    padding: 0 10px !important;
-  }
+  .why-choose-us .column-container { flex-wrap: wrap !important; }
+  .why-choose-us .card { flex: 1 1 calc(50% - 20px) !important; }
+  .approach-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .case-grid-cards { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 /* --- Ultimate Mobile View Fix (768px) --- */
@@ -458,20 +431,15 @@ section {
     padding: 6px 4% !important;
     flex-direction: column !important;
     gap: 4px !important;
-    height: auto !important; /* मोबाईलवर २ ओळी होत असल्यामुळे उंची ऑटो केली */
+    height: auto !important; 
   }
 
-  /* 🟢 मोबाईलवरील लोगो सेटिंग */
   header img {
-    height: 38px !important; /* मोबाईलवर लोगो अजून बारीक केला */
+    height: 38px !important; 
     width: auto !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
   }
 
-
-
-  /* मोबाईलवर लिंक्स सुटसुटीत आणि एका रांगेत रॅप होण्यासाठी */
   .main-nav {
     display: flex !important;
     flex-direction: row !important;
@@ -484,113 +452,116 @@ section {
     padding: 0 !important;
   }
 
-.main-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  border-bottom: 2px solid transparent; /* 🟢 सुरुवातीला अंडरलाईन ट्रान्सपरंट ठेवली */
-  display: inline-block;
-}
-
-
-  .btn-get-touch {
-    padding: 5px 12px !important;
-    font-size: 0.78rem !important;
-  }
-
-  /* हेडर स्लिम केल्यामुळे कंटेंट मागे लपू नये म्हणून अंतर फिक्स केले */
-  .page-wrapper, #home {
-    margin-top: 85px !important; 
-  }
-
-  /* 🟢 फिक्स: गायब झालेला आणि अर्धवट कट झालेला मोबाईल रिस्पॉन्सिव्ह कोड खालीलप्रमाणे */
-  header {
-    box-sizing: border-box !important;
-    right: 0 !important;
-  }
-
-  .slider, .hero-banner {
-    height: 350px !important;
-  }
-
-  .hero-banner h1 {
-    font-size: 1.7rem !important;
-    line-height: 1.3 !important;
-  }
-
-  /* ग्रिड्स सिंगल कॉलम करणे */
-  .two-columns {
-    grid-template-columns: 1fr;
-  }
-
-  .why-choose-us .column-container {
-    grid-template-columns: 1fr !important; /* 🟢 फिक्स: मोबाईलवर १ कॉलम केला */
-    gap: 15px !important;
-    padding: 0 10px !important;
-  }
-
-
-  .why-choose-us .card {
-    flex: 1 1 100% !important;
-    min-width: 100% !important;
-    padding: 20px 15px !important;
-  }
-
-  .team-member-card {
-    width: calc(50% - 15px);
-  }
-
-  /* केस स्टडी रिस्पॉन्सिव्ह */
-  .case-row-container {
-    flex-direction: column !important;
-    gap: 20px !important;
-  }
-  
-  .case-sidebar-box {
-    flex: 1 1 100% !important;
-    text-align: center !important;
-    align-items: center !important;
-  }
-  
-  .case-grid-cards {
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-  }
-
-  /* फुटर रिस्पॉन्सिव्ह */
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-}
-
-/* --- Ultra-Small Mobiles View (576px & 480px) --- */
-@media (max-width: 576px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .site-footer {
-    padding: 40px 20px 20px 20px;
-  }
-  .approach-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-nav {
-    gap: 6px 10px !important;
-  }
   .main-nav a {
-    font-size: 0.78rem !important;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+border-bottom: 2px solid transparent;
+display: inline-block;
+}
+
+.btn-get-touch {
+  padding: 5px 12px !important;
+  font-size: 0.78rem !important;
+}
+
+.page-wrapper, #home {
+  margin-top: 90px !important;
+}
+
+.slider, .hero-banner { height: 350px !important; 
+}
+.hero-banner h1 { font-size: 1.7rem !important; 
+}
+.two-columns { grid-template-columns: 1fr; 
+}
+.why-choose-us 
+.column-container { grid-template-columns: 1fr !important; 
+  gap: 15px !important; 
+}
+  .why-choose-us .card { min-width: 100% !important; 
   }
-  .team-member-card {
-    width: 100%;
+  .team-member-card { width: calc(50% - 15px); 
   }
-  .hero-banner h1 {
-    font-size: 1.4rem !important;
+  .case-row-container { flex-direction: column !important; 
+    gap: 20px !important; 
   }
+  .case-sidebar-box { flex: 1 1 100% !important; 
+    text-align: center !important; 
+  }
+  
+  .case-grid-cards { grid-template-columns: 1fr !important; 
+  }
+  .footer-container { grid-template-columns: 1fr 1fr; gap: 40px; 
+  }
+}
+
+/* --- Ultra-Small Mobiles View (576px) --- */
+@media (max-width: 576px) {
+  .footer-container { grid-template-columns: 1fr; gap: 30px; 
+  }
+  .approach-container { grid-template-columns: 1fr; 
+  }
+}
+
+/* ==========================================================================
+   💎 PREMIUM CONTACT CARDS HOVER SYSTEM (दुरुस्त)
+   ========================================================================== */
+
+.contact-premium-card {
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease !important;
+}
+
+/* 🟢 माउस नेल्यावर कार्ड पांढरे होईल, वर तरंगेल आणि बॉक्सेस उठून दिसतील */
+.contact-premium-card:hover {
+  transform: translateY(-8px) !important;
+  background-color: #ffffff !important; /* माउस नेताच सॉलिड व्हाईट होईल */
+  box-shadow: 0 15px 35px rgba(10, 25, 49, 0.08) !important;
+  border-color: #0a1931 !important;
+}
+
+/* आयकॉन कंटेनर बेस स्टाईल */
+.contact-icon-wrapper {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.call-icon { background-color: #ffffff; color: #0a1931; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.email-icon { background-color: #ffffff; color: #ff6b6b; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.visit-icon { background-color: #ffffff; color: #2e7d32; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+
+.contact-premium-card:hover .call-icon { background-color: #0a1931; color: #ffffff; transform: rotate(15deg); }
+.contact-premium-card:hover .email-icon { background-color: #ff6b6b; color: #ffffff; transform: scale(1.1); }
+.contact-premium-card:hover .visit-icon { background-color: #2e7d32; color: #ffffff; transform: translateY(-2px); }
+
+.contact-card-title {
+  margin: 0 0 10px 0 !important;
+  color: #555555 !important;
+  font-size: 0.9rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.contact-card-data {
+  margin: 0 !important;
+  font-size: 1.02rem !important;
+  font-weight: 600 !important;
+  color: #0a1931 !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
 }

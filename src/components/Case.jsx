@@ -118,12 +118,23 @@ function CaseStudy() {
         </div>
 
         {/* Introduction */}
-        <div className="intro-section" style={{ backgroundColor: '#ffffff', padding: '40px 5%', textAlign: 'center', borderBottom: '1px solid #e2e8f0' }}>
-          <h2 style={{ color: '#003366', margin: '0 0 15px 0', fontSize: '2.3rem', fontWeight: 'bold' }}>CASE STUDIES</h2>
-          <p style={{ fontSize: '1rem', color: '#444', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
-            Real procurement challenges. Strategic solutions. Measurable impact. Below are select case studies demonstrating our expertise in action.
-          </p>
-        </div>
+        {/* प्रिमियम लिनियर ग्रॅडिएंट बॉक्स */}
+        <section style={{ 
+          padding: '20px 5%', 
+          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+          margin: '20px auto', 
+          maxWidth: '1400px', 
+          borderRadius: '10px', 
+          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+              "Real procurement challenges. Strategic solutions. Measurable impact. Below are select case studies demonstrating our expertise in action."
+            </p>
+          </div>
+        </section>
 
         {/* 📐 ग्रिड आणि लेआउट विभाग */}
         <section style={{ maxWidth: '1200px', margin: '40px auto 0 auto', padding: '0 20px', background: 'transparent', boxShadow: 'none' }}>

@@ -53,7 +53,7 @@ function Home() {
       <Header />
 
       {/* Main Home Content */}
-      <div id="home" style={{ marginTop: '80px', width: '100%' }}>
+      <div id="home" style={{ marginTop: '55px', width: '100%' }}>
         
         {/* Hero Banner Section */}
         <div className="hero-banner" style={{ 
@@ -84,7 +84,7 @@ function Home() {
 
         {/* प्रिमियम लिनियर ग्रॅडिएंट बॉक्स */}
         <section style={{ 
-          padding: '30px 5%', 
+          padding: '20px 5%', 
           background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
           margin: '20px auto', 
           maxWidth: '1400px', 

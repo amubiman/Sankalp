@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header'; 
 import contactImage from '../assets/Images/contact.png'; 
 
-// 🟢 Footer कॉम्पोनंट इम्पोर्ट केला
+// Footer कॉम्पोनंट
 import Footer from '../components/Footer';
 
 function Contact() {
@@ -34,7 +34,6 @@ function Contact() {
         <meta property="og:url" content="https://sankalpsolutions.co.in" />
       </Helmet>
 
-      {/* 🟢 हेडर कॉम्पोनंट */}
       <Header />
 
       {/* मुख्य मजकूर रॅप */}
@@ -45,38 +44,32 @@ function Contact() {
           <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" />
         </div>
 
-
-        {/* मुख्य कॉन्टॅक्ट विभाग */}
-        <section style={{ backgroundColor: '#f8fafc', padding: '50px 20px', margin: '0 auto', color: '#333333', width: '100%', boxSizing: 'border-box' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
+        {/* मुख्य कॉन्टॅक्ट विभाग (इथे margin: '0 auto' मुळे सर्व सेंटर होईल) */}
+        <section style={{ backgroundColor: '#f8fafc', padding: '20px 24px 50px 24px', margin: '0 auto', color: '#333333', width: '100%', maxWidth: '1424px', boxSizing: 'border-box' }}>
+          
+          <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
             
-            {/* 🟦 टॉप हेडिंग */}
-            <div style={{ width: '100%', marginBottom: '20px', textAlign: 'center' }}>
-              <h2 style={{ color: '#0a1931', fontSize: '2.5rem', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>
-                Let's Connect and Grow Together
-              </h2>
-            </div>
-
-        {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
-        <section style={{ 
-          padding: '20px 5%', 
-          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
-          margin: '20px auto', 
-          maxWidth: '1400px', 
-          borderRadius: '10px', 
-          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-          textAlign: 'center',
-          boxSizing: 'border-box'
-        }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
-              We are here to answer your questions and provide the best solutions for your business.
-            </p>
-          </div>
-        </section>
+            {/* १. प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
+            <section style={{ 
+              padding: '20px 5%', 
+              background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+              margin: '0 auto 30px auto', 
+              maxWidth: '1400px', 
+              borderRadius: '10px', 
+              boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+              textAlign: 'center',
+              boxSizing: 'border-box',
+              width: '100%'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+                <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+                  Have a challenge? We have the expertise. Reach out today to see how we can drive your business forward.
+                </p>
+              </div>
+            </section>
 
             {/* ==========================================
-                🎯 दुरुस्त केलेले ३ स्वतंत्र बॉक्स (Cards)
+                🎯 दुरुस्त केलेले ३ स्वतंत्र सॉलिड प्रीमियम बॉक्स
                ========================================== */}
             <div style={{ 
               display: 'grid', 
@@ -87,32 +80,32 @@ function Contact() {
               boxSizing: 'border-box'
             }}>
               
-              {/* 📞 बॉक्स १: कॉल */}
-              <div style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '30px 25px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', boxSizing: 'border-box' }}>
-                <div style={{ color: '#0a1931', marginBottom: '15px', backgroundColor: '#f0f4f8', padding: '12px', borderRadius: '50%' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              {/* 📞 बॉक्स १: कॉल (Solid Light Blue) */}
+              <div className="contact-premium-card" style={{ backgroundColor: '#eef4fa', padding: '35px 20px', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <div className="contact-icon-wrapper call-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
-                <h5 style={{ margin: '0 0 8px 0', color: '#666666', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Call Us</h5>
-                <p style={{ margin: 0, fontSize: '1.05rem', fontWeight: '600', color: '#0a1931', lineHeight: '1.5' }}>+91 8600771113<br />+91 8669966192</p>
+                <h5 className="contact-card-title">Call Us</h5>
+                <p className="contact-card-data">+91 8600771113<br />+91 8669966192</p>
               </div>
 
-              {/* ✉️ बॉक्स २: ईमेल */}
-              <div style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '30px 25px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', boxSizing: 'border-box' }}>
-                <div style={{ color: '#0a1931', marginBottom: '15px', backgroundColor: '#f0f4f8', padding: '12px', borderRadius: '50%' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              {/* ✉️ बॉक्स २: ईमेल (Solid Light Navy) */}
+              <div className="contact-premium-card" style={{ backgroundColor: '#e9ecf5', padding: '35px 20px', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <div className="contact-icon-wrapper email-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </div>
-                <h5 style={{ margin: '0 0 8px 0', color: '#666666', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Email Us</h5>
-                <p style={{ margin: 0, fontSize: '1.05rem', fontWeight: '600', color: '#0a1931', lineHeight: '1.5', wordBreak: 'break-word' }}>info@sankalpsolutions.co.in<br />kawalerohit41@gmail.com</p>
+                <h5 className="contact-card-title">Email Us</h5>
+                <p className="contact-card-data">info@sankalpsolutions.co.in<br />kawalerohit41@gmail.com</p>
               </div>
 
-              {/* 📍 बॉक्स ३: ऑफिस पत्ता */}
-              <div style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '30px 25px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', boxSizing: 'border-box' }}>
-                <div style={{ color: '#0a1931', marginBottom: '15px', backgroundColor: '#f0f4f8', padding: '12px', borderRadius: '50%' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              {/* 📍 बॉक्स ३: ऑफिस पत्ता (Solid Light Green) */}
+              <div className="contact-premium-card" style={{ backgroundColor: '#eaf4eb', padding: '35px 20px', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <div className="contact-icon-wrapper visit-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
-                <h5 style={{ margin: '0 0 8px 0', color: '#666666', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Visit Us</h5>
-                <p style={{ margin: 0, fontSize: '0.95rem', fontWeight: '600', color: '#0a1931', lineHeight: '1.5' }}>
-                  Flat no-14, Asthbhuja Enclave, Kailash Colony, Rasnenagar, Savedi, AhilyaNagar, Maharashtra, 414005.
+                <h5 className="contact-card-title">Visit Us</h5>
+                <p className="contact-card-data" style={{ fontSize: '0.92rem' }}>
+                  Bhairavnath park, Nagar kalyan road, opposite to Balaji temple, Nepti Suburban, Nepti, Ahilyanagar, Maharashtra 414001.
                 </p>
               </div>
 
@@ -126,14 +119,15 @@ function Contact() {
               width: '100%',
               justifyContent: 'center', 
               alignItems: 'stretch',
-              boxSizing: 'border-box'
+              boxSizing: 'border-box',
+              marginBottom: '30px'
             }}>
               
               {/* ⬜ डावा कॉलम: बिझनेस फॉर्म बॉक्स */}
               <div style={{ 
                 flex: '1', 
                 minWidth: '320px', 
-                maxWidth: '580px', 
+                maxWidth: '685px', 
                 backgroundColor: '#ffffff', 
                 borderRadius: '16px', 
                 padding: '40px 35px', 
@@ -155,11 +149,12 @@ function Contact() {
                   </button>
                 </form>
               </div>
+
               {/* 🗺️ उजवा कॉलम: Google Map */}
               <div style={{ 
                 flex: '1', 
                 minWidth: '320px', 
-                maxWidth: '580px', 
+                maxWidth: '685px', 
                 backgroundColor: '#ffffff', 
                 borderRadius: '16px', 
                 padding: '15px', 
@@ -170,47 +165,48 @@ function Contact() {
                 display: 'flex'
               }}>
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30162.61301962769!2d74.6893062!3d19.0933217!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcb11acad378b9%3A0x8f9495f1f094be84!2sSankalp%20Solutions!5e0!3m2!1sen!2sin!4v1788626369511!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30162.61301962769!2d74.6893062!3d19.0933217!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcb11acad378b9%3A0x8f9495f1f094be84!2sSankalp%20Solutions!5e0!3m2!1sen!2sin!4v1788870864555!5m2!1sen!2sin" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0, borderRadius: '12px', minHeight: '380px' }} 
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="strict-origin-when-cross-origin"
-                >
+                ></iframe>
+              </div> {/* 🟢 १. मॅप कन्टेंनर वाल्या div चा क्लोजिंग टॅग */}
 
-                </iframe>
-              </div> {/* मॅपचा मुख्य div बंद */}
+            </div> {/* 🟢 २. फॉर्म आणि मॅप एकत्र ठेवणाऱ्या flex वाल्या div चा क्लोजिंग टॅग */}
+          </div> {/* 🟢 ३. मॅक्स-विड्थ १४००px वाल्या कंटेनर div चा क्लोजिंग टॅग */}
+        </section> {/* 🟢 ४. मुख्य कॉन्टॅक्ट विभाग <section> चा क्लोजिंग टॅग */}
 
-            </div> {/* मिडिल विभाग (flex) चा div बंद */}
-          </div> {/* मॅक्स-विड्थ १२८०चा div बंद */}
-        </section> {/* मुख्य कॉन्टॅक्टचा section बंद */}
-
-        {/* ३. बॉटम पट्टी बॉक्स */}
-        {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
+        {/* 🎨 ५. ३. बॉटम ग्रॅडिएंट पट्टी बॉक्स (इथे विड्थ calc(100% - 48px) केली आहे) */}
         <section style={{ 
           padding: '20px 5%', 
           background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
-          margin: '20px auto', 
+          margin: '0 auto 20px auto', 
           maxWidth: '1400px', 
           borderRadius: '10px', 
           boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
           textAlign: 'center',
-          boxSizing: 'border-box'
+          boxSizing: 'border-box',
+          width: 'calc(100% - 48px)'
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
             <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
-              We look forward to hearing from you! Your success is our priority.
+              <span>We look forward to hearing from you!</span>
+              <span style={{ marginRight: '60px' }}></span> 
+              <span>Your success is our priority.</span>
             </p>
           </div>
         </section>
 
-      </div> {/* page-wrapper चा मुख्य div बंद */}
+      </div> {/* 🟢 ६. मुख्य page-wrapper वाल्या div चा क्लोजिंग टॅग */}
 
-      {/* 🟢 फुटर कॉम्पोनंट */}
-      <Footer />
+      <Footer /> {/* 🟢 ७. फुटर कॉम्पोनंट */}
     </>
   );
 }
 
-export default Contact;
+export default Contact; /* 🟢 ८. कॉम्पोनंट एक्सपोर्ट */
+
+

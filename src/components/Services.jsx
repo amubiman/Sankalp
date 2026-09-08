@@ -52,7 +52,7 @@ function Services() {
 
         {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
         <section style={{ 
-          padding: '30px 5%', 
+          padding: '20px 5%', 
           background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
           margin: '20px auto', 
           maxWidth: '1400px', 
@@ -186,7 +186,7 @@ function Services() {
            ========================================== */}
         {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
         <section style={{ 
-          padding: '30px 5%', 
+          padding: '20px 5%', 
           background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
           margin: '20px auto', 
           maxWidth: '1400px', 
@@ -276,9 +276,25 @@ function Services() {
 
           </div>
 
-          <p style={{ fontSize: '0.95rem', color: '#555', fontStyle: 'italic', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
-            Whether you are building your procurement function from scratch or optimizing an existing one, we deliver scalable, efficient and cost-effective solutions aligned with your business goals.
-          </p>
+
+        </section>
+        
+        {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
+        <section style={{ 
+          padding: '20px 5%', 
+          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+          margin: '20px auto', 
+          maxWidth: '1400px', 
+          borderRadius: '10px', 
+          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+              Whether you are building your procurement function from scratch or optimizing an existing one, we deliver scalable, efficient and cost-effective solutions aligned with your business goals.
+            </p>
+          </div>
         </section>
 
         </div>
