@@ -33,9 +33,9 @@ function Footer() {
           <h4>Our Services</h4>
           <ul className="footer-links">
             <li><Link to="/services">Business Solutions</Link></li>
-            <li><Link to="/services">IT Solutions</Link></li>
-            <li><Link to="/services">Consulting</Link></li>
-            <li><Link to="/services">Support & Maintenance</Link></li>
+            <li><Link to="/industry">Sector</Link></li>
+            <li><Link to="/case">Consulting</Link></li>
+            <li><Link to="/about">Support & Maintenance</Link></li>
           </ul>
         </div>
 
@@ -43,10 +43,10 @@ function Footer() {
         <div className="footer-column">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61593476303392" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
             <a href="https://linkedin.com" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sankalp.solutions/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+            <a href="https://x.com/sankalpsol" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
           </div>
         </div>
 
@@ -54,13 +54,9 @@ function Footer() {
         <div className="footer-column">
           <h4>Get In Touch</h4>
           <ul className="contact-info">
-            <li>
-              <i className="fas fa-map-marker-alt"></i>
-              <span>AhilyaNagar</span>
-              </li>
               <li>
               <i className="fas fa-map-marker-alt"></i>
-              <span>Pune</span>
+              <span>Pune, Ahilyanagar</span>
               </li>
             <li>
               <i className="fas fa-envelope"></i>

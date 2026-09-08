@@ -86,20 +86,25 @@ header nav a.btn-get-touch {
   box-sizing: border-box;
 }
 
-/* --- Hero Slider & Banner --- */
-.hero-banner, .slider {
+/* --- Hero Slider & Banner (सर्व पेजेससाठी एकसमान आकार) --- */
+.slider, .hero-banner {
   position: relative !important;
   overflow: hidden !important;
   width: 100% !important;
+  /* 👇 डेस्कटॉपवर सर्व बॅनरची उंची एकसमान करण्यासाठी खालील उंची (Height) सेट करा */
+  height: 75vh !important; /* तुम्ही तुमच्या गरजेनुसार 400px किंवा 50vh ते 60vh ठेवू शकता */
   box-sizing: border-box !important;
 }
 
+/* स्लायडरच्या आतील इमेज परफेक्ट फिट होण्यासाठी */
 .slides, .slides img, .hero-banner img, .slider img {
   width: 100% !important;
   height: 100% !important;
   display: block !important;
-  object-fit: cover !important;
+  object-fit: cover !important; /* यामुळे इमेज ताणली (stretch) जाणार नाही आणि व्यवस्थित क्रॉप होईल */
+  object-position: center !important; /* इमेज नेहमी मध्यभागी राहील */
 }
+
 
 /* --- Content Sections --- */
 section {
@@ -290,6 +295,9 @@ section {
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
 
 /* ==========================================================================
    🌐 SITE FOOTER (CLEANED FROM 100VW & BAD MARGINS)

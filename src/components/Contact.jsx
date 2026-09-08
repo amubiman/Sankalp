@@ -41,23 +41,39 @@ function Contact() {
       <div className="page-wrapper" style={{ backgroundColor: '#f8fafc', width: '100%', overflowX: 'hidden' }}>
         
         {/* स्लायडर आणि इमेज ऑटो-फिट */}
-        <div className="slider" style={{ width: '100%' }}>
-          <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" style={{ width: '100%', display: 'block' }} />
+        <div className="slider">
+          <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" />
         </div>
+
 
         {/* मुख्य कॉन्टॅक्ट विभाग */}
         <section style={{ backgroundColor: '#f8fafc', padding: '50px 20px', margin: '0 auto', color: '#333333', width: '100%', boxSizing: 'border-box' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
             
             {/* 🟦 टॉप हेडिंग */}
-            <div style={{ width: '100%', marginBottom: '45px', textAlign: 'center' }}>
+            <div style={{ width: '100%', marginBottom: '20px', textAlign: 'center' }}>
               <h2 style={{ color: '#0a1931', fontSize: '2.5rem', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>
                 Let's Connect and Grow Together
               </h2>
-              <p style={{ color: '#555555', fontSize: '1.05rem', lineHeight: '1.6', margin: '0 auto', maxWidth: '600px' }}>
-                We are here to answer your questions and provide the best solutions for your business.
-              </p>
             </div>
+
+        {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
+        <section style={{ 
+          padding: '20px 5%', 
+          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+          margin: '20px auto', 
+          maxWidth: '1400px', 
+          borderRadius: '10px', 
+          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+              We are here to answer your questions and provide the best solutions for your business.
+            </p>
+          </div>
+        </section>
 
             {/* ==========================================
                 🎯 दुरुस्त केलेले ३ स्वतंत्र बॉक्स (Cards)
@@ -171,10 +187,19 @@ function Contact() {
         </section> {/* मुख्य कॉन्टॅक्टचा section बंद */}
 
         {/* ३. बॉटम पट्टी बॉक्स */}
-        <section style={{ background: '#f8fafc', padding: '0 20px 40px 20px', textAlign: 'center', width: '100%', boxSizing: 'border-box' }}>
-          <div style={{ maxWidth: '960px', margin: '0 auto', padding: '25px 30px', border: '1px solid #e2e8f0', borderRadius: '12px', backgroundColor: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-            <span style={{ fontSize: '1.5rem' }}>🎯</span>
-            <p style={{ margin: 0, fontWeight: '700', color: '#003366', fontSize: '1.1rem', letterSpacing: '0.3px' }}>
+        {/* 🎨 🟢 प्रिमियम रेड-टू-येलो लिनियर ग्रॅडिएंट बॉक्स */}
+        <section style={{ 
+          padding: '20px 5%', 
+          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+          margin: '20px auto', 
+          maxWidth: '1400px', 
+          borderRadius: '10px', 
+          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
               We look forward to hearing from you! Your success is our priority.
             </p>
           </div>

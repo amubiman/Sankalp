@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'; // 👈 इथे useEffect जोडा
 import { Link } from 'react-router-dom';
 import '../App.css';
 import { Helmet } from 'react-helmet-async';
@@ -11,7 +11,22 @@ import serviceImage from '../assets/Images/Service.jpg';
 import Footer from '../components/Footer';
 
 function Services() {
-  return (
+  // 🟢 हा स्क्रोल ॲनिमेशनचा कोड इथे मॅन्युअली जोडा
+  useEffect(() => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return ( // जुना return तसाच राहील
+
     
     <>
       <Helmet>
@@ -75,7 +90,8 @@ function Services() {
           }}>
             
             {/* Box 1: Strategic Sourcing */}
-            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            {/* 🟢 मॅन्युअल बदल: className="animate-on-scroll delay-1" जोडा */}
+            <div className="animate-on-scroll delay-1" style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#0a1931', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
               </div>
@@ -86,7 +102,8 @@ function Services() {
             </div>
 
             {/* Box 2: Category Management */}
-            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            {/* 🟢 मॅन्युअल बदल: className="animate-on-scroll delay-2" जोडा */}
+              <div className="animate-on-scroll delay-2" style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#7cb342', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
               </div>
@@ -97,7 +114,8 @@ function Services() {
             </div>
 
             {/* Box 3: Contract Negotiation */}
-            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            {/* 🟢 मॅन्युअल बदल: className="animate-on-scroll delay-3" जोडा */}
+            <div className="animate-on-scroll delay-3" style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#1565c0', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
               </div>
@@ -108,7 +126,8 @@ function Services() {
             </div>
 
             {/* Box 4: Supplier Relationship Management (SRM) */}
-            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            {/* 🟢 मॅन्युअल बदल: className="animate-on-scroll delay-4" जोडा */}
+            <div className="animate-on-scroll delay-4" style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#2e7d32', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg>
               </div>
@@ -119,7 +138,8 @@ function Services() {
             </div>
 
             {/* Box 5: Cost Reduction */}
-            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            {/* 🟢 मॅन्युअल बदल: className="animate-on-scroll delay-5" जोडा */}
+              <div className="animate-on-scroll delay-5" style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#c62828', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
               </div>
@@ -130,7 +150,8 @@ function Services() {
             </div>
 
             {/* Box 6: SCM Co-Ordination */}
-            <div style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            {/* 🟢 मॅन्युअल बदल: className="animate-on-scroll delay-6" जोडा */}
+              <div className="animate-on-scroll delay-6" style={{ flex: '1', minWidth: '290px', maxWidth: '580px', display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#f57c00', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
               </div>
@@ -145,7 +166,8 @@ function Services() {
 
           {/* ७ वी सेवा खालच्या ओळीत मध्यावर (Center) आणण्यासाठी स्वतंत्र रचना */}
           <div style={{ display: 'flex', justifyContent: 'center', maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', width: '100%', maxWidth: '580px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            {/* 🟢 मॅन्युअल बदल: className="animate-on-scroll delay-1" जोडा (नवीन ओळीची सुरुवात म्हणून delay-1 उत्तम वाटेल) */}
+              <div className="animate-on-scroll delay-1" style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '25px', border: '1px solid #e0e0e0', borderRadius: '16px', background: '#fff', width: '100%', maxWidth: '580px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <div style={{ width: '55px', height: '55px', background: '#00838f', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
               </div>
