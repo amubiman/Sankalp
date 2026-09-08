@@ -23,15 +23,17 @@ header {
   justify-content: space-between;
   background: #0a1931;
   /* 🟢 फिक्स: पॅडिंगला मॅक्स-विड्थच्या मर्यादेत मॅनेज केले जेणेकरून लोगो आत येईल */
-  padding: 8px calc((100% - 1400px) / 2 + 24px) !important; 
+  padding: 4px calc((100% - 1400px) / 2 + 24px) !important; 
   box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  height: 80px !important; /* 🟢 हेडरची एकूण उंची इथे लॉक केली */
 }
 
 
 header img {
-  width: 145px !important;
+  width: 110px !important;
   height: auto !important;
+  display: block;
 }
 
 /* Navigation Menu */
@@ -45,7 +47,7 @@ header img {
 .main-nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   padding-bottom: 4px; /* अंडरलाईनसाठी थोडी जागा */
   border-bottom: 2px solid transparent; /* सुरुवातीला बॉर्डर ट्रान्सपरंट राहील */
   transition: all 0.3s ease;
@@ -453,14 +455,21 @@ section {
 /* --- Ultimate Mobile View Fix (768px) --- */
 @media (max-width: 768px) {
   header {
-    padding: 10px 4% !important;
+    padding: 6px 4% !important;
     flex-direction: column !important;
-    gap: 6px !important;
+    gap: 4px !important;
+    height: auto !important; /* मोबाईलवर २ ओळी होत असल्यामुळे उंची ऑटो केली */
   }
 
+  /* 🟢 मोबाईलवरील लोगो सेटिंग */
   header img {
-    width: 110px !important;
+    height: 38px !important; /* मोबाईलवर लोगो अजून बारीक केला */
+    width: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
+
+
 
   /* मोबाईलवर लिंक्स सुटसुटीत आणि एका रांगेत रॅप होण्यासाठी */
   .main-nav {
@@ -492,7 +501,7 @@ section {
 
   /* हेडर स्लिम केल्यामुळे कंटेंट मागे लपू नये म्हणून अंतर फिक्स केले */
   .page-wrapper, #home {
-    margin-top: 95px !important; 
+    margin-top: 85px !important; 
   }
 
   /* 🟢 फिक्स: गायब झालेला आणि अर्धवट कट झालेला मोबाईल रिस्पॉन्सिव्ह कोड खालीलप्रमाणे */
