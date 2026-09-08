@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'; 
-import logoImage from '../assets/Images/Logo.png'; 
+import logoImage from '../assets/Images/HLogo.png'; 
 
 function Header() {
   // 🟢 बदल: जुने activeStyle चे इनलाईन फंक्शन इथून काढून टाकले आहे.

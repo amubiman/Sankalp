@@ -29,9 +29,10 @@ header {
 }
 
 header img {
-  height: 42px !important;  /* 🟢 स्लिम हेडरमध्ये परफेक्ट बसण्यासाठी उंची ४२px केली */
+  height: 100px !important;  /* 🟢 स्लिम हेडरमध्ये परफेक्ट बसण्यासाठी उंची ४२px केली */
   width: auto !important;
   display: block;
+  margin-top: 50px !important; /* 👈 इथे ५px किंवा तुमच्या गरजेनुसार स्पेस वाढवू शकता */
 }
 
 /* Navigation Menu */
