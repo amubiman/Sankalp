@@ -163,7 +163,7 @@ function Industry() {
           boxSizing: 'border-box'
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
               From everyday procurement to critical project requirements, we deliver reliable sourcing solutions that balance quality, cost, and timelines—helping businesses operate efficiently and grow with confidence.
             </p>
           </div>
@@ -251,7 +251,7 @@ function Industry() {
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
           {/* 🟢 फिक्स: इथे </p> टॅग आणि सर्व क्लोजिंग ब्रॅकेट्स अचूक केले आहेत */}
-          <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+          <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
             We act as an extended procurement arm, delivering cost-effective and reliable sourcing solutions tailored to each industry.
           </p>
         </div>

@@ -62,7 +62,7 @@ function Contact() {
               width: '100%'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-                <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+                <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
                   Have a challenge? We have the expertise. Reach out today to see how we can drive your business forward.
                 </p>
               </div>
@@ -192,9 +192,9 @@ function Contact() {
           width: 'calc(100% - 48px)'
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
-              <span>We look forward to hearing from you!</span>
-              <span style={{ marginRight: '60px' }}></span> 
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
+              <span>We look forward to hearing from you !</span>
+              <span style={{ marginRight: '100px' }}></span> 
               <span>Your success is our priority.</span>
             </p>
           </div>

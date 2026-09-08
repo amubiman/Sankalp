@@ -82,7 +82,7 @@ function About() {
           boxSizing: 'border-box'
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
               "Where Experience Met a Purpose"
             </p>
           </div>

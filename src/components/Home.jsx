@@ -84,7 +84,7 @@ function Home() {
 
         {/* प्रिमियम लिनियर ग्रॅडिएंट बॉक्स */}
         <section style={{ 
-          padding: '20px 5%', 
+          padding: '20px 2%', 
           background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
           margin: '20px auto', 
           maxWidth: '1400px', 
@@ -93,8 +93,8 @@ function Home() {
           textAlign: 'center',
           boxSizing: 'border-box'
         }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 0 0', color: '#ffffff' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
               Sankalp Solutions streamlines sourcing for India's top industries, connecting you with the right suppliers to deliver quality products and longterm values
             </p>
           </div>

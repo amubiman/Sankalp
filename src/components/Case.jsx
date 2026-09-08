@@ -6,6 +6,17 @@ import { Helmet } from 'react-helmet-async';
 // assets मधील इमेजेस
 import Header from '../components/Header'; // 👈 ही लाईन जोडा
 import caseImage from '../assets/Images/Case.jpg';
+// assets मधील इमेजेसच्या खाली या ९ लाईन्स जोडा
+import img1 from '../assets/Images/1.jpg';
+import img2 from '../assets/Images/2.jpg';
+import img3 from '../assets/Images/3.jpg';
+import img4 from '../assets/Images/4.jpg';
+import img5 from '../assets/Images/5.jpg';
+import img6 from '../assets/Images/6.jpg';
+import img7 from '../assets/Images/7.jpg';
+import img8 from '../assets/Images/8.jpg';
+import img9 from '../assets/Images/9.jpg';
+
 
 // Footer कॉम्पोनंट इम्पोर्ट केला
 import Footer from '../components/Footer';
@@ -22,17 +33,17 @@ function CaseStudy() {
         { 
           title: "Loan License Manufacturing Optimization", 
           desc: "Reduced production cost and improved manufacturing lead time.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><path d="M22 21H2M5 21V7l7-3v17M12 21V9l7 4v8" /></svg>
+          image: img1 // 👈 पहिली इमेज जोडली
         },
         { 
           title: "Cost Sheet & Vendor Benchmarking", 
           desc: "Identified cost gaps and strengthened vendor negotiations.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
+          image: img2 // 👈 दुसरी इमेज जोडली
         },
         { 
           title: "Supplier Credit Optimization", 
           desc: "Improved payment terms and supported healthier cash flow.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
+          image: img3 // 👈 तिसरी इमेज जोडली
         }
       ]
     },
@@ -45,17 +56,17 @@ function CaseStudy() {
         { 
           title: "ARC-Based Procurement Optimization", 
           desc: "Standardized recurring purchases for faster and more efficient ordering.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
+          image: img4 // 👈 चौथी इमेज जोडली
         },
         { 
           title: "Vendor Base Rationalization", 
           desc: "Consolidated suppliers to improve pricing and quality consistency.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><circle cx="12" cy="12" r="4" /><path d="M16 12a4 4 0 0 1-4 4 4 4 4 4-4" /></svg>
+          image: img5 // 👈 पाचवी इमेज जोडली
         },
         { 
           title: "Procurement Process Standardization", 
           desc: "Introduced SOPs and tracking for greater transparency and control.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
+          image: img6 // 👈 सहावी इमेज जोडली
         }
       ]
     },
@@ -68,21 +79,22 @@ function CaseStudy() {
         { 
           title: "Advance Demand-Based Procurement", 
           desc: "Reduced stock-outs through projection-based procurement planning.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+          image: img7 // 👈 सातवी इमेज जोडली
         },
         { 
           title: "Emergency Procurement Cost Control", 
           desc: "Reduced urgent purchase costs through backup suppliers and rate agreements.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /></svg>
+          image: img8 // 👈 आठवी इमेज जोडली
         },
         { 
           title: "Multi-Year AMC Strategy", 
           desc: "Improved equipment uptime with predictable maintenance contracts.",
-          icon: <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0a1931" strokeWidth="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
+          image: img9 // 👈 नववी इमेज जोडली
         }
       ]
     }
   ];
+
 
   return (
     <>
@@ -130,30 +142,32 @@ function CaseStudy() {
           boxSizing: 'border-box'
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.6', fontWeight: '500', opacity: '0.95' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
               "Real procurement challenges. Strategic solutions. Measurable impact. Below are select case studies demonstrating our expertise in action."
             </p>
           </div>
         </section>
 
         {/* 📐 ग्रिड आणि लेआउट विभाग */}
-        <section style={{ maxWidth: '1200px', margin: '40px auto 0 auto', padding: '0 20px', background: 'transparent', boxShadow: 'none' }}>
+        <section style={{ maxWidth: '1400px', margin: '40px auto 0 auto', padding: '0 2%', background: 'transparent', boxShadow: 'none' }}>
           
           {caseCategories.map((cat, index) => (
             <div key={index} className="case-row-container">
               
-              {/* 🟦 डावा कॉलम: कॅटेगरी सॉलिड बॉक्स */}
-              <div className="case-sidebar-box" style={{ backgroundColor: cat.color }}>
-                <span style={{ fontSize: '2.5rem', fontWeight: '800', borderBottom: '2px solid rgba(255,255,255,0.3)', paddingBottom: '5px', display: 'inline-block', width: 'fit-content', marginBottom: '15px', lineHeight: '1' }}>
-                  {cat.id}
-                </span>
-                <h3 style={{ color: '#ffffff', fontSize: '1.2rem', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.4', letterSpacing: '0.5px' }}>
-                  {cat.catTitle}
-                </h3>
-                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0, fontWeight: '400' }}>
-                  {cat.catDesc}
-                </p>
-              </div>
+            {/* 🟦 डावा कॉलम: कॅटेगरी सॉलिड बॉक्स */}
+            {/* 🟢 फिक्स: flex: '0 0 240px' इनलाईन जोडून डाव्या बॉक्सची रुंदी कमी केली जेणेकरून उजवे ३ बॉक्सेस जास्त पसरतील */}
+            <div className="case-sidebar-box" style={{ backgroundColor: cat.color, flex: '0 0 240px', boxSizing: 'border-box' }}>
+              <span style={{ fontSize: '2.5rem', fontWeight: '800', borderBottom: '2px solid rgba(255,255,255,0.3)', paddingBottom: '5px', display: 'inline-block', width: 'fit-content', marginBottom: '15px', lineHeight: '1' }}>
+                {cat.id}
+              </span>
+              <h3 style={{ color: '#ffffff', fontSize: '1.2rem', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.4', letterSpacing: '0.5px' }}>
+                {cat.catTitle}
+              </h3>
+              <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0, fontWeight: '400' }}>
+                {cat.catDesc}
+              </p>
+            </div>
+
 
               {/* ⬜ उजवा कॉलम: ३ केस स्टडीजची रचना */}
               <div className="case-grid-cards">
@@ -163,20 +177,26 @@ function CaseStudy() {
                     <div key={idx} className="case-single-card">
                       
 
-                      {/* आयकॉन बॉक्स */}
+                      {/* 🟢 फिक्स: जुन्या आयकॉन बॉक्स ऐवजी प्रिमियम इमेज बॉक्स जोडला */}
                       <div style={{ 
                         width: '100%', 
-                        height: '90px', 
+                        height: '140px', // इमेजेस स्पष्ट दिसण्यासाठी उंची थोडी वाढवली आहे
                         backgroundColor: '#f8fafc', 
                         borderRadius: '8px', 
+                        overflow: 'hidden', // इमेज कोपऱ्याबाहेर जाणार नाही
                         display: 'flex', 
                         alignItems: 'center', 
                         justifyContent: 'center',
                         marginBottom: '15px',
                         border: '1px solid #edf2f7'
                       }}>
-                        {study.icon}
+                        <img 
+                          src={study.image} 
+                          alt={study.title} 
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+                        />
                       </div>
+
 
                       {/* हेडिंग */}
                       <h4 style={{ color: '#0a1931', fontSize: '1.02rem', fontWeight: '700', margin: '0 0 8px 0', lineHeight: '1.4' }}>
