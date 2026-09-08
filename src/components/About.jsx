@@ -93,8 +93,8 @@ function About() {
           padding: '10px 5% 40px 5%', /* 🟢 वरचे पॅडिंग ५०px वरून २०px केले जेणेकरून वरची अतिरिक्त जागा कमी होईल */
           backgroundColor: '#fff' 
         }}>
-          <h2 style={{ color: '#003366', fontSize: '2.2rem', marginBottom: '25px', textAlign: 'center', fontWeight: '700' }}>
-            Our Story
+          <h2 style={{ color: '#003366', fontSize: '2.3rem', marginBottom: '25px', textAlign: 'center', fontWeight: '700' }}>
+            OUR STORY
           </h2>
           
           {/* 🟢 मॅक्स-विड्थ ११००px केली, ज्यामुळे डाव्या-उजव्या बाजूची एक्स्ट्रा स्पेस कमी होऊन मजकूर सुंदर पसरेल */}
@@ -134,7 +134,7 @@ function About() {
 
         {/* 2. Our Approach Section */}
         <section style={{ padding: '50px 5%', backgroundColor: '#fff', textAlign: 'center' }}>
-          <h2 style={{ color: '#003366', fontSize: '2.4rem', marginBottom: '40px', fontWeight: '700' }}>Our Approach</h2>
+          <h2 style={{ color: '#003366', fontSize: '2.3rem', marginBottom: '40px', fontWeight: '700' }}>OUR APPROACH</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px', maxWidth: '1200px', margin: '0 auto' }}>
             
             {/* Step 1 - Understand */}
@@ -175,9 +175,10 @@ function About() {
           </div> {/* 🟢 हा flex वाल्या div चा क्लोजिंग टॅग आहे */}
         </section> {/* 🟢 हा Our Approach वाल्या section चा क्लोजिंग टॅग आहे */}
 
+
         {/* 3. Our Team Section (जो कट झाला होता तो पुन्हा जोडा) */}
         <section style={{ padding: '50px 5%', backgroundColor: '#fdfdfd' }}>
-          <h2 style={{ textAlign: 'center', color: '#003366', fontSize: '2.2rem', marginBottom: '30px', fontWeight: '700' }}>Meet Our Team</h2>
+          <h2 style={{ textAlign: 'center', color: '#003366', fontSize: '2.3rem', marginBottom: '30px', fontWeight: '700' }}>MEET OUR TEAM</h2>
           <div className="team-flex">
             {teamMembers.map((member, index) => (
               <div key={index} className={`team-member-card animate-on-scroll delay-${index + 1}`} style={{ borderTop: '3px solid #ff6b6b' }}>

@@ -142,7 +142,7 @@ function Home() {
               <img src={founderImage} alt="Mr. Rohit Vijay Kawale" style={{ width: '100%', maxWidth: '300px', borderRadius: '8px' }} />
             </div>
             <div style={{ flex: '2', minWidth: '300px' }}>
-              <h3 style={{ fontSize: '2.2rem', color: '#002e79' }}>The Vision behind Sankalp</h3>
+              <h2 style={{ fontSize: '2.2rem', color: '#002e79' }}>The Vision behind Sankalp</h2>
               <h2 style={{ fontSize: '1.4rem', color: '#0a1931' }}>Mr. Rohit Vijay Kawale</h2>
               <p style={{ fontWeight: '600', color: '#666' }}>Founder | Sankalp Solutions</p>
               <p>With 14+ years of industry experience in Procurement & Supply Chain Management, Rohit has worked across diverse sectors including pharmaceuticals, automobile, manufacturing, life sciences, and R&D.</p>

@@ -50,24 +50,26 @@ function Footer() {
           </div>
         </div>
 
-        {/* कॉलम ५: संपर्क माहिती */}
-        <div className="footer-column">
-          <h4>Get In Touch</h4>
-          <ul className="contact-info">
-              <li>
-              <i className="fas fa-map-marker-alt"></i>
-              <span>Pune, Ahilyanagar</span>
-              </li>
-            <li>
-              <i className="fas fa-envelope"></i>
-              <span>info@sankalpsolutions.co.in</span>
-            </li>
-            <li>
-              <i className="fas fa-phone-alt"></i>
-              <span>+91 8600771113</span>
-            </li>
-          </ul>
-        </div>
+          {/* कॉलम ५: संपर्क माहिती (सुधारित आवृत्ती) */}
+          <div className="footer-column">
+            <h4>Get In Touch</h4>
+            <ul className="contact-info">
+              <li><i className="fas fa-map-marker-alt"></i> <span>Pune, Ahilyanagar</span></li>
+              <li><i className="fas fa-envelope"></i> <span>info@sankalpsolutions.co.in</span></li>
+              <li><i className="fas fa-phone-alt"></i> <span>+91 8600771113</span></li>
+            </ul>
+            
+            {/* 👇 🟢 ही नवीन छोटी लीगल पट्टी फुटरमध्ये जोडा */}
+            <div style={{ marginTop: '20px', paddingTop: '15px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+              <p style={{ fontSize: '0.8rem', color: '#a0aec0', margin: '0 0 5px 0', fontWeight: 'bold' }}>REGISTRATIONS</p>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', fontSize: '0.78rem' }}>
+                <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>GSTIN</span>
+                <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>MSME / UDYAM</span>
+                <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>PAN</span>
+              </div>
+            </div>
+          </div>
+
 
       </div>
 
