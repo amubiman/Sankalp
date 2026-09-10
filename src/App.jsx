@@ -10,7 +10,7 @@ import ScrollToTop from './components/ScrollToTop'; // 👈 १. इथे इ�
 
 function App() {
   return (
-    <Router basename="/Sankalp"> 
+    <Router> 
       <ScrollToTop /> {/* 👈 २. गिटहब राउटरच्या आत सर्वात वर हा टॅग जोडा */}
       <Routes>
         <Route path="/" element={<Home />} />
