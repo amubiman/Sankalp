@@ -26,13 +26,16 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Let's Connect & Grow Together</title>
-        <meta name="description" content="Get in touch with Sankalp Solutions in AhilyaNagar, Maharashtra. Call us or send a message for smart procurement solutions." />
-        <link rel="canonical" href="https://sankalpsolutions.co.in" />
-        <meta property="og:title" content="Contact Us | Sankalp Solutions" />
-        <meta property="og:description" content="We are here to answer your questions and provide the best solutions for your business." />
-        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+        <title>Contact Us | Let's Connect & Optimize Sourcing Together</title>
+        <meta name="description" content="Get in touch with Sankalp Solution in Ahilyanagar, Maharashtra. Partner with us for industrial sourcing, vendor management, and procurement execution." />
+        <link rel="canonical" href="https://sankalpsolution.co.in" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us | Sankalp Solution - Partner with Experts" />
+        <meta property="og:description" content="We are here to answer your questions and provide the best supply chain solutions for your business." />
+        <meta property="og:url" content="https://sankalpsolution.co.in" />
       </Helmet>
+
 
       <Header />
 

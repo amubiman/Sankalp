@@ -28,14 +28,14 @@ header {
   padding: 5px calc((100% - 1400px) / 2 + 24px) !important; 
   box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  height: 55px !important; /* 🟢 हेडरची उंची ५५px वर लॉक केली */
+  height: 85px !important; /* 🟢 हेडरची उंची ५५px वर लॉक केली */
 }
 
 header img {
-  height: 100px !important;  /* 🟢 स्लिम हेडरमध्ये परफेक्ट बसण्यासाठी उंची ४२px केली */
+  height: 85px !important;  /* 🟢 स्लिम हेडरमध्ये परफेक्ट बसण्यासाठी उंची ४२px केली */
   width: auto !important;
   display: block;
-  margin-top: 50px !important; /* 👈 इथे ५px किंवा तुमच्या गरजेनुसार स्पेस वाढवू शकता */
+  margin-top: 0px !important; /* 👈 इथे ५px किंवा तुमच्या गरजेनुसार स्पेस वाढवू शकता */
 }
 
 /* Navigation Menu */
@@ -486,98 +486,7 @@ display: inline-block;
   text-align: center !important;
 }
 
-/* ==========================================================================
-   🌙 DAY / NIGHT MODE (DARK MODE) SYSTEM - १००% क्लियर व्हिजन फिक्स
-   ========================================================================== */
 
-/* 🟢 १. मुख्य रात्रीचा बॅकग्राउंड आणि अक्षरे */
-body.dark-mode {
-  background-color: #030a16 !important;
-  color: #f3f4f6 !important;
-}
-
-/* 🟢 २. सर्व पांढरे सेक्शन्स, कार्ड्स आणि डिव्हिजन्स हलके काळे करणे */
-body.dark-mode section, 
-body.dark-mode .case-single-card,
-body.dark-mode .contact-premium-card,
-body.dark-mode .card,
-body.dark-mode .page-wrapper,
-body.dark-mode div[style*="background-color: #ffffff"],
-body.dark-mode div[style*="background-color: #fff"],
-body.dark-mode div[style*="background: #fff"],
-body.dark-mode div[style*="background: white"],
-body.dark-mode div[style*="background-color: white"] {
-  background-color: #0b1528 !important;
-  background: #0b1528 !important;
-  border-color: #1e293b !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* 🟢 ३. इनलाईन काळ्या रंगांना खारीज करून अक्षरे स्पष्ट पांढरी करणे (मोस्ट इम्पॉर्टंट) */
-body.dark-mode p, 
-body.dark-mode span, 
-body.dark-mode li, 
-body.dark-mode div, 
-body.dark-mode strong,
-body.dark-mode .contact-card-data,
-body.dark-mode p[style*="color"],
-body.dark-mode span[style*="color"],
-body.dark-mode h4[style*="color"],
-body.dark-mode h3[style*="color"] {
-  color: #e2e8f0 !important; /* सर्व अक्षरे स्पष्ट वाचता येतील असा सिल्व्हर-व्हाईट रंग */
-}
-
-/* 🟢 ४. मुख्य हेडिंग्स आणि हायलाइट्सचा रंग */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h2[style*="color"],
-body.dark-mode h1[style*="color"] {
-  color: #ffffff !important;
-}
-
-body.dark-mode h3, 
-body.dark-mode h4,
-body.dark-mode h4[style*="color"] {
-  color: #38bdf8 !important; /* उप-मुद्द्यांसाठी सुंदर स्काय-ब्लू हायलाईट */
-}
-
-/* 🟢 ५. इनपुट फील्ड्स (फॉर्म) डार्क मोडमध्ये नीट दिसण्यासाठी */
-body.dark-mode input, 
-body.dark-mode textarea {
-  background-color: #1e293b !important;
-  color: #ffffff !important;
-  border: 1px solid #334155 !important;
-}
-
-/* 🟢 ६. थीम टॉगल बटण डिझाईन */
-.theme-toggle-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  margin-left: 15px;
-}
-
-.theme-toggle-btn:hover {
-  background: #ff6b6b;
-  border-color: #ff6b6b;
-}
-
-@media (max-width: 768px) {
-  .theme-toggle-btn {
-    margin-left: 0;
-    margin-top: 5px;
-    padding: 4px 10px;
-    font-size: 0.85rem;
-  }
-}
 /* ==========================================
    👥 MEET OUR TEAM CONTAINER FIX (एक्स्ट्रा स्पेसिंगसह)
    ========================================== */

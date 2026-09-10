@@ -40,14 +40,14 @@ function Home() {
   return (
     <div style={{ fontFamily: "'Poppins', sans-serif", backgroundColor: '#fdfdfd', color: '#333' }}>
       <Helmet>
-        <title>Sankalp Solutions | Procurement & Supply Chain Expert</title>
-        <meta name="description" content="Sankalp Solutions delivers smart, reliable, and innovative procurement solutions. Optimize costs, build strong supplier networks, and streamline your supply chain." />
-        <link rel="canonical" href="https://sankalpsolutions.co.in" />
+        <title>Sankalp Solution | Procurement & Supply Chain Expert India</title>
+        <meta name="description" content="Sankalp Solution delivers smart, reliable procurement and supply chain execution. Optimize sourcing costs, reduce operational risks, and scale your business." />
+        <link rel="canonical" href="https://sankalpsolution.co.in" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Sankalp Solutions | Smart Sourcing, Better Prices, Stronger Businesses." />
+        <meta property="og:title" content="Sankalp Solution | Smart Sourcing, Better Prices, Stronger Businesses." />
         <meta property="og:description" content="Expert-led supply chain and procurement solutions designed to drive efficiency and reduce operational costs." />
-        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+        <meta property="og:url" content="https://sankalpsolution.co.in" />
       </Helmet>
 
       <Header />
@@ -93,7 +93,7 @@ function Home() {
           textAlign: 'center',
           boxSizing: 'border-box'
         }}>
-          <div style={{ maxWidth: '1400px', margin: '0 0 0', color: '#ffffff' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto', color: '#ffffff' }}>
             <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
               Sankalp Solutions streamlines sourcing for India's top industries, connecting you with the right suppliers to deliver quality products and longterm values
             </p>

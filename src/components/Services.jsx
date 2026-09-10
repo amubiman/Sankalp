@@ -50,13 +50,16 @@ function Services() {
     
     <>
       <Helmet>
-        <title>Our Services | Strategic Sourcing & SCM Co-Ordination</title>
-        <meta name="description" content="Explore expert supply chain solutions: Strategic Sourcing, Category Management, Contract Negotiation, Cost Reduction, and GEM Support." />
-        <link rel="canonical" href="https://sankalpsolutions.co.in" />
-        <meta property="og:title" content="Our Procurement Services | Sankalp Solutions" />
+        <title>Our Services | Strategic Sourcing & SCM Coordination Solutions</title>
+        <meta name="description" content="Explore expert supply chain solutions: Strategic Sourcing, Category Management, Contract Negotiation, Cost Reduction, and GEM & Tender Support Services." />
+        <link rel="canonical" href="https://sankalpsolution.co.in" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Our Procurement Services | Sankalp Solution" />
         <meta property="og:description" content="Flexible, practical, and result-oriented engagement models tailored to your business goals." />
-        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+        <meta property="og:url" content="https://sankalpsolution.co.in" />
       </Helmet>
+
 
       {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
       <Header />

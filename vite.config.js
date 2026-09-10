@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/react-vite' // किंवा तुमचा जो फ्रेमवर्क असेल तो
 
-// 🟢 हा मॅजिक कोड लोकल कॉम्प्युटरवर '/' वापरेल आणि ऑनलाईन गिटहबवर '/Sankalp/' वापरेल
 export default defineConfig({
   plugins: [react()],
+  // जर आपण प्रोडक्शन (GitHub) वर असू तर '/Sankalp/' वापरेल, नाहीतर लोकलसाठी '/' वापरेल
   base: process.env.NODE_ENV === 'production' ? '/Sankalp/' : '/',
 })

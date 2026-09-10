@@ -134,13 +134,16 @@ function Industry() {
   return (
     <>
       <Helmet>
-        <title>Industries We Serve | Tailored Procurement Solutions</title>
-        <meta name="description" content="We act as an extended procurement arm for Manufacturing, Pharma, Automobile, Construction, IT, Energy, and Hospitality sectors." />
-        <link rel="canonical" href="https://sankalpsolutions.co.in" />
-        <meta property="og:title" content="Industries We Serve | Sankalp Solutions" />
-        <meta property="og:description" content="From routine consumables to critical project procurement, we ensure quality and timely delivery across all sectors." />
-        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+        <title>Industries We Serve | Tailored Procurement Sourcing Solutions</title>
+        <meta name="description" content="We act as an extended procurement arm for Manufacturing, Pharma, Automobile, Construction, IT, Residential Facilities, Energy, and Hospitality sectors." />
+        <link rel="canonical" href="https://sankalpsolution.co.in" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Industries We Serve | Sankalp Solution" />
+        <meta property="og:description" content="From routine consumables to critical project procurement, we ensure quality and timely delivery across all industrial sectors." />
+        <meta property="og:url" content="https://sankalpsolution.co.in" />
       </Helmet>
+
 
       <Header />
 

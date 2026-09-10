@@ -99,13 +99,16 @@ function CaseStudy() {
   return (
     <>
       <Helmet>
-        <title>Case Studies | Sankalp Solutions - Real Impact Stories</title>
-        <meta name="description" content="Read select case studies demonstrating our expertise in cost optimization, procurement efficiency, and risk management." />
-        <link rel="canonical" href="https://sankalpsolutions.co.in" />
-        <meta property="og:title" content="Case Studies | Sankalp Solutions" />
+        <title>Case Studies | Sankalp Solution - Sourcing Real Impact Stories</title>
+        <meta name="description" content="Read select case studies demonstrating our expertise in cost optimization, commercial negotiation, procurement efficiency, and supply chain risk management." />
+        <link rel="canonical" href="https://sankalpsolution.co.in" />
+        
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Case Studies | Sankalp Solution - Real Procurement Challenges" />
         <meta property="og:description" content="Real procurement challenges. Strategic solutions. Measurable business impact." />
-        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+        <meta property="og:url" content="https://sankalpsolution.co.in" />
       </Helmet>
+
 
       {/* 🟢 फिक्स: इथे नवीन स्वतंत्र हेडर कॉम्पोनंट जोडला */}
       <Header />

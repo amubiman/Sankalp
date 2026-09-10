@@ -45,13 +45,16 @@ function About() {
   return (
     <>
       <Helmet>
-        <title>About Us | Sankalp Solutions - Our Story</title>
-        <meta name="description" content="Learn about Sankalp Solutions, founded by Mr. Rohit Vijay Kawale in 2025. Discover our structured procurement approach and expert team." />
-        <link rel="canonical" href="https://sankalpsolutions.co.in" />
-        <meta property="og:title" content="About Us | Sankalp Solutions" />
+        <title>About Us | Sankalp Solution - Sourcing Expertise Since 2025</title>
+        <meta name="description" content="Learn about Sankalp Solution, founded by Mr. Rohit Vijay Kawale. Discover our structured procurement approach and expert team with 14+ years of industry experience." />
+        <link rel="canonical" href="https://sankalpsolution.co.in" />
+        
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="About Us | Sankalp Solution - Our Story" />
         <meta property="og:description" content="Bringing 14+ years of industry experience to make procurement simpler and smarter." />
-        <meta property="og:url" content="https://sankalpsolutions.co.in" />
+        <meta property="og:url" content="https://sankalpsolution.co.in" />
       </Helmet>
+
 
       <Header />
 
@@ -101,11 +104,7 @@ function About() {
           <div style={{ maxWidth: '1100px', margin: '0 auto', color: '#444', lineHeight: '1.8', fontSize: '1.05rem' }}>
             
             <p style={paragraphStyle}>
-              Every business depends on procurement. But when sourcing becomes complex, suppliers become unreliable, or costs continue to rise, procurement can quickly become a business challenge.
-            </p>
-
-            <p style={paragraphStyle}>
-              Sankalp Solutions was created to change that.
+              Every business depends on procurement. But when sourcing becomes complex, suppliers become unreliable, or costs continue to rise, procurement can quickly become a business challenge. Sankalp Solutions was created to change that.
             </p>
 
             <p style={paragraphStyle}>
