@@ -6,12 +6,12 @@ import Case from './components/Case';
 import Contact from './components/Contact';
 import Industry from './components/Industry';
 import Services from './components/Services';
-import ScrollToTop from './components/ScrollToTop'; // 👈 १. इथे इम्पोर्ट करा
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router> 
-      <ScrollToTop /> {/* 👈 २. गिटहब राउटरच्या आत सर्वात वर हा टॅग जोडा */}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} /> 
@@ -19,6 +19,8 @@ function App() {
         <Route path="/industry" element={<Industry />} />
         <Route path="/case" element={<Case />} />
         <Route path="/contact" element={<Contact />} />
+        {/* चुकून चुकीचा पाथ टाईप झाल्यास होम पेजवर रिडायरेक्ट करण्यासाठी (पर्यायी) */}
+        <Route path="*" element={<Home />} /> 
       </Routes>
     </Router>
   );
