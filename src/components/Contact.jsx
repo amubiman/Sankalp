@@ -21,8 +21,28 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmittedName(formData.name);
-    setIsSubmitted(true);
-    setFormData({ name: '', phone: '', email: '', message: '' });
+
+    // 🟢 तुमची नवीन Google Web App URL इथे जोडली आहे
+    const googleScriptUrl = "https://script.google.com/macros/s/AKfycbyqXgLd4R1803Q7VywKZvSyGViSU0vae81xPT3CS99F8kkGklEJY1KLTVu7HSTjPH_R/exec";
+
+    // fetch API द्वारे डेटा गुगल स्क्रिप्टकडे पाठवणे
+    fetch(googleScriptUrl, {
+      method: 'POST',
+      mode: 'no-cors', // 👈 CORS एरर टाळण्यासाठी आवश्यक
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(() => {
+      // डेटा गेल्यानंतर फॉर्म क्लिअर करणे आणि पॉपअप दाखवणे
+      setIsSubmitted(true);
+      setFormData({ name: '', phone: '', email: '', message: '' });
+    })
+    .catch((error) => {
+      console.error("Error sending data to Google Sheet:", error);
+      alert("Something went wrong. Please try again!");
+    });
   };
 
   return (
@@ -144,15 +164,16 @@ function Contact() {
                 <h3 style={{ color: '#0a1931', marginTop: 0, marginBottom: '25px', fontSize: '1.4rem', fontWeight: '700' }}>Send Us a Message</h3>
                 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box' }} />
-                  <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box' }} />
-                  <input type="tel" name="phone" placeholder="Your Phone" value={formData.phone} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box' }} />
-                  <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', height: '120px', outline: 'none', resize: 'vertical', boxSizing: 'border-box' }}></textarea>
-                  
-                  <button type="submit" style={{ padding: '14px', background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1rem', letterSpacing: '0.5px', boxShadow: '0 4px 15px rgba(255,107,107,0.3)', marginTop: '5px' }}>
-                    Send Message
-                  </button>
+                <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
+                <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
+                <input type="tel" name="phone" placeholder="Your Phone" value={formData.phone} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
+                <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', height: '120px', outline: 'none', resize: 'vertical', boxSizing: 'border-box', width: '100%' }}></textarea>
+                
+                <button type="submit" style={{ padding: '14px', background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1rem', letterSpacing: '0.5px', boxShadow: '0 4px 15px rgba(255,107,107,0.3)', marginTop: '5px', width: '100%' }}>
+                  Send Message
+                </button>
                 </form>
+
               </div>
 
               {/* 🗺️ उजवा कॉलम: Google Map */}
