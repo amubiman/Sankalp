@@ -5,21 +5,23 @@ import { Helmet } from 'react-helmet-async';
 
 // assets मधील इमेजेस
 import Header from '../components/Header'; 
-import contactImage from '../assets/Images/contact.png'; 
+import contactImage from '../assets/Images/contact.jpg'; 
 
 // Footer कॉम्पोनंट
 import Footer from '../components/Footer';
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
-
+  const [isSubmitted, setIsSubmitted] = useState(false); 
+  const [submittedName, setSubmittedName] = useState('');
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank You ${formData.name}! Your message has been submitted..`);
+    setSubmittedName(formData.name);
+    setIsSubmitted(true);
     setFormData({ name: '', phone: '', email: '', message: '' });
   };
 
@@ -89,7 +91,7 @@ function Contact() {
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
                 <h5 className="contact-card-title">Call Us</h5>
-                <p className="contact-card-data">+91 8600771113<br />+91 8669966192</p>
+                <p className="contact-card-data">+91 9185271113<br />+91 8600771113</p>
               </div>
 
               {/* ✉️ बॉक्स २: ईमेल (Solid Light Navy) */}
@@ -203,9 +205,61 @@ function Contact() {
           </div>
         </section>
 
-      </div> {/* 🟢 ६. मुख्य page-wrapper वाल्या div चा क्लोजिंग टॅग */}
+      </div> {/* ६. मुख्य page-wrapper वाल्या div चा क्लोजिंग टॅग */}
 
-      <Footer /> {/* 🟢 ७. फुटर कॉम्पोनंट */}
+      {/* ==========================================
+          🎯 इथे बदल ३ चा कोड पेस्ट करा (पॉपअप लेआउट)
+         ========================================== */}
+      {isSubmitted && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+          backgroundColor: 'rgba(10, 25, 49, 0.6)', backdropFilter: 'blur(4px)',
+          display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 9999, padding: '20px', boxSizing: 'border-box'
+        }}>
+          <div style={{
+            backgroundColor: '#ffffff', padding: '40px 30px', borderRadius: '20px',
+            maxWidth: '550px', width: '100%', textAlign: 'center',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.15)', border: '1px solid #e2e8f0',
+            boxSizing: 'border-box'
+          }}>
+            {/* टिक मार्क आयकॉन */}
+            <div style={{
+              width: '60px', height: '60px', backgroundColor: '#eaf4eb', borderRadius: '50%',
+              display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto 20px auto'
+            }}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+
+            {/* मुख्य मेसेज */}
+            <h3 style={{ color: '#0a1931', margin: '0 0 15px 0', fontSize: '1.6rem', fontWeight: '700' }}>
+              Thank You, {submittedName}!
+            </h3>
+            
+            <p style={{ color: '#4a5568', fontSize: '1.05rem', lineHeight: '1.6', margin: '0 0 20px 0' }}>
+              We’ve received your message successfully. Your requirement is now with our team.
+            </p>
+
+            <p style={{ color: '#1a202c', fontSize: '1rem', fontStyle: 'italic', lineHeight: '1.6', margin: '0 0 25px 0', fontWeight: '500' }}>
+              "We’ll be in touch soon to explore how Sankalp Solutions can add value to your business."
+            </p>
+
+            <h4 style={{ color: '#ff6b6b', margin: '0 0 30px 0', fontSize: '1.1rem', fontWeight: '700', letterSpacing: '0.5px' }}>
+              Your Success. Our Priority.
+            </h4>
+
+            {/* क्लोज बटण */}
+            <button 
+              onClick={() => setIsSubmitted(false)}
+              style={{ padding: '12px 35px', background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.95rem', boxShadow: '0 4px 15px rgba(255,107,107,0.3)' }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <Footer /> {/* ७. फुटर कॉम्पोनंट */}
+
     </>
   );
 }

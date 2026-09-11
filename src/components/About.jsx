@@ -21,7 +21,7 @@ function About() {
           entry.target.classList.add('is-visible');
         }
       });
-    }, { threshold: 0.15 }); // ५% बॉक्स स्क्रीनवर दिसताच ॲनिमेशन सुरू होईल
+    }, { threshold: 0.50 }); // ५% बॉक्स स्क्रीनवर दिसताच ॲनिमेशन सुरू होईल
 
     elements.forEach((el) => observer.observe(el));
     

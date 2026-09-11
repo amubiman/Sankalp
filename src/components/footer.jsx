@@ -44,7 +44,7 @@ function Footer() {
           <h4>Follow Us</h4>
           <div className="social-icons">
             <a href="https://www.facebook.com/profile.php?id=61593476303392" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/company/108233233/admin/dashboard/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
             <a href="https://www.instagram.com/sankalp.solutions/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
             <a href="https://x.com/sankalpsol" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
           </div>
@@ -56,7 +56,7 @@ function Footer() {
             <ul className="contact-info">
               <li><i className="fas fa-map-marker-alt"></i> <span>Pune, Ahilyanagar</span></li>
               <li><i className="fas fa-envelope"></i> <span>info@sankalpsolutions.co.in</span></li>
-              <li><i className="fas fa-phone-alt"></i> <span>+91 8600771113</span></li>
+              <li><i className="fas fa-phone-alt"></i> <span>+91 9185271113</span></li>
             </ul>
             
             {/* 👇 🟢 ही नवीन छोटी लीगल पट्टी फुटरमध्ये जोडा */}
