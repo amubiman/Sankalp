@@ -34,7 +34,7 @@ function Footer() {
           <ul className="footer-links">
             <li><Link to="/services">Business Solutions</Link></li>
             <li><Link to="/industry">Sector</Link></li>
-            <li><Link to="/case">Consulting</Link></li>
+            <li><Link to="/contact">Consulting</Link></li>
             <li><Link to="/about">Support & Maintenance</Link></li>
           </ul>
         </div>
@@ -50,25 +50,55 @@ function Footer() {
           </div>
         </div>
 
-          {/* कॉलम ५: संपर्क माहिती (सुधारित आवृत्ती) */}
-          <div className="footer-column">
-            <h4>Get In Touch</h4>
-            <ul className="contact-info">
-              <li><i className="fas fa-map-marker-alt"></i> <span>Pune, Ahilyanagar</span></li>
-              <li><i className="fas fa-envelope"></i> <span>info@sankalpsolutions.co.in</span></li>
-              <li><i className="fas fa-phone-alt"></i> <span>+91 9185271113</span></li>
-            </ul>
+        {/* कॉलम ५: संपर्क माहिती (सुधारित आवृत्ती) */}
+        <div className="footer-column">
+          <h4>Get In Touch</h4>
+          <ul className="contact-info" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+              <i className="fas fa-map-marker-alt"></i> <span>Pune, Ahilyanagar</span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
+              <i className="fas fa-envelope"></i> <span>info@sankalpsolutions.co.in</span>
+            </li>
             
-            {/* 👇 🟢 ही नवीन छोटी लीगल पट्टी फुटरमध्ये जोडा */}
-            <div style={{ marginTop: '20px', paddingTop: '15px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-              <p style={{ fontSize: '0.8rem', color: '#a0aec0', margin: '0 0 5px 0', fontWeight: 'bold' }}>REGISTRATIONS</p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', fontSize: '0.78rem' }}>
-                <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>GSTIN</span>
-                <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>MSME / UDYAM</span>
-                <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>PAN</span>
+            {/* 📞 मोबाईल नंबर १ */}
+            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '10px', marginBottom: '10px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <i className="fas fa-phone-alt"></i>
+                <span>+91 9185271113</span>
               </div>
+              {/* आयकॉन्सचा प्रिमियम सेट */}
+              <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
+                <a href="tel:+919185271113" title="Call Us" style={{ color: '#3182ce', fontSize: '1.05rem', transition: '0.3s' }}><i className="fas fa-phone-square-alt"></i></a>
+                <a href="https://wa.me/919185271113" target="_blank" rel="noreferrer" title="WhatsApp Us" style={{ color: '#25D366', fontSize: '1.1rem', transition: '0.3s' }}><i className="fab fa-whatsapp"></i></a>
+              </div>
+            </li>
+
+            {/* 📞 मोबाईल नंबर २ (नवीन जोडलेला) */}
+            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '10px', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <i className="fas fa-phone-alt"></i>
+                <span>+91 8600771113</span>
+              </div>
+              {/* आयकॉन्सचा प्रिमियम सेट */}
+              <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
+                <a href="tel:+918600771113" title="Call Us" style={{ color: '#3182ce', fontSize: '1.05rem', transition: '0.3s' }}><i className="fas fa-phone-square-alt"></i></a>
+                <a href="https://wa.me/918600771113" target="_blank" rel="noreferrer" title="WhatsApp Us" style={{ color: '#25D366', fontSize: '1.1rem', transition: '0.3s' }}><i className="fab fa-whatsapp"></i></a>
+              </div>
+            </li>
+          </ul>
+          
+          {/* 👇 ही नवीन छोटी लीगल पट्टी फुटरमध्ये जोडा */}
+          <div style={{ marginTop: '20px', paddingTop: '15px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <p style={{ fontSize: '0.8rem', color: '#a0aec0', margin: '0 0 5px 0', fontWeight: 'bold' }}>REGISTRATIONS</p>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', fontSize: '0.78rem' }}>
+              <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>GSTIN</span>
+              <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>MSME / UDYAM</span>
+              <span style={{ background: 'rgba(255,255,255,0.1)', padding: '3px 8px', borderRadius: '4px' }}>PAN</span>
             </div>
           </div>
+        </div>
+
 
 
       </div>

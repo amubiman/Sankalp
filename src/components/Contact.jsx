@@ -20,9 +20,31 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // 🎯 १. ईमेल आयडीसाठी प्रगत (Regex) व्हॅलिडेशन
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      alert("कृपया वैध ईमेल आयडी टाका! (उदा. info@example.com)");
+      return; // कोड इथेच थांबेल
+    }
+
+    // 🎯 २. फोन नंबरसाठी फक्त १० अंकी नंबरचे व्हॅलिडेशन
+    // युझरने टाकलेल्या नंबरमधून फक्त अंक बाजूला काढणे
+    const cleanPhone = formData.phone.replace(/\D/g, ''); 
+    if (cleanPhone.length !== 10) {
+      alert("कृपया अचूक १० अंकी मोबाईल नंबर टाका!");
+      return; // कोड इथेच थांबेल
+    }
+
+    // 🎯 ३. सर्व माहिती भरली आहे की नाही हे तपासणे (Basic Check)
+    if (!formData.name.trim() || !formData.message.trim()) {
+      alert("कृपया सर्व माहिती अचूक भरा. सर्व फील्ड्स भरणे अनिवार्य आहे!");
+      return; // कोड इथेच थांबेल
+    }
+
     setSubmittedName(formData.name);
 
-    // 🟢 तुमची नवीन Google Web App URL इथे जोडली आहे
+    // 🟢 तुमची Google Web App URL
     const googleScriptUrl = "https://script.google.com/macros/s/AKfycbyqXgLd4R1803Q7VywKZvSyGViSU0vae81xPT3CS99F8kkGklEJY1KLTVu7HSTjPH_R/exec";
 
     // fetch API द्वारे डेटा गुगल स्क्रिप्टकडे पाठवणे
@@ -32,7 +54,10 @@ function Contact() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify({
+        ...formData,
+        phone: cleanPhone // गुगल शीटमध्ये फक्त शुद्ध १० अंकी नंबर पाठवण्यासाठी
+      })
     })
     .then(() => {
       // डेटा गेल्यानंतर फॉर्म क्लिअर करणे आणि पॉपअप दाखवणे
@@ -44,6 +69,7 @@ function Contact() {
       alert("Something went wrong. Please try again!");
     });
   };
+
 
   return (
     <>
@@ -163,16 +189,55 @@ function Contact() {
               }}>
                 <h3 style={{ color: '#0a1931', marginTop: 0, marginBottom: '25px', fontSize: '1.4rem', fontWeight: '700' }}>Send Us a Message</h3>
                 
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
-                <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
-                <input type="tel" name="phone" placeholder="Your Phone" value={formData.phone} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
-                <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', height: '120px', outline: 'none', resize: 'vertical', boxSizing: 'border-box', width: '100%' }}></textarea>
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                // 🔍 सर्व फील्ड्स भरली आहेत की नाही हे तपासणे (JavaScript Validation)
+                if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.message.trim()) {
+                  alert("कृपया सर्व माहिती अचूक भरा. सर्व फील्ड्स भरणे अनिवार्य आहे!");
+                  return; // जर एखादे फील्ड रिकामे असेल तर कोड इथेच थांबेल, गुगल शीटला डेटा जाणार नाही
+                }
+                handleSubmit(e); // जर सर्व माहिती भरली असेल तरच तुमचा मुख्य फंक्शन कॉल होईल
+              }} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                
+                {/* नावाचे फील्ड */}
+                <div style={{ position: 'relative' }}>
+                  <input type="text" name="name" placeholder="Your Name *" value={formData.name} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
+                </div>
+
+                {/* ईमेलचे फील्ड */}
+                <div style={{ position: 'relative' }}>
+                  <input type="email" name="email" placeholder="Your Email *" value={formData.email} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} />
+                </div>
+
+                {/* फोन नंबरचे फील्ड */}
+                <div style={{ position: 'relative' }}>
+                  <input 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="Your Phone *" 
+                  value={formData.phone} 
+                  onChange={(e) => {
+                    // 🛑 फक्त नंबर टाईप होऊ देणे, अक्षरे ब्लॉक करणे
+                    const onlyNums = e.target.value.replace(/\D/g, '');
+                    setFormData({ ...formData, phone: onlyNums });
+                  }} 
+                  maxLength="10" 
+                  required 
+                  style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', outline: 'none', boxSizing: 'border-box', width: '100%' }} 
+                  />
+
+                </div>
+
+                {/* मेसेजचे फील्ड */}
+                <div style={{ position: 'relative' }}>
+                  <textarea name="message" placeholder="Your Message *" value={formData.message} onChange={handleChange} required style={{ padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: '#f8fafc', color: '#333', fontSize: '0.95rem', height: '120px', outline: 'none', resize: 'vertical', boxSizing: 'border-box', width: '100%' }}></textarea>
+                </div>
                 
                 <button type="submit" style={{ padding: '14px', background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1rem', letterSpacing: '0.5px', boxShadow: '0 4px 15px rgba(255,107,107,0.3)', marginTop: '5px', width: '100%' }}>
                   Send Message
                 </button>
-                </form>
+              </form>
+
 
               </div>
 

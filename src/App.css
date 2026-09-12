@@ -486,31 +486,84 @@ display: inline-block;
 
 
 /* ==========================================
-   👥 MEET OUR TEAM CONTAINER FIX (एक्स्ट्रा स्पेसिंगसह)
+   👥 MEET OUR TEAM CONTAINER FIX (SLOW & SMOOTH HOVER EFFECT)
    ========================================== */
 .team-flex {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: wrap !important; 
   justify-content: center !important; 
-  gap: 45px !important; /* 🟢 फिक्स: दोन बॉक्समधील अंतर ३०px वरून ४५px केले, ज्यामुळे एक्स्ट्रा स्पेस दिसेल */
-  margin-top: 40px !important; /* 🟢 फिक्स: 'Meet Our Team' टायटल आणि बॉक्समधील वरची जागा वाढवली */
+  gap: 45px !important; 
+  margin-top: 40px !important; 
   width: 100% !important;
   padding-bottom: 30px !important;
 }
 
 .team-member-card {
-  width: 260px !important; /* 🟢 फिक्स: बॉक्सची रुंदी २४०px वरून २६०px केली जेणेकरून तो सुटसुटीत दिसेल */
+  width: 260px !important; 
   text-align: center !important;
-  padding: 35px 25px !important; /* 🟢 फिक्स: बॉक्सच्या आत वरून-खालून आणि बाजूने एक्स्ट्रा स्पेस दिली */
+  padding: 35px 25px !important; 
   border-radius: 12px !important;
   box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
   background: #ffffff !important;
   box-sizing: border-box !important;
-  transition: transform 0.3s ease !important;
+  
+  /* 🟢 बदल: ट्रान्झिशन टाइम 0.3s वरून 0.6s केला आणि एक प्रिमियम टाइमिंग फंक्शन जोडले */
+  transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.9s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
-/* 🟢 माउस नेल्यावर कार्ड थोडं वर सरकण्यासाठी सुंदर इफेक्ट */
+/* 🟢 माउस नेल्यावर कार्ड अगदी हळूवार आणि सुंदर पद्धतीने वर सरकेल */
 .team-member-card:hover {
-  transform: translateY(-5px) !important;
+  transform: translateY(-10px) !important; /* आधी ५px होते, ते १०px केले जेणेकरून इफेक्ट स्पष्ट आणि प्रिमियम दिसेल */
+  box-shadow: 0 12px 30px rgba(0, 34, 88, 0.1) !important; /* हवेत तरंगतानाची सुंदर सावली (Shadow) */
+}
+
+/* ==========================================================================
+   🎬 HERO BANNER TEXT ANIMATION EFFECTS (SLOW & SMOOTH VERSION)
+   ========================================================================== */
+
+/* १. मुख्य कंटेनर - ॲनिमेशन वेळ १.२ वरून २.० सेकंद केला */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUpHero 2.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+/* २. की-फ्रेम्स */
+@keyframes fadeInUpHero {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ३. शब्दांचे ॲनिमेशन - वेळ ०.८ वरून १.५ सेकंद केला */
+.hero-animate h1 span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInWords 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ४. प्रत्येक ओळ एकामागून एक खूप शांतपणे येण्यासाठी डिले (Delay) वाढवला */
+.hero-animate h1 span:nth-child(1) { animation-delay: 0.4s; } /* Smart Sourcing */
+.hero-animate h1 span:nth-child(2) { animation-delay: 1.0s; } /* Better Prices */
+.hero-animate h1 span:nth-child(3) { animation-delay: 1.6s; } /* Stronger Businesses */
+
+/* ५. बटन्स सर्वात शेवटी अतिशय हळूवारपणे दिसतील */
+.hero-animate div { 
+  opacity: 0; 
+  animation: fadeInWords 1.5s ease forwards; 
+  animation-delay: 2.2s; 
+}
+
+@keyframes fadeInWords {
+  to {
+    opacity: 1;
+  }
 }
