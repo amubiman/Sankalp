@@ -112,7 +112,7 @@ function Contact() {
       {/* मुख्य बड़ी और कैपिटल हेडिंग */}
       <h2 style={{ 
         color: '#ffffff', 
-        fontSize: '5rem', // 👈 साइज को बड़ा (Big Size) किया गया है
+        fontSize: '4rem', // 👈 साइज को बड़ा (Big Size) किया गया है
         fontWeight: '900', // 👈 अक्षरों को और बोल्ड किया
         textTransform: 'uppercase', // 👈 टेक्स्ट को ऑटोमैटिक CAPITAL (CONTACT US) करने के लिए
         margin: '0 0 15px 0', 
