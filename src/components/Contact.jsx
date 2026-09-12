@@ -156,7 +156,7 @@ function Contact() {
                 </div>
                 <h5 className="contact-card-title">Visit Us</h5>
                 <p className="contact-card-data" style={{ fontSize: '0.92rem' }}>
-                  Bhairavnath park, Nagar kalyan road, opposite to Balaji temple, Nepti Suburban, Nepti, Ahilyanagar, Maharashtra 414001.
+                  Bhairavnath Park, Nagar Kalyan Road, Opposite To Balaji Temple, Nepti Suburban, Nepti, Ahilyanagar, Maharashtra 414001.
                 </p>
               </div>
 

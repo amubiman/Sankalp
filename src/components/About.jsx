@@ -30,7 +30,7 @@ function About() {
 
   const teamMembers = [
     { name: "Mr. Rohit Vijay Kawale", role: "Founder", initials: "RK" },
-    { name: "Mr. Amol Prakash Biman", role: "Technical Support Specialist", initials: "AB" },
+    { name: "Mr. Amol Prakash Biman", role: "Technical Support", initials: "AB" },
     { name: "Ms. Rutuja Vilas Deshpande", role: "Documentation & Compliance Executive", initials: "RD" },
     { name: "Mr. Mangesh Sadanand Shahane", role: "Support Associate", initials: "MS" }
   ];

@@ -55,7 +55,7 @@ function Footer() {
           <h4>Get In Touch</h4>
           <ul className="contact-info" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-              <i className="fas fa-map-marker-alt"></i> <span>Pune, Ahilyanagar</span>
+              <i className="fas fa-map-marker-alt"></i> <span>Pune & Ahilyanagar</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
               <i className="fas fa-envelope"></i> <span>info@sankalpsolutions.co.in</span>
