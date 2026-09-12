@@ -87,12 +87,23 @@ function Contact() {
 
       <Header />
 
-      {/* मुख्य मजकूर रॅप */}
-      <div className="page-wrapper" style={{ backgroundColor: '#f8fafc', width: '100%', overflowX: 'hidden' }}>
+      {/* Main Content Wrap */}
+      <div className="page-wrapper" style={{ backgroundColor: '#f8fafc', paddingBottom: '60px' }}>
         
-        {/* स्लायडर आणि इमेज ऑटो-फिट */}
+        {/* बॅनर्स */}
         <div className="slider">
-          <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" />
+          <div className="slides">
+            <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" />
+            <div className="caption" style={{
+              position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)',
+              color: '#ffffff', textAlign: 'center', width: '100%', maxWidth: '800px',
+              background: 'transparent', padding: '1rem', zIndex: '10'
+            }}>
+              <h2 style={{ color: '#ffffff', fontSize: '2.8rem', fontWeight: 'bold', margin: '0', textShadow: '2px 2px 8px rgba(0,0,0,0.6)' }}>
+                Contact Us
+              </h2>
+            </div>
+          </div>
         </div>
 
         {/* मुख्य कॉन्टॅक्ट विभाग (इथे margin: '0 auto' मुळे सर्व सेंटर होईल) */}
@@ -272,7 +283,7 @@ function Contact() {
 
         {/* 🎨 ५. ३. बॉटम ग्रॅडिएंट पट्टी बॉक्स (इथे विड्थ calc(100% - 48px) केली आहे) */}
         <section style={{ 
-          padding: '20px 5%', 
+          padding: '10px 10%', 
           background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
           margin: '0 auto 20px auto', 
           maxWidth: '1400px', 
@@ -283,10 +294,11 @@ function Contact() {
           width: 'calc(100% - 48px)'
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '1.5', fontWeight: 'bold', opacity: '1' }}>
+            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '2.0', fontWeight: 'bold', opacity: '1' }}>
               <span>We look forward to hearing from you !</span>
-              <span style={{ marginRight: '100px' }}></span> 
-              <span>Your success is our priority.</span>
+            </p>
+            <p style={{ fontSize: '1.3rem', color: '#ffffff', margin: '0', lineHeight: '2.0', fontWeight: 'bold', opacity: '1' }}>
+            <span>YOUR SUCCESS IS OUR PRIORITY.</span>
             </p>
           </div>
         </section>

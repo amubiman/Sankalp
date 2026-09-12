@@ -149,10 +149,61 @@ function Industry() {
 
       <div className="page-wrapper">
         
-        {/* Banner Section */}
-        <div className="slider">
-          <img src={industryImage} alt="Sankalp Solutions Industries Banner" />
-        </div>
+{/* Banner Section (इमेजवरील टेक्स्टसह सुधारित) */}
+<div className="slider" style={{ 
+  position: 'relative', 
+  width: '100%', 
+  height: '60vh', // 👈 बॅनरची उंची (तुम्ही तुमच्या गरजेनुसार कमी-जास्त करू शकता)
+  overflow: 'hidden'
+}}>
+  {/* मुख्य बॅनर इमेज */}
+  <img 
+    src={industryImage} 
+    alt="Sankalp Solutions Industries Banner" 
+    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+  />
+  
+  {/* 🖤 डार्क ओव्हरले: यामुळे इमेजवर पांढरा टेक्स्ट अगदी स्पष्ट आणि गडद दिसेल */}
+  <div style={{
+    position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+    background: 'linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5))',
+    display: 'flex', flexDirection: 'column', justifyContent: 'center',
+    paddingLeft: '6%', boxSizing: 'border-box'
+  }}>
+    
+    {/* १. वरची छोटी हेडिंग */}
+    <h4 style={{ 
+      color: '#ffffff', fontSize: '1.2rem', fontWeight: '500', 
+      margin: '0 0 12px 0', letterSpacing: '0.5px', fontFamily: "'Poppins', sans-serif" 
+    }}>
+      Solutions for Every Industry
+    </h4>
+
+    {/* 🔥 लाल/ऑरेंज रंगाची अंडरलाईन (इमेजप्रमाणे) */}
+    <div style={{ 
+      width: '180px', height: '3px', backgroundColor: '#ff6b6b', 
+      marginBottom: '35px' 
+    }} />
+
+    {/* २. मुख्य मोठी हेडिंग */}
+    <h1 style={{ 
+      color: '#ffffff', fontSize: '3.5rem', fontWeight: '700', 
+      margin: '0 0 25px 0', fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.5px' 
+    }}>
+      Empowering Businesses
+    </h1>
+
+    {/* ३. खालची सब-हेडिंग */}
+    <p style={{ 
+      color: '#e2e8f0', fontSize: '1.1rem', fontWeight: '400', 
+      margin: '0', fontFamily: "'Poppins', sans-serif", opacity: '0.9' 
+    }}>
+      Discover our tailored solutions for your specific industry needs
+    </p>
+
+  </div>
+</div>
+
 
         {/* प्रिमियम लिनियर ग्रॅडिएंट बॉक्स १ */}
         <section style={{ 
