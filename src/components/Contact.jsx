@@ -90,21 +90,51 @@ function Contact() {
       {/* Main Content Wrap */}
       <div className="page-wrapper" style={{ backgroundColor: '#f8fafc', paddingBottom: '60px' }}>
         
-        {/* बॅनर्स */}
-        <div className="slider">
-          <div className="slides">
-            <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" />
-            <div className="caption" style={{
-              position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)',
-              color: '#ffffff', textAlign: 'center', width: '100%', maxWidth: '800px',
-              background: 'transparent', padding: '1rem', zIndex: '10'
-            }}>
-              <h2 style={{ color: '#ffffff', fontSize: '2.8rem', fontWeight: 'bold', margin: '0', textShadow: '2px 2px 8px rgba(0,0,0,0.6)' }}>
-                Contact Us
-              </h2>
-            </div>
-          </div>
-        </div>
+{/* बॅनर्स (कैपिटल और बड़ी साइज हेडिंग के साथ अपडेटेड) */}
+<div className="slider" style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+  <div className="slides" style={{ position: 'relative', width: '100%' }}>
+    <img src={contactImage} alt="Sankalp Solutions Contact Us Banner" style={{ width: '100%', display: 'block' }} />
+    
+    {/* 🎯 टेक्स्ट कंटेनर - इसे इमेज के अनुसार लेफ्ट साइड में सेट किया गया है */}
+    <div className="caption" style={{
+      position: 'absolute', 
+      top: '50%', 
+      left: '8%', // 👈 बाईं तरफ से उचित दूरी
+      transform: 'translateY(-50%)',
+      color: '#ffffff', 
+      textAlign: 'left', // 👈 टेक्स्ट को लेफ्ट अलाइन किया
+      width: 'auto', 
+      maxWidth: '600px',
+      background: 'transparent', 
+      zIndex: '10',
+      boxSizing: 'border-box'
+    }}>
+      {/* मुख्य बड़ी और कैपिटल हेडिंग */}
+      <h2 style={{ 
+        color: '#ffffff', 
+        fontSize: '5rem', // 👈 साइज को बड़ा (Big Size) किया गया है
+        fontWeight: '900', // 👈 अक्षरों को और बोल्ड किया
+        textTransform: 'uppercase', // 👈 टेक्स्ट को ऑटोमैटिक CAPITAL (CONTACT US) करने के लिए
+        margin: '0 0 15px 0', 
+        letterSpacing: '1px',
+        lineHeight: '1.1',
+        textShadow: '3px 3px 10px rgba(0,0,0,0.5)',
+        fontFamily: "'Poppins', sans-serif"
+      }}>
+        CONTACT US
+      </h2>
+
+      {/* 🔹 नीली/लाइट ब्लू बॉर्डर लाइन (दूसरी इमेज के डिज़ाइन जैसी) */}
+      <div style={{ 
+        width: '160px', 
+        height: '4px', 
+        backgroundColor: '#00bcd4', // 👈 ब्राइट ब्लू कलर की अंडरलाइन
+        boxShadow: '0 2px 8px rgba(0,188,212,0.4)'
+      }} />
+    </div>
+  </div>
+</div>
+
 
         {/* मुख्य कॉन्टॅक्ट विभाग (इथे margin: '0 auto' मुळे सर्व सेंटर होईल) */}
         <section style={{ backgroundColor: '#f8fafc', padding: '20px 24px 50px 24px', margin: '0 auto', color: '#333333', width: '100%', maxWidth: '1424px', boxSizing: 'border-box' }}>
@@ -281,27 +311,41 @@ function Contact() {
           </div> {/* 🟢 ३. मॅक्स-विड्थ १४००px वाल्या कंटेनर div चा क्लोजिंग टॅग */}
         </section> {/* 🟢 ४. मुख्य कॉन्टॅक्ट विभाग <section> चा क्लोजिंग टॅग */}
 
-        {/* 🎨 ५. ३. बॉटम ग्रॅडिएंट पट्टी बॉक्स (इथे विड्थ calc(100% - 48px) केली आहे) */}
-        <section style={{ 
-          padding: '10px 10%', 
-          background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
-          margin: '0 auto 20px auto', 
-          maxWidth: '1400px', 
-          borderRadius: '10px', 
-          boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-          textAlign: 'center',
-          boxSizing: 'border-box',
-          width: 'calc(100% - 48px)'
-        }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
-            <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0', lineHeight: '2.0', fontWeight: 'bold', opacity: '1' }}>
-              <span>We look forward to hearing from you !</span>
-            </p>
-            <p style={{ fontSize: '1.3rem', color: '#ffffff', margin: '0', lineHeight: '2.0', fontWeight: 'bold', opacity: '1' }}>
-            <span>YOUR SUCCESS IS OUR PRIORITY.</span>
-            </p>
-          </div>
-        </section>
+{/* 🎨 ५. ३. बॉटम ग्रॅडिएंट पट्टी बॉक्स (हुबेहूब इमेजमधील फॉन्ट डिझाईनसह) */}
+<section style={{ 
+  padding: '18px 5%', 
+  background: 'linear-gradient(90deg, #ff6b6b, #ff8e53)', 
+  margin: '0 auto 20px auto', 
+  maxWidth: '1400px', 
+  borderRadius: '10px', 
+  boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+  textAlign: 'center',
+  boxSizing: 'border-box',
+  width: 'calc(100% - 48px)'
+}}>
+  <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#ffffff' }}>
+    <p style={{ fontSize: '1.1rem', color: '#ffffff', margin: '0 0 6px 0', lineHeight: '1.3', fontWeight: 'bold', fontFamily: "'Poppins', sans-serif" }}>
+      We look forward to hearing from you !
+    </p>
+    
+    {/* 🎯 बदल: हुबेहूब इमेजसारखा फॉन्ट फॅमिली, साईज आणि स्वल्पविराम (!) जोडला आहे */}
+    <p style={{ 
+      fontSize: '2rem', // 👈 फॉन्ट अगदी योग्य आणि स्पष्ट दिसण्यासाठी २rem साईज
+      color: '#ffffff', 
+      margin: '0', 
+      lineHeight: '1.3', 
+      fontWeight: '600',
+      fontFamily: "'Cormorant Garamond', serif", // 👈 हुबेहूब मोनोटाईप कॉर्सिव्हासारखा रॉयल लुक
+      fontStyle: 'italic', // 👈 अक्षरे तिरपी करण्यासाठी
+      letterSpacing: '0.8px',
+      textShadow: '1px 1px 2px rgba(0,0,0,0.1)'
+    }}>
+      Your Success, Our Priority!
+    </p>
+  </div>
+</section>
+
+
 
       </div> {/* ६. मुख्य page-wrapper वाल्या div चा क्लोजिंग टॅग */}
 
