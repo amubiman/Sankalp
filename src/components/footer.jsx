@@ -1,20 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoImage from '../assets/Images/Logo.png'; // लोगोचा पाथ अचूक तपासा
+import logoImage from '../assets/Images/Logo.png'; 
+
+// सर्व इमेजेसचे अचूक इम्पोर्ट्स
+import fbIcon from '../assets/Images/facebook.png';
+import liIcon from '../assets/Images/linkedin.png';
+import instaIcon from '../assets/Images/instagram.png';
+import twitterIcon from '../assets/Images/twitter.png';
 
 function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-container">
         
-        {/* कॉलम १: लोगो आणि माहिती - 🟢 फिक्स: लोगो आणि मजकूर डावीकडे सरकवण्यासाठी इनलाईन स्टाईल जोडली */}
+        {/* कॉलम १: लोगो आणि माहिती */}
         <div className="footer-column" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', paddingLeft: '0', marginLeft: '0' }}>
           <img src={logoImage} alt="Sankalp Solutions Logo" style={{ marginLeft: '0', paddingLeft: '0', display: 'block' }} />
           <p style={{ textAlign: 'left', marginLeft: '0', paddingLeft: '0' }}>Delivering innovative and reliable solutions that help businesses grow, scale and succeed in a competitive world.</p>
         </div>
 
-
-        {/* कॉलम २: क्विक लिंक्स (६ अचूक लिंक्स आणि बदललेली नावे) */}
+        {/* कॉलम २: क्विक लिंक्स */}
         <div className="footer-column">
           <h4>Quick Links</h4>
           <ul className="footer-links">
@@ -27,7 +32,6 @@ function Footer() {
           </ul>
         </div>
 
-
         {/* कॉलम ३: आमच्या सेवा */}
         <div className="footer-column">
           <h4>Our Services</h4>
@@ -39,18 +43,32 @@ function Footer() {
           </ul>
         </div>
 
-        {/* कॉलम ४: सोशल मीडिया */}
+        {/* कॉलम ४: सोशल मीडिया (परफेक्ट सेंटर अलाइनमेंट फिक्स) */}
         <div className="footer-column">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61593476303392" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/company/108233233/admin/dashboard/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/sankalp.solutions/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-            <a href="https://x.com/sankalpsol" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
+            
+            <a href="https://www.facebook.com/people/Sankalp-Solutions/61593476303392/" target="_blank" rel="noreferrer" className="social-link-wrapper">
+              <img src={fbIcon} alt="Facebook" className="social-img-fix" />
+            </a>
+
+            <a href="https://www.linkedin.com/company/108233233/admin/dashboard/" target="_blank" rel="noreferrer" className="social-link-wrapper">
+              <img src={liIcon} alt="LinkedIn" className="social-img-fix" />
+            </a>
+
+            <a href="https://www.instagram.com/sankalp.solutions/" target="_blank" rel="noreferrer" className="social-link-wrapper">
+              <img src={instaIcon} alt="Instagram" className="social-img-fix" />
+            </a>
+
+            <a href="https://x.com/sankalpsol" target="_blank" rel="noreferrer" className="social-link-wrapper">
+              <img src={twitterIcon} alt="X Twitter" className="social-img-fix" />
+            </a>
+
           </div>
         </div>
 
-        {/* कॉलम ५: संपर्क माहिती (सुधारित आवृत्ती) */}
+
+        {/* कॉलम ५: संपर्क माहिती */}
         <div className="footer-column">
           <h4>Get In Touch</h4>
           <ul className="contact-info" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -61,26 +79,24 @@ function Footer() {
               <i className="fas fa-envelope"></i> <span>info@sankalpsolutions.co.in</span>
             </li>
             
-            {/* 📞 मोबाईल नंबर १ */}
+            {/* मोबाईल नंबर १ */}
             <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '10px', marginBottom: '10px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <i className="fas fa-phone-alt"></i>
                 <span>+91 9185271113</span>
               </div>
-              {/* आयकॉन्सचा प्रिमियम सेट */}
               <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
                 <a href="tel:+919185271113" title="Call Us" style={{ color: '#3182ce', fontSize: '1.05rem', transition: '0.3s' }}><i className="fas fa-phone-square-alt"></i></a>
                 <a href="https://wa.me/919185271113" target="_blank" rel="noreferrer" title="WhatsApp Us" style={{ color: '#25D366', fontSize: '1.1rem', transition: '0.3s' }}><i className="fab fa-whatsapp"></i></a>
               </div>
             </li>
 
-            {/* 📞 मोबाईल नंबर २ (नवीन जोडलेला) */}
+            {/* मोबाईल नंबर २ */}
             <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '10px', marginBottom: '15px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <i className="fas fa-phone-alt"></i>
                 <span>+91 8600771113</span>
               </div>
-              {/* आयकॉन्सचा प्रिमियम सेट */}
               <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
                 <a href="tel:+918600771113" title="Call Us" style={{ color: '#3182ce', fontSize: '1.05rem', transition: '0.3s' }}><i className="fas fa-phone-square-alt"></i></a>
                 <a href="https://wa.me/918600771113" target="_blank" rel="noreferrer" title="WhatsApp Us" style={{ color: '#25D366', fontSize: '1.1rem', transition: '0.3s' }}><i className="fab fa-whatsapp"></i></a>
@@ -88,7 +104,6 @@ function Footer() {
             </li>
           </ul>
           
-          {/* 👇 ही नवीन छोटी लीगल पट्टी फुटरमध्ये जोडा */}
           <div style={{ marginTop: '20px', paddingTop: '15px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
             <p style={{ fontSize: '0.8rem', color: '#a0aec0', margin: '0 0 5px 0', fontWeight: 'bold' }}>REGISTRATIONS</p>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', fontSize: '0.78rem' }}>
@@ -98,8 +113,6 @@ function Footer() {
             </div>
           </div>
         </div>
-
-
 
       </div>
 

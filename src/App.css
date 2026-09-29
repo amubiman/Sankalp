@@ -276,30 +276,65 @@ section {
 
 .footer-links a:hover { color: #ff6b6b; }
 
+/* ==========================================================================
+   📸 SOCIAL MEDIA PERFECT SIZE & CENTER ALIGN FIX
+   ========================================================================== */
 .social-icons {
-  display: flex;
-  gap: 12px;
-  margin-top: 5px;
+  display: flex !important;
+  gap: 12px !important;
+  margin-top: 12px !important;
+  background: transparent !important;
 }
 
-.social-icons a {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* १. पांढऱ्या कड्यांचे वर्तुळ (परफेक्ट फ्लेक्स सेंटर) */
+.social-icons .social-link-wrapper,
+.site-footer .social-icons .social-link-wrapper {
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important; /* इनलाईन फ्लेक्स */
+  align-items: center !important;    /* 🎯 इमेज उभ्या दिशेने मध्यभागी आणेल */
+  justify-content: center !important; /* 🎯 इमेज आडव्या दिशेने मध्यभागी आणेल */
+  border-radius: 50% !important;     /* परफेक्ट गोल वर्तुळ */
+  padding: 0 !important;
+  margin: 0 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  overflow: hidden !important;        /* इमेज बाहेर जाऊ देणार नाही */
+  text-decoration: none !important;
+  transition: transform 0.3s ease, background 0.3s ease !important;
+  position: relative !important;
 }
 
-.social-icons a:hover {
-  background: #ff6b6b;
-  color: #ffffff;
+/* २. आतली ओरिजिनल रंगीत इमेज (कंटेनरच्या रचनेनुसार १००% फिट) */
+.social-icons .social-link-wrapper .social-img-fix,
+.site-footer .social-icons .social-link-wrapper .social-img-fix {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;    /* 🎯 इमेज वर्तुळाचा संपूर्ण कोपरा न कोपरा व्यापून घेईल */
+  border-radius: 50% !important;   /* इमेजला सुद्धा परफेक्ट गोल करेल */
+  display: block !important;
+  margin: 0 !important;            /* कोणताही डीफॉल्ट मार्जिन काढून टाकला */
+  padding: 0 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
 }
+
+/* ३. होव्हर इफेक्ट */
+.social-icons .social-link-wrapper:hover,
+.site-footer .social-icons .social-link-wrapper:hover {
+  transform: translateY(-4px) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 📸 इंस्टाग्राम लोगो किंचित मोठा करून बॉर्डर स्पेस मॅच करण्यासाठी फिक्स */
+.social-icons .social-link-wrapper img[alt="Instagram"] {
+  transform: scale(1.12) !important; /* 🎯 इन्स्टाग्रामच्या लोगोला किंचित मोठे करेल */
+  transform-origin: center !important;
+}
+
 
 .contact-info {
   list-style: none;
